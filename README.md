@@ -2,7 +2,7 @@
 
 AI-powered customer feedback analysis using AWS Bedrock (Claude) - replaces Sunbeam AI solution.
 
-[![Logo](https://github.com/stockmanncom/dalidreams/blob/main/images/logo-draft.png)](link_url)
+<img src="images/logo-draft.png" width="400">
 
 ## What It Does
 
