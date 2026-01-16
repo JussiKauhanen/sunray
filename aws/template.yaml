@@ -1,0 +1,401 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Bedrock Claude Feedback Labeling System - replaces Sunbeam AI'
+
+Parameters:
+  FeedbackBucketName:
+    Type: String
+    Description: Name for the S3 bucket (must be globally unique)
+    Default: qaw-feedback-labeling
+    
+  BedrockModelId:
+    Type: String
+    Description: Bedrock model to use
+    Default: anthropic.claude-3-5-sonnet-20241022-v2:0
+    
+Resources:
+  # S3 Bucket for feedback storage (without notifications initially)
+  FeedbackBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref FeedbackBucketName
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub '${AWS::StackName}-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                Resource: !Sub '${FeedbackBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !GetAtt FeedbackBucket.Arn
+        - PolicyName: BedrockAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource: !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/${BedrockModelId}'
+
+  # CloudWatch Log Group for Lambda
+  FunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${AWS::StackName}-labeling-function'
+      RetentionInDays: 7
+
+  # The main Lambda function
+  FeedbackLabelingFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-labeling-function'
+      Runtime: python3.11
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 300
+      MemorySize: 512
+      Environment:
+        Variables:
+          BEDROCK_MODEL_ID: !Ref BedrockModelId
+          OUTPUT_BUCKET: !Ref FeedbackBucket
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import os
+          from datetime import datetime
+          from urllib.parse import unquote_plus
+          
+          s3 = boto3.client('s3')
+          bedrock = boto3.client('bedrock-runtime')
+          
+          MODEL_ID = os.environ['BEDROCK_MODEL_ID']
+          OUTPUT_BUCKET = os.environ['OUTPUT_BUCKET']
+          
+          # Prompt template for Claude
+          LABELING_PROMPT = """Analyze this customer feedback and label it accurately.
+
+          Feedback: "{feedback_text}"
+          
+          You must return ONLY valid JSON (no markdown, no explanation) with these exact fields:
+          - category: one of [product, service, delivery, payment, technical, general, positive_feedback]
+          - sentiment: one of [positive, neutral, negative]
+          - subcategory: specific issue type (e.g., "late_delivery", "poor_quality", "great_service")
+          - language: detected language code (fi, en, et, lv, lt, or other)
+          - priority: one of [low, medium, high]
+          - summary: brief 1-sentence description in English
+          - confidence: your confidence level (low, medium, high)
+          
+          Example output:
+          {{"category":"delivery","sentiment":"negative","subcategory":"late_delivery","language":"en","priority":"high","summary":"Customer reports delayed package delivery","confidence":"high"}}
+          
+          Return only the JSON object, nothing else."""
+          
+          def invoke_claude(feedback_text):
+              """Send feedback to Claude and get labeled response"""
+              prompt = LABELING_PROMPT.format(feedback_text=feedback_text)
+              
+              request_body = {
+                  "anthropic_version": "bedrock-2023-05-31",
+                  "max_tokens": 500,
+                  "messages": [
+                      {
+                          "role": "user",
+                          "content": prompt
+                      }
+                  ],
+                  "temperature": 0.3
+              }
+              
+              response = bedrock.invoke_model(
+                  modelId=MODEL_ID,
+                  body=json.dumps(request_body)
+              )
+              
+              response_body = json.loads(response['body'].read())
+              claude_response = response_body['content'][0]['text']
+              
+              # Parse Claude's JSON response
+              try:
+                  labeled_data = json.loads(claude_response.strip())
+                  return labeled_data
+              except json.JSONDecodeError:
+                  # Fallback if Claude doesn't return perfect JSON
+                  return {
+                      "error": "Failed to parse Claude response",
+                      "raw_response": claude_response,
+                      "category": "general",
+                      "sentiment": "neutral",
+                      "priority": "low"
+                  }
+          
+          def lambda_handler(event, context):
+              """Main handler - triggered by S3 upload"""
+              print(f"Received event: {json.dumps(event)}")
+              
+              results = []
+              
+              for record in event['Records']:
+                  # Get the uploaded file details
+                  bucket = record['s3']['bucket']['name']
+                  key = unquote_plus(record['s3']['object']['key'])
+                  
+                  print(f"Processing: s3://{bucket}/{key}")
+                  
+                  try:
+                      # Read the input file
+                      response = s3.get_object(Bucket=bucket, Key=key)
+                      file_content = response['Body'].read().decode('utf-8')
+                      feedback_data = json.loads(file_content)
+                      
+                      # Handle both single feedback and arrays
+                      feedbacks = feedback_data if isinstance(feedback_data, list) else [feedback_data]
+                      
+                      labeled_feedbacks = []
+                      
+                      for feedback in feedbacks:
+                          feedback_text = feedback.get('feedback', feedback.get('message', feedback.get('text', '')))
+                          
+                          if not feedback_text:
+                              print(f"No feedback text found in: {feedback}")
+                              continue
+                          
+                          # Send to Claude for labeling
+                          print(f"Labeling: {feedback_text[:100]}...")
+                          labeled = invoke_claude(feedback_text)
+                          
+                          # Merge original data with labels
+                          result = {
+                              **feedback,
+                              'labels': labeled,
+                              'processed_at': datetime.utcnow().isoformat(),
+                              'processor': 'bedrock-claude'
+                          }
+                          
+                          labeled_feedbacks.append(result)
+                      
+                      # Write to egress folder
+                      timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+                      original_filename = key.split('/')[-1].replace('.json', '')
+                      output_key = f"egress/{original_filename}_labeled_{timestamp}.json"
+                      
+                      s3.put_object(
+                          Bucket=OUTPUT_BUCKET,
+                          Key=output_key,
+                          Body=json.dumps(labeled_feedbacks, indent=2),
+                          ContentType='application/json'
+                      )
+                      
+                      print(f"✓ Labeled data written to: s3://{OUTPUT_BUCKET}/{output_key}")
+                      
+                      # Move original to archive
+                      archive_key = key.replace('ingress/', 'archive/')
+                      s3.copy_object(
+                          Bucket=OUTPUT_BUCKET,
+                          CopySource={'Bucket': bucket, 'Key': key},
+                          Key=archive_key
+                      )
+                      s3.delete_object(Bucket=bucket, Key=key)
+                      
+                      print(f"✓ Original moved to: s3://{OUTPUT_BUCKET}/{archive_key}")
+                      
+                      results.append({
+                          'input': key,
+                          'output': output_key,
+                          'count': len(labeled_feedbacks),
+                          'status': 'success'
+                      })
+                      
+                  except Exception as e:
+                      print(f"✗ Error processing {key}: {str(e)}")
+                      results.append({
+                          'input': key,
+                          'status': 'error',
+                          'error': str(e)
+                      })
+              
+              return {
+                  'statusCode': 200,
+                  'body': json.dumps(results)
+              }
+
+  # Lambda Permission for S3 to invoke
+  LambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref FeedbackLabelingFunction
+      Action: lambda:InvokeFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !GetAtt FeedbackBucket.Arn
+      SourceAccount: !Ref AWS::AccountId
+
+  # Custom resource to add S3 notification after everything is created
+  S3NotificationCustomResource:
+    Type: Custom::S3BucketNotification
+    Properties:
+      ServiceToken: !GetAtt S3NotificationFunction.Arn
+      BucketName: !Ref FeedbackBucket
+      LambdaArn: !GetAtt FeedbackLabelingFunction.Arn
+      NotificationId: FeedbackIngressNotification
+
+  # Lambda to configure S3 notifications (runs once during stack creation)
+  S3NotificationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-s3-notification-config'
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !GetAtt S3NotificationFunctionRole.Arn
+      Timeout: 60
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import cfnresponse
+          
+          s3 = boto3.client('s3')
+          
+          def handler(event, context):
+              print(f"Event: {json.dumps(event)}")
+              
+              try:
+                  bucket = event['ResourceProperties']['BucketName']
+                  lambda_arn = event['ResourceProperties']['LambdaArn']
+                  notification_id = event['ResourceProperties']['NotificationId']
+                  
+                  if event['RequestType'] in ['Create', 'Update']:
+                      # Add notification configuration
+                      s3.put_bucket_notification_configuration(
+                          Bucket=bucket,
+                          NotificationConfiguration={
+                              'LambdaFunctionConfigurations': [
+                                  {
+                                      'Id': notification_id,
+                                      'LambdaFunctionArn': lambda_arn,
+                                      'Events': ['s3:ObjectCreated:*'],
+                                      'Filter': {
+                                          'Key': {
+                                              'FilterRules': [
+                                                  {'Name': 'prefix', 'Value': 'ingress/'},
+                                                  {'Name': 'suffix', 'Value': '.json'}
+                                              ]
+                                          }
+                                      }
+                                  }
+                              ]
+                          }
+                      )
+                      print(f"✓ Notification configured for bucket: {bucket}")
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+                      
+                  elif event['RequestType'] == 'Delete':
+                      # Remove notification configuration
+                      try:
+                          s3.put_bucket_notification_configuration(
+                              Bucket=bucket,
+                              NotificationConfiguration={}
+                          )
+                          print(f"✓ Notification removed from bucket: {bucket}")
+                      except Exception as e:
+                          print(f"Note: Could not remove notification (bucket may be deleted): {e}")
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+                      
+              except Exception as e:
+                  print(f"✗ Error: {str(e)}")
+                  cfnresponse.send(event, context, cfnresponse.FAILED, {'Error': str(e)})
+
+  # Role for the S3 notification configuration Lambda
+  S3NotificationFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3NotificationConfig
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutBucketNotification
+                  - s3:GetBucketNotification
+                Resource: !GetAtt FeedbackBucket.Arn
+
+Outputs:
+  BucketName:
+    Description: S3 Bucket for feedback files
+    Value: !Ref FeedbackBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'
+  
+  IngressFolder:
+    Description: Upload raw feedback JSON files here
+    Value: !Sub 's3://${FeedbackBucket}/ingress/'
+    
+  EgressFolder:
+    Description: Labeled feedback appears here
+    Value: !Sub 's3://${FeedbackBucket}/egress/'
+    
+  ArchiveFolder:
+    Description: Processed files are moved here
+    Value: !Sub 's3://${FeedbackBucket}/archive/'
+  
+  LambdaFunctionName:
+    Description: Lambda function processing the feedback
+    Value: !Ref FeedbackLabelingFunction
+    Export:
+      Name: !Sub '${AWS::StackName}-LambdaFunction'
+  
+  LambdaFunctionArn:
+    Description: Lambda function ARN
+    Value: !GetAtt FeedbackLabelingFunction.Arn
+    
+  LambdaRoleName:
+    Description: IAM Role for Lambda
+    Value: !Ref LambdaExecutionRole
+    
+  CloudWatchLogGroup:
+    Description: View Lambda logs here
+    Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252F${AWS::StackName}-labeling-function'
+  
+  S3Console:
+    Description: Open S3 bucket in console
+    Value: !Sub 'https://s3.console.aws.amazon.com/s3/buckets/${FeedbackBucket}?region=${AWS::Region}'
+    
+  TestCommand:
+    Description: CLI command to test with sample file
+    Value: !Sub 'aws s3 cp sample-feedback.json s3://${FeedbackBucket}/ingress/'
