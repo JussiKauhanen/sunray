@@ -9,8 +9,8 @@ Parameters:
     
   BedrockModelId:
     Type: String
-    Description: Bedrock model to use
-    Default: anthropic.claude-3-5-sonnet-20241022-v2:0
+    Description: Bedrock model to use (Claude 3 Haiku works without inference profiles)
+    Default: anthropic.claude-3-haiku-20240307-v1:0
     
 Resources:
   # S3 Bucket for feedback storage (without notifications initially)
@@ -62,7 +62,18 @@ Resources:
               - Effect: Allow
                 Action:
                   - bedrock:InvokeModel
-                Resource: !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/${BedrockModelId}'
+                Resource: 
+                  - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/*'
+                  - !Sub 'arn:aws:bedrock:*::foundation-model/*'
+        - PolicyName: MarketplaceAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - aws-marketplace:ViewSubscriptions
+                  - aws-marketplace:Subscribe
+                Resource: '*'
 
   # CloudWatch Log Group for Lambda
   FunctionLogGroup:
@@ -388,6 +399,10 @@ Outputs:
     Description: IAM Role for Lambda
     Value: !Ref LambdaExecutionRole
     
+  BedrockModelUsed:
+    Description: Bedrock model being used
+    Value: !Ref BedrockModelId
+    
   CloudWatchLogGroup:
     Description: View Lambda logs here
     Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252F${AWS::StackName}-labeling-function'
@@ -399,3 +414,10 @@ Outputs:
   TestCommand:
     Description: CLI command to test with sample file
     Value: !Sub 'aws s3 cp sample-feedback.json s3://${FeedbackBucket}/ingress/'
+  
+  SetupInstructions:
+    Description: Next steps after deployment
+    Value: !Sub |
+      1. Create folders: aws s3api put-object --bucket ${FeedbackBucket} --key ingress/ egress/ archive/
+      2. Test the model once manually to enable marketplace subscription
+      3. Upload test file to ingress/ folder
