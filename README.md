@@ -68,10 +68,16 @@ cat > sample-feedback.json << 'EOF'
     "timestamp": "2026-01-16T10:30:00Z"
   },
   {
-    "id": "fb002",
+    "id": "fb002", 
     "feedback": "Couldn't complete my purchase, payment failed",
     "customer_id": "67890",
     "timestamp": "2026-01-16T11:15:00Z"
+  },
+  {
+    "id": "fb003",
+    "feedback": "Selection is quite poor",
+    "customer_id": "11111",
+    "timestamp": "2026-01-16T12:00:00Z"
   }
 ]
 EOF
@@ -92,23 +98,59 @@ cat result.json
 
 ## Output Format
 ```json
-{
-  "id": "fb001",
-  "feedback": "Todella hyvä palvelu, kiitos!",
-  "customer_id": "12345",
-  "timestamp": "2026-01-16T10:30:00Z",
-  "labels": {
-    "category": "positive_feedback",
-    "sentiment": "positive",
-    "subcategory": "great_service",
-    "language": "fi",
-    "priority": "low",
-    "summary": "Customer expresses satisfaction with service",
-    "confidence": "high"
+[
+  {
+    "id": "fb001",
+    "feedback": "Todella hyv\u00e4 palvelu, kiitos!",
+    "customer_id": "12345",
+    "timestamp": "2026-01-16T10:30:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "positive",
+      "subcategory": "great_service",
+      "language": "fi",
+      "priority": "high",
+      "summary": "Customer reports excellent service",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-16T15:09:47.690778",
+    "processor": "bedrock-claude"
   },
-  "processed_at": "2026-01-16T13:45:00.123Z",
-  "processor": "bedrock-claude"
-}
+  {
+    "id": "fb002",
+    "feedback": "Couldn't complete my purchase, payment failed",
+    "customer_id": "67890",
+    "timestamp": "2026-01-16T11:15:00Z",
+    "labels": {
+      "category": "payment",
+      "sentiment": "negative",
+      "subcategory": "payment_failed",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer couldn't complete purchase due to payment failure",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-16T15:09:48.399807",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb003",
+    "feedback": "Selection is quite poor",
+    "customer_id": "11111",
+    "timestamp": "2026-01-16T12:00:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "poor_selection",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer reports poor product selection",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-16T15:09:48.858031",
+    "processor": "bedrock-claude"
+  }
+]
 ```
 
 ## Cost Estimate
