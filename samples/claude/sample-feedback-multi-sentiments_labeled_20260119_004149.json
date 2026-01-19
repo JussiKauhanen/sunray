@@ -1,0 +1,342 @@
+[
+  {
+    "id": "fb101",
+    "feedback": "Tuote oli hyv\u00e4 mutta toimitus my\u00f6h\u00e4ss\u00e4. Asiakaspalvelu auttoi kuitenkin hyvin!",
+    "customer_id": "20001",
+    "timestamp": "2026-01-16T14:00:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "negative",
+      "subcategory": "late_delivery",
+      "language": "fi",
+      "priority": "medium",
+      "summary": "Product was good but delivery was late, however customer service helped well",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:40.420473",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb102",
+    "feedback": "Terrible experience! Product broke immediately AND customer service was rude. Never shopping here again.",
+    "customer_id": "20002",
+    "timestamp": "2026-01-16T14:05:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "poor_quality",
+      "language": "en",
+      "priority": "high",
+      "summary": "Product broke immediately",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:40.848945",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb103",
+    "feedback": "I love the product quality but it's way too expensive for what you get. Would buy if price was lower.",
+    "customer_id": "20003",
+    "timestamp": "2026-01-16T14:10:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "mixed",
+      "subcategory": "price",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer likes product quality but finds it too expensive",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:41.369374",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb104",
+    "feedback": "Veebileht ei t\u00f6\u00f6tanud \u00fcldse. P\u00fc\u00fcdsin kaks tundi maksta aga ei \u00f5nnestunud. V\u00e4ga pettunud!",
+    "customer_id": "20004",
+    "timestamp": "2026-01-16T14:15:00Z",
+    "labels": {
+      "category": "technical",
+      "sentiment": "negative",
+      "subcategory": "website_not_working",
+      "language": "et",
+      "priority": "high",
+      "summary": "Customer unable to make payment due to website issues",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:41.960173",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb105",
+    "feedback": "Fast delivery \ud83d\udc4d but product selection could be better. Overall satisfied though.",
+    "customer_id": "20005",
+    "timestamp": "2026-01-16T14:20:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "positive",
+      "subcategory": "fast_delivery",
+      "language": "en",
+      "priority": "low",
+      "summary": "Customer reports fast delivery",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:42.369640",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb106",
+    "feedback": "Pas\u016bt\u012bjums ierad\u0101s boj\u0101ts. Atgrie\u0161anas process bija sare\u017e\u0123\u012bts un ilgs. Neiesaku.",
+    "customer_id": "20006",
+    "timestamp": "2026-01-16T14:25:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "negative",
+      "subcategory": "damaged_item",
+      "language": "lv",
+      "priority": "high",
+      "summary": "Order arrived damaged, return process was complex and lengthy",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:42.870489",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb107",
+    "feedback": "The website kept crashing during checkout. After 3 attempts I gave up. Fix your technical issues!",
+    "customer_id": "20007",
+    "timestamp": "2026-01-16T14:30:00Z",
+    "labels": {
+      "category": "technical",
+      "sentiment": "negative",
+      "subcategory": "website_crash",
+      "language": "en",
+      "priority": "high",
+      "summary": "Website kept crashing during checkout",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:43.340666",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb108",
+    "feedback": "Prek\u0117 gera, kaina normali, bet pristatymas u\u017etruko 2 savaites. Per ilgai.",
+    "customer_id": "20008",
+    "timestamp": "2026-01-16T14:35:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "negative",
+      "subcategory": "late_delivery",
+      "language": "lt",
+      "priority": "high",
+      "summary": "Product delivery took 2 weeks, which is too long",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:43.833060",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb109",
+    "feedback": "Perfect! Everything was exactly as described. Fast shipping, great quality, reasonable price. Will order again! \ud83c\udf1f",
+    "customer_id": "20009",
+    "timestamp": "2026-01-16T14:40:00Z",
+    "labels": {
+      "category": "positive_feedback",
+      "sentiment": "positive",
+      "subcategory": "great_quality",
+      "language": "en",
+      "priority": "low",
+      "summary": "Customer is very satisfied with the product and service",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:44.288158",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb110",
+    "feedback": "Tilaus saapui nopeasti mutta v\u00e4\u00e4r\u00e4 tuote. Yritin soittaa asiakaspalveluun mutta en saanut vastausta.",
+    "customer_id": "20010",
+    "timestamp": "2026-01-16T14:45:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "negative",
+      "subcategory": "wrong_product",
+      "language": "fi",
+      "priority": "high",
+      "summary": "Customer received wrong product and could not reach customer service",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:44.771990",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb111",
+    "feedback": "I guess it's okay? Nothing special. Product works but feels cheap. Probably won't buy again.",
+    "customer_id": "20011",
+    "timestamp": "2026-01-16T14:50:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "neutral",
+      "subcategory": "poor_quality",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer feels the product is of poor quality and not special",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:45.282665",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb112",
+    "feedback": "Maksu ei toiminut, yritin kolmea eri korttia. Sitten l\u00f6ysin saman tuotteen halvemmalla kilpailijalta. Huono kokemus.",
+    "customer_id": "20012",
+    "timestamp": "2026-01-16T14:55:00Z",
+    "labels": {
+      "category": "payment",
+      "sentiment": "negative",
+      "subcategory": "payment_failure",
+      "language": "fi",
+      "priority": "high",
+      "summary": "Payment did not work, customer found the same product cheaper elsewhere",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:45.837071",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb113",
+    "feedback": "Great selection! Prices are high but you get what you pay for. Delivery was slower than expected though.",
+    "customer_id": "20013",
+    "timestamp": "2026-01-16T15:00:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "positive",
+      "subcategory": "great_selection",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer is satisfied with the product selection",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:46.258710",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb114",
+    "feedback": "Toode saabus kiiresti aga kvaliteet on kohutav. Raha tagasi palun!",
+    "customer_id": "20014",
+    "timestamp": "2026-01-16T15:05:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "poor_quality",
+      "language": "et",
+      "priority": "high",
+      "summary": "Product quality is terrible, customer requests refund",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:46.771650",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb115",
+    "feedback": "Customer service was amazing! They helped me find exactly what I needed. Product itself is just average but service made up for it.",
+    "customer_id": "20015",
+    "timestamp": "2026-01-16T15:10:00Z",
+    "labels": {
+      "category": "positive_feedback",
+      "sentiment": "positive",
+      "subcategory": "great_service",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer praises excellent customer service",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:47.203804",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb116",
+    "feedback": "Pas\u016bt\u012bju pirms ned\u0113\u013cas, joproj\u0101m nav sa\u0146emts. Neviens neatbild uz e-pastiem. \u0160ausm\u012bgi!",
+    "customer_id": "20016",
+    "timestamp": "2026-01-16T15:15:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "negative",
+      "subcategory": "late_delivery",
+      "language": "lv",
+      "priority": "high",
+      "summary": "Customer reports delayed package delivery",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:47.598237",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb117",
+    "feedback": "Mixed feelings. Love the product design but hate the checkout process. Also shipping took forever.",
+    "customer_id": "20017",
+    "timestamp": "2026-01-16T15:20:00Z",
+    "labels": {
+      "category": "mixed",
+      "sentiment": "mixed",
+      "subcategory": "product_design,checkout_process,shipping_time",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer has mixed feelings about the product design, checkout process, and shipping time",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:48.192549",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb118",
+    "feedback": "Labai patiko! Greitas pristatymas, gera kokyb\u0117, puiki kaina. Rekomenduoju visiems!",
+    "customer_id": "20018",
+    "timestamp": "2026-01-16T15:25:00Z",
+    "labels": {
+      "category": "positive_feedback",
+      "sentiment": "positive",
+      "subcategory": "great_service",
+      "language": "lt",
+      "priority": "high",
+      "summary": "Customer is very satisfied with fast delivery, good quality, and great price, and recommends to all",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:48.840716",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb119",
+    "feedback": "Website is slow and confusing. Found what I wanted but checkout kept giving errors. Eventually worked after 5 tries.",
+    "customer_id": "20019",
+    "timestamp": "2026-01-16T15:30:00Z",
+    "labels": {
+      "category": "technical",
+      "sentiment": "negative",
+      "subcategory": "website_issues",
+      "language": "en",
+      "priority": "high",
+      "summary": "Website is slow and confusing, with checkout errors",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:49.337706",
+    "processor": "bedrock-claude"
+  },
+  {
+    "id": "fb120",
+    "feedback": "Ihan ok. Ei mit\u00e4\u00e4n erikoista. Toimii.",
+    "customer_id": "20020",
+    "timestamp": "2026-01-16T15:35:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "neutral",
+      "subcategory": "average",
+      "language": "fi",
+      "priority": "low",
+      "summary": "Customer feedback is neutral about the product",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T00:41:49.823441",
+    "processor": "bedrock-claude"
+  }
+]

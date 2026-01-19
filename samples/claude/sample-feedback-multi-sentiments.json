@@ -1,0 +1,122 @@
+[
+  {
+    "id": "fb101",
+    "feedback": "Tuote oli hyvä mutta toimitus myöhässä. Asiakaspalvelu auttoi kuitenkin hyvin!",
+    "customer_id": "20001",
+    "timestamp": "2026-01-16T14:00:00Z"
+  },
+  {
+    "id": "fb102",
+    "feedback": "Terrible experience! Product broke immediately AND customer service was rude. Never shopping here again.",
+    "customer_id": "20002",
+    "timestamp": "2026-01-16T14:05:00Z"
+  },
+  {
+    "id": "fb103",
+    "feedback": "I love the product quality but it's way too expensive for what you get. Would buy if price was lower.",
+    "customer_id": "20003",
+    "timestamp": "2026-01-16T14:10:00Z"
+  },
+  {
+    "id": "fb104",
+    "feedback": "Veebileht ei töötanud üldse. Püüdsin kaks tundi maksta aga ei õnnestunud. Väga pettunud!",
+    "customer_id": "20004",
+    "timestamp": "2026-01-16T14:15:00Z"
+  },
+  {
+    "id": "fb105",
+    "feedback": "Fast delivery 👍 but product selection could be better. Overall satisfied though.",
+    "customer_id": "20005",
+    "timestamp": "2026-01-16T14:20:00Z"
+  },
+  {
+    "id": "fb106",
+    "feedback": "Pasūtījums ieradās bojāts. Atgriešanas process bija sarežģīts un ilgs. Neiesaku.",
+    "customer_id": "20006",
+    "timestamp": "2026-01-16T14:25:00Z"
+  },
+  {
+    "id": "fb107",
+    "feedback": "The website kept crashing during checkout. After 3 attempts I gave up. Fix your technical issues!",
+    "customer_id": "20007",
+    "timestamp": "2026-01-16T14:30:00Z"
+  },
+  {
+    "id": "fb108",
+    "feedback": "Prekė gera, kaina normali, bet pristatymas užtruko 2 savaites. Per ilgai.",
+    "customer_id": "20008",
+    "timestamp": "2026-01-16T14:35:00Z"
+  },
+  {
+    "id": "fb109",
+    "feedback": "Perfect! Everything was exactly as described. Fast shipping, great quality, reasonable price. Will order again! 🌟",
+    "customer_id": "20009",
+    "timestamp": "2026-01-16T14:40:00Z"
+  },
+  {
+    "id": "fb110",
+    "feedback": "Tilaus saapui nopeasti mutta väärä tuote. Yritin soittaa asiakaspalveluun mutta en saanut vastausta.",
+    "customer_id": "20010",
+    "timestamp": "2026-01-16T14:45:00Z"
+  },
+  {
+    "id": "fb111",
+    "feedback": "I guess it's okay? Nothing special. Product works but feels cheap. Probably won't buy again.",
+    "customer_id": "20011",
+    "timestamp": "2026-01-16T14:50:00Z"
+  },
+  {
+    "id": "fb112",
+    "feedback": "Maksu ei toiminut, yritin kolmea eri korttia. Sitten löysin saman tuotteen halvemmalla kilpailijalta. Huono kokemus.",
+    "customer_id": "20012",
+    "timestamp": "2026-01-16T14:55:00Z"
+  },
+  {
+    "id": "fb113",
+    "feedback": "Great selection! Prices are high but you get what you pay for. Delivery was slower than expected though.",
+    "customer_id": "20013",
+    "timestamp": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "fb114",
+    "feedback": "Toode saabus kiiresti aga kvaliteet on kohutav. Raha tagasi palun!",
+    "customer_id": "20014",
+    "timestamp": "2026-01-16T15:05:00Z"
+  },
+  {
+    "id": "fb115",
+    "feedback": "Customer service was amazing! They helped me find exactly what I needed. Product itself is just average but service made up for it.",
+    "customer_id": "20015",
+    "timestamp": "2026-01-16T15:10:00Z"
+  },
+  {
+    "id": "fb116",
+    "feedback": "Pasūtīju pirms nedēļas, joprojām nav saņemts. Neviens neatbild uz e-pastiem. Šausmīgi!",
+    "customer_id": "20016",
+    "timestamp": "2026-01-16T15:15:00Z"
+  },
+  {
+    "id": "fb117",
+    "feedback": "Mixed feelings. Love the product design but hate the checkout process. Also shipping took forever.",
+    "customer_id": "20017",
+    "timestamp": "2026-01-16T15:20:00Z"
+  },
+  {
+    "id": "fb118",
+    "feedback": "Labai patiko! Greitas pristatymas, gera kokybė, puiki kaina. Rekomenduoju visiems!",
+    "customer_id": "20018",
+    "timestamp": "2026-01-16T15:25:00Z"
+  },
+  {
+    "id": "fb119",
+    "feedback": "Website is slow and confusing. Found what I wanted but checkout kept giving errors. Eventually worked after 5 tries.",
+    "customer_id": "20019",
+    "timestamp": "2026-01-16T15:30:00Z"
+  },
+  {
+    "id": "fb120",
+    "feedback": "Ihan ok. Ei mitään erikoista. Toimii.",
+    "customer_id": "20020",
+    "timestamp": "2026-01-16T15:35:00Z"
+  }
+]

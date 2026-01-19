@@ -1,0 +1,482 @@
+[
+  {
+    "id": "fb101",
+    "feedback": "Tuote oli hyv\u00e4 mutta toimitus my\u00f6h\u00e4ss\u00e4. Asiakaspalvelu auttoi kuitenkin hyvin!",
+    "customer_id": "20001",
+    "timestamp": "2026-01-16T14:00:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "mixed",
+      "subcategory": "general_service",
+      "language": "fi",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about service",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.02205605059862137,
+        "Negative": 0.00012202374637126923,
+        "Neutral": 1.3572514035331551e-05,
+        "Mixed": 0.9778084754943848
+      }
+    },
+    "processed_at": "2026-01-19T00:32:39.918433",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb102",
+    "feedback": "Terrible experience! Product broke immediately AND customer service was rude. Never shopping here again.",
+    "customer_id": "20002",
+    "timestamp": "2026-01-16T14:05:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "negative",
+      "subcategory": "general_service",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about service",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 5.2654526371043175e-05,
+        "Negative": 0.9998766183853149,
+        "Neutral": 2.540075365686789e-05,
+        "Mixed": 4.533176979748532e-05
+      }
+    },
+    "processed_at": "2026-01-19T00:32:39.956287",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb103",
+    "feedback": "I love the product quality but it's way too expensive for what you get. Would buy if price was lower.",
+    "customer_id": "20003",
+    "timestamp": "2026-01-16T14:10:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "mixed",
+      "subcategory": "general_product",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.0024781259708106518,
+        "Negative": 0.0004277002008166164,
+        "Neutral": 2.4839855541358702e-05,
+        "Mixed": 0.9970694184303284
+      }
+    },
+    "processed_at": "2026-01-19T00:32:39.986647",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb104",
+    "feedback": "Veebileht ei t\u00f6\u00f6tanud \u00fcldse. P\u00fc\u00fcdsin kaks tundi maksta aga ei \u00f5nnestunud. V\u00e4ga pettunud!",
+    "customer_id": "20004",
+    "timestamp": "2026-01-16T14:15:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "negative",
+      "subcategory": "general_general",
+      "language": "et",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.00012877087283413857,
+        "Negative": 0.9998052716255188,
+        "Neutral": 6.323456909740344e-05,
+        "Mixed": 2.792478198898607e-06
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.024935",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb105",
+    "feedback": "Fast delivery \ud83d\udc4d but product selection could be better. Overall satisfied though.",
+    "customer_id": "20005",
+    "timestamp": "2026-01-16T14:20:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "mixed",
+      "subcategory": "general_product",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.04982812702655792,
+        "Negative": 0.0006007989286445081,
+        "Neutral": 0.00045144613250158727,
+        "Mixed": 0.9491196274757385
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.060010",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb106",
+    "feedback": "Pas\u016bt\u012bjums ierad\u0101s boj\u0101ts. Atgrie\u0161anas process bija sare\u017e\u0123\u012bts un ilgs. Neiesaku.",
+    "customer_id": "20006",
+    "timestamp": "2026-01-16T14:25:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "negative",
+      "subcategory": "general_general",
+      "language": "lv",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.003924379590898752,
+        "Negative": 0.9956900477409363,
+        "Neutral": 0.00035755420685745776,
+        "Mixed": 2.79515497823013e-05
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.092231",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb107",
+    "feedback": "The website kept crashing during checkout. After 3 attempts I gave up. Fix your technical issues!",
+    "customer_id": "20007",
+    "timestamp": "2026-01-16T14:30:00Z",
+    "labels": {
+      "category": "technical",
+      "sentiment": "negative",
+      "subcategory": "general_technical",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about technical",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.00017503340495750308,
+        "Negative": 0.9990400671958923,
+        "Neutral": 0.0005140207358635962,
+        "Mixed": 0.000270842487225309
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.126179",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb108",
+    "feedback": "Prek\u0117 gera, kaina normali, bet pristatymas u\u017etruko 2 savaites. Per ilgai.",
+    "customer_id": "20008",
+    "timestamp": "2026-01-16T14:35:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "mixed",
+      "subcategory": "general_general",
+      "language": "lt",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.00096883688820526,
+        "Negative": 0.005800008308142424,
+        "Neutral": 1.232769682246726e-05,
+        "Mixed": 0.9932188391685486
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.156193",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb109",
+    "feedback": "Perfect! Everything was exactly as described. Fast shipping, great quality, reasonable price. Will order again! \ud83c\udf1f",
+    "customer_id": "20009",
+    "timestamp": "2026-01-16T14:40:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "positive",
+      "subcategory": "general_product",
+      "language": "en",
+      "priority": "low",
+      "summary": "Customer feedback with positive sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.9998065829277039,
+        "Negative": 2.0404211682034656e-05,
+        "Neutral": 0.00016662877169437706,
+        "Mixed": 6.44196097709937e-06
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.185888",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb110",
+    "feedback": "Tilaus saapui nopeasti mutta v\u00e4\u00e4r\u00e4 tuote. Yritin soittaa asiakaspalveluun mutta en saanut vastausta.",
+    "customer_id": "20010",
+    "timestamp": "2026-01-16T14:45:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "mixed",
+      "subcategory": "general_service",
+      "language": "fi",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about service",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.0025679501704871655,
+        "Negative": 0.4641091525554657,
+        "Neutral": 9.490508091403171e-05,
+        "Mixed": 0.5332280397415161
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.219925",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb111",
+    "feedback": "I guess it's okay? Nothing special. Product works but feels cheap. Probably won't buy again.",
+    "customer_id": "20011",
+    "timestamp": "2026-01-16T14:50:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "general_product",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.0002978343691211194,
+        "Negative": 0.9250074028968811,
+        "Neutral": 0.0004767882055602968,
+        "Mixed": 0.07421797513961792
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.249885",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb112",
+    "feedback": "Maksu ei toiminut, yritin kolmea eri korttia. Sitten l\u00f6ysin saman tuotteen halvemmalla kilpailijalta. Huono kokemus.",
+    "customer_id": "20012",
+    "timestamp": "2026-01-16T14:55:00Z",
+    "labels": {
+      "category": "payment",
+      "sentiment": "negative",
+      "subcategory": "general_payment",
+      "language": "fi",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about payment",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 4.714339956990443e-05,
+        "Negative": 0.9997949004173279,
+        "Neutral": 0.00015350659668911248,
+        "Mixed": 4.4195626287546474e-06
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.280496",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb113",
+    "feedback": "Great selection! Prices are high but you get what you pay for. Delivery was slower than expected though.",
+    "customer_id": "20013",
+    "timestamp": "2026-01-16T15:00:00Z",
+    "labels": {
+      "category": "delivery",
+      "sentiment": "mixed",
+      "subcategory": "general_delivery",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about delivery",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.4449838101863861,
+        "Negative": 0.0002860459208022803,
+        "Neutral": 0.0001550462911836803,
+        "Mixed": 0.5545750856399536
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.309762",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb114",
+    "feedback": "Toode saabus kiiresti aga kvaliteet on kohutav. Raha tagasi palun!",
+    "customer_id": "20014",
+    "timestamp": "2026-01-16T15:05:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "negative",
+      "subcategory": "general_general",
+      "language": "et",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.11604578793048859,
+        "Negative": 0.8669492602348328,
+        "Neutral": 0.0003988414828199893,
+        "Mixed": 0.016606062650680542
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.341946",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb115",
+    "feedback": "Customer service was amazing! They helped me find exactly what I needed. Product itself is just average but service made up for it.",
+    "customer_id": "20015",
+    "timestamp": "2026-01-16T15:10:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "positive",
+      "subcategory": "general_service",
+      "language": "en",
+      "priority": "low",
+      "summary": "Customer feedback with positive sentiment about service",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.9985087513923645,
+        "Negative": 6.058051440049894e-05,
+        "Neutral": 7.411198748741299e-05,
+        "Mixed": 0.0013564928667619824
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.372850",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb116",
+    "feedback": "Pas\u016bt\u012bju pirms ned\u0113\u013cas, joproj\u0101m nav sa\u0146emts. Neviens neatbild uz e-pastiem. \u0160ausm\u012bgi!",
+    "customer_id": "20016",
+    "timestamp": "2026-01-16T15:15:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "negative",
+      "subcategory": "general_general",
+      "language": "lv",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.000251587713137269,
+        "Negative": 0.9993792772293091,
+        "Neutral": 0.00036837178049609065,
+        "Mixed": 7.349525503741461e-07
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.404958",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb117",
+    "feedback": "Mixed feelings. Love the product design but hate the checkout process. Also shipping took forever.",
+    "customer_id": "20017",
+    "timestamp": "2026-01-16T15:20:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "mixed",
+      "subcategory": "general_product",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer feedback with mixed sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.001216904609464109,
+        "Negative": 0.013760002329945564,
+        "Neutral": 0.00014551841013599187,
+        "Mixed": 0.9848777055740356
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.435495",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb118",
+    "feedback": "Labai patiko! Greitas pristatymas, gera kokyb\u0117, puiki kaina. Rekomenduoju visiems!",
+    "customer_id": "20018",
+    "timestamp": "2026-01-16T15:25:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "positive",
+      "subcategory": "general_general",
+      "language": "lt",
+      "priority": "low",
+      "summary": "Customer feedback with positive sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.9998515844345093,
+        "Negative": 2.7165939172846265e-05,
+        "Neutral": 0.00011575275129871443,
+        "Mixed": 5.485046585818054e-06
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.470743",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb119",
+    "feedback": "Website is slow and confusing. Found what I wanted but checkout kept giving errors. Eventually worked after 5 tries.",
+    "customer_id": "20019",
+    "timestamp": "2026-01-16T15:30:00Z",
+    "labels": {
+      "category": "technical",
+      "sentiment": "negative",
+      "subcategory": "general_technical",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about technical",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.0004479752678889781,
+        "Negative": 0.9708974957466125,
+        "Neutral": 0.00037089944817125797,
+        "Mixed": 0.028283560648560524
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.502820",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb120",
+    "feedback": "Ihan ok. Ei mit\u00e4\u00e4n erikoista. Toimii.",
+    "customer_id": "20020",
+    "timestamp": "2026-01-16T15:35:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "positive",
+      "subcategory": "general_general",
+      "language": "fi",
+      "priority": "low",
+      "summary": "Customer feedback with positive sentiment about general",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.9772520065307617,
+        "Negative": 0.0005597448325715959,
+        "Neutral": 0.005291732493788004,
+        "Mixed": 0.01689649000763893
+      }
+    },
+    "processed_at": "2026-01-19T00:32:40.542187",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  }
+]

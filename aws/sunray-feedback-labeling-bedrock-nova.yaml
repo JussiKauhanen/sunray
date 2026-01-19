@@ -1,23 +1,52 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Bedrock Claude Feedback Labeling System - replaces Sunbeam AI'
+Description: 'Sunray Feedback Labeling System - Amazon Bedrock Nova'
 
 Parameters:
-  FeedbackBucketName:
+  Environment:
     Type: String
-    Description: Name for the S3 bucket (must be globally unique)
-    Default: sunray-feedback-labeling
+    Description: Environment for deployment
+    AllowedValues:
+      - dev
+      - tst
+      - qa
+      - prd
+    Default: dev
+    ConstraintDescription: Must be dev, tst, qa, or prd
     
-  BedrockModelId:
+  NovaModelId:
     Type: String
-    Description: Bedrock model to use (Claude 3 Haiku works without inference profiles)
-    Default: anthropic.claude-3-haiku-20240307-v1:0
+    Description: |
+      Amazon Nova model selection (via EU inference profile):
+      
+      Micro - Fastest, cheapest (~$0.035/1M tokens)
+        Best for: Simple classification, high volume, POC/testing
+        Cost: $1-3 per 10K feedbacks
+      
+      Lite - Balanced performance (~$0.06/1M tokens)
+        Best for: Most production use cases
+        Cost: $2-5 per 10K feedbacks
+      
+      2-Lite - Improved Lite version (newer)
+        Best for: Latest features, similar cost to Lite
+        Cost: $2-5 per 10K feedbacks
+      
+      Pro - Most capable (~$0.80/1M tokens)
+        Best for: Complex reasoning, nuanced analysis
+        Cost: $20-50 per 10K feedbacks
+    Default: eu.amazon.nova-micro-v1:0
+    AllowedValues:
+      - eu.amazon.nova-micro-v1:0
+      - eu.amazon.nova-lite-v1:0
+      - eu.amazon.nova-2-lite-v1:0
+      - eu.amazon.nova-pro-v1:0
+    ConstraintDescription: Must be a valid Amazon Nova inference profile ID
     
 Resources:
-  # S3 Bucket for feedback storage (without notifications initially)
+  # S3 Bucket for feedback storage
   FeedbackBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Ref FeedbackBucketName
+      BucketName: !Sub 'sunray-feedback-nova-${Environment}-${AWS::Region}'
       VersioningConfiguration:
         Status: Enabled
       PublicAccessBlockConfiguration:
@@ -25,12 +54,19 @@ Resources:
         BlockPublicPolicy: true
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+        - Key: AIProvider
+          Value: bedrock-nova
 
   # IAM Role for Lambda
   LambdaExecutionRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub '${AWS::StackName}-lambda-role'
+      RoleName: !Sub 'sunray-feedback-nova-${Environment}-lambda-role'
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -65,28 +101,19 @@ Resources:
                 Resource: 
                   - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/*'
                   - !Sub 'arn:aws:bedrock:*::foundation-model/*'
-        - PolicyName: MarketplaceAccess
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - aws-marketplace:ViewSubscriptions
-                  - aws-marketplace:Subscribe
-                Resource: '*'
 
   # CloudWatch Log Group for Lambda
   FunctionLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: !Sub '/aws/lambda/${AWS::StackName}-labeling-function'
+      LogGroupName: !Sub '/aws/lambda/sunray-feedback-nova-${Environment}-labeling-function'
       RetentionInDays: 7
 
   # The main Lambda function
   FeedbackLabelingFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: !Sub '${AWS::StackName}-labeling-function'
+      FunctionName: !Sub 'sunray-feedback-nova-${Environment}-labeling-function'
       Runtime: python3.11
       Handler: index.lambda_handler
       Role: !GetAtt LambdaExecutionRole.Arn
@@ -94,8 +121,21 @@ Resources:
       MemorySize: 512
       Environment:
         Variables:
-          BEDROCK_MODEL_ID: !Ref BedrockModelId
+          BEDROCK_MODEL_ID: !Ref NovaModelId
           OUTPUT_BUCKET: !Ref FeedbackBucket
+          ENVIRONMENT: !Ref Environment
+          # Optional override - set via Lambda console to test different models
+          # MODEL_OVERRIDE: eu.amazon.nova-lite-v1:0
+          # Available options:
+          # eu.amazon.nova-micro-v1:0
+          # eu.amazon.nova-lite-v1:0
+          # eu.amazon.nova-2-lite-v1:0
+          # eu.amazon.nova-pro-v1:0
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
       Code:
         ZipFile: |
           import json
@@ -107,10 +147,16 @@ Resources:
           s3 = boto3.client('s3')
           bedrock = boto3.client('bedrock-runtime')
           
-          MODEL_ID = os.environ['BEDROCK_MODEL_ID']
+          # Check for override first, then use default
+          MODEL_ID = os.environ.get('MODEL_OVERRIDE', os.environ['BEDROCK_MODEL_ID'])
           OUTPUT_BUCKET = os.environ['OUTPUT_BUCKET']
+          ENVIRONMENT = os.environ['ENVIRONMENT']
           
-          # Prompt template for Claude
+          print(f"Using model: {MODEL_ID}")
+          if 'MODEL_OVERRIDE' in os.environ:
+              print(f"⚠️  MODEL_OVERRIDE is set - using {MODEL_ID} instead of stack default")
+          
+          # Prompt template for Amazon Nova
           LABELING_PROMPT = """Analyze this customer feedback and label it accurately.
 
           Feedback: "{feedback_text}"
@@ -129,20 +175,26 @@ Resources:
           
           Return only the JSON object, nothing else."""
           
-          def invoke_claude(feedback_text):
-              """Send feedback to Claude and get labeled response"""
+          def invoke_nova(feedback_text):
+              """Send feedback to Amazon Nova and get labeled response"""
               prompt = LABELING_PROMPT.format(feedback_text=feedback_text)
               
+              # Amazon Nova uses the Converse API format
               request_body = {
-                  "anthropic_version": "bedrock-2023-05-31",
-                  "max_tokens": 500,
                   "messages": [
                       {
                           "role": "user",
-                          "content": prompt
+                          "content": [
+                              {
+                                  "text": prompt
+                              }
+                          ]
                       }
                   ],
-                  "temperature": 0.3
+                  "inferenceConfig": {
+                      "max_new_tokens": 500,
+                      "temperature": 0.3
+                  }
               }
               
               response = bedrock.invoke_model(
@@ -151,17 +203,19 @@ Resources:
               )
               
               response_body = json.loads(response['body'].read())
-              claude_response = response_body['content'][0]['text']
               
-              # Parse Claude's JSON response
+              # Extract text from Nova response
+              nova_response = response_body['output']['message']['content'][0]['text']
+              
+              # Parse Nova's JSON response
               try:
-                  labeled_data = json.loads(claude_response.strip())
+                  labeled_data = json.loads(nova_response.strip())
                   return labeled_data
               except json.JSONDecodeError:
-                  # Fallback if Claude doesn't return perfect JSON
+                  # Fallback if Nova doesn't return perfect JSON
                   return {
-                      "error": "Failed to parse Claude response",
-                      "raw_response": claude_response,
+                      "error": "Failed to parse Nova response",
+                      "raw_response": nova_response,
                       "category": "general",
                       "sentiment": "neutral",
                       "priority": "low"
@@ -169,6 +223,8 @@ Resources:
           
           def lambda_handler(event, context):
               """Main handler - triggered by S3 upload"""
+              print(f"Environment: {ENVIRONMENT}")
+              print(f"Model: {MODEL_ID}")
               print(f"Received event: {json.dumps(event)}")
               
               results = []
@@ -198,16 +254,18 @@ Resources:
                               print(f"No feedback text found in: {feedback}")
                               continue
                           
-                          # Send to Claude for labeling
-                          print(f"Labeling: {feedback_text[:100]}...")
-                          labeled = invoke_claude(feedback_text)
+                          # Send to Nova for labeling
+                          print(f"Labeling with Nova: {feedback_text[:100]}...")
+                          labeled = invoke_nova(feedback_text)
                           
                           # Merge original data with labels
                           result = {
                               **feedback,
                               'labels': labeled,
                               'processed_at': datetime.utcnow().isoformat(),
-                              'processor': 'bedrock-claude'
+                              'processor': 'amazon-nova',
+                              'model': MODEL_ID,
+                              'environment': ENVIRONMENT
                           }
                           
                           labeled_feedbacks.append(result)
@@ -246,6 +304,8 @@ Resources:
                       
                   except Exception as e:
                       print(f"✗ Error processing {key}: {str(e)}")
+                      import traceback
+                      traceback.print_exc()
                       results.append({
                           'input': key,
                           'status': 'error',
@@ -276,11 +336,11 @@ Resources:
       LambdaArn: !GetAtt FeedbackLabelingFunction.Arn
       NotificationId: FeedbackIngressNotification
 
-  # Lambda to configure S3 notifications (runs once during stack creation)
+  # Lambda to configure S3 notifications
   S3NotificationFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: !Sub '${AWS::StackName}-s3-notification-config'
+      FunctionName: !Sub 'sunray-feedback-nova-${Environment}-s3-config'
       Runtime: python3.11
       Handler: index.handler
       Role: !GetAtt S3NotificationFunctionRole.Arn
@@ -302,7 +362,6 @@ Resources:
                   notification_id = event['ResourceProperties']['NotificationId']
                   
                   if event['RequestType'] in ['Create', 'Update']:
-                      # Add notification configuration
                       s3.put_bucket_notification_configuration(
                           Bucket=bucket,
                           NotificationConfiguration={
@@ -327,7 +386,6 @@ Resources:
                       cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
                       
                   elif event['RequestType'] == 'Delete':
-                      # Remove notification configuration
                       try:
                           s3.put_bucket_notification_configuration(
                               Bucket=bucket,
@@ -335,7 +393,7 @@ Resources:
                           )
                           print(f"✓ Notification removed from bucket: {bucket}")
                       except Exception as e:
-                          print(f"Note: Could not remove notification (bucket may be deleted): {e}")
+                          print(f"Note: Could not remove notification: {e}")
                       cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
                       
               except Exception as e:
@@ -367,11 +425,19 @@ Resources:
                 Resource: !GetAtt FeedbackBucket.Arn
 
 Outputs:
+  StackName:
+    Description: CloudFormation stack name
+    Value: !Ref AWS::StackName
+    
+  Environment:
+    Description: Deployment environment
+    Value: !Ref Environment
+    
   BucketName:
     Description: S3 Bucket for feedback files
     Value: !Ref FeedbackBucket
     Export:
-      Name: !Sub '${AWS::StackName}-BucketName'
+      Name: !Sub 'sunray-feedback-nova-${Environment}-BucketName'
   
   IngressFolder:
     Description: Upload raw feedback JSON files here
@@ -389,23 +455,19 @@ Outputs:
     Description: Lambda function processing the feedback
     Value: !Ref FeedbackLabelingFunction
     Export:
-      Name: !Sub '${AWS::StackName}-LambdaFunction'
-  
-  LambdaFunctionArn:
-    Description: Lambda function ARN
-    Value: !GetAtt FeedbackLabelingFunction.Arn
+      Name: !Sub 'sunray-feedback-nova-${Environment}-LambdaFunction'
     
-  LambdaRoleName:
-    Description: IAM Role for Lambda
-    Value: !Ref LambdaExecutionRole
+  NovaModelUsed:
+    Description: Amazon Nova model being used
+    Value: !Ref NovaModelId
     
-  BedrockModelUsed:
-    Description: Bedrock model being used
-    Value: !Ref BedrockModelId
+  Region:
+    Description: AWS Region
+    Value: !Ref AWS::Region
     
   CloudWatchLogGroup:
     Description: View Lambda logs here
-    Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252F${AWS::StackName}-labeling-function'
+    Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fsunray-feedback-nova-${Environment}-labeling-function'
   
   S3Console:
     Description: Open S3 bucket in console
@@ -413,11 +475,14 @@ Outputs:
     
   TestCommand:
     Description: CLI command to test with sample file
-    Value: !Sub 'aws s3 cp sample-feedback.json s3://${FeedbackBucket}/ingress/'
-  
+    Value: !Sub 'aws s3 cp sample-feedback.json s3://${FeedbackBucket}/ingress/ --region ${AWS::Region}'
+    
   SetupInstructions:
-    Description: Next steps after deployment
+    Description: Setup steps after deployment
     Value: !Sub |
-      1. Create folders: aws s3api put-object --bucket ${FeedbackBucket} --key ingress/ egress/ archive/
-      2. Test the model once manually to enable marketplace subscription
+      1. Create folders:
+         aws s3api put-object --bucket ${FeedbackBucket} --key ingress/
+         aws s3api put-object --bucket ${FeedbackBucket} --key egress/
+         aws s3api put-object --bucket ${FeedbackBucket} --key archive/
+      2. Test Nova model once in Bedrock playground
       3. Upload test file to ingress/ folder

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fb001",
+    "feedback": "Todella hyv\u00e4 palvelu, kiitos!",
+    "customer_id": "12345",
+    "timestamp": "2026-01-16T10:30:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "positive",
+      "subcategory": "general_service",
+      "language": "fi",
+      "priority": "low",
+      "summary": "Customer feedback with positive sentiment about service",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.9998455047607422,
+        "Negative": 6.150142144178972e-05,
+        "Neutral": 8.427237480645999e-05,
+        "Mixed": 8.660755156597588e-06
+      }
+    },
+    "processed_at": "2026-01-19T00:26:38.992162",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb002",
+    "feedback": "Couldn't complete my purchase, payment failed",
+    "customer_id": "67890",
+    "timestamp": "2026-01-16T11:15:00Z",
+    "labels": {
+      "category": "payment",
+      "sentiment": "negative",
+      "subcategory": "general_payment",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about payment",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.0004985647974535823,
+        "Negative": 0.9968026876449585,
+        "Neutral": 0.0024060497526079416,
+        "Mixed": 0.00029261887539178133
+      }
+    },
+    "processed_at": "2026-01-19T00:26:39.030212",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  },
+  {
+    "id": "fb003",
+    "feedback": "Selection is quite poor",
+    "customer_id": "11111",
+    "timestamp": "2026-01-16T12:00:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "poor_quality",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer feedback with negative sentiment about product",
+      "confidence": "medium",
+      "sentiment_scores": {
+        "Positive": 0.000684055034071207,
+        "Negative": 0.9937630295753479,
+        "Neutral": 0.0015310647431761026,
+        "Mixed": 0.004021948669105768
+      }
+    },
+    "processed_at": "2026-01-19T00:26:39.059372",
+    "processor": "aws-comprehend",
+    "environment": "dev"
+  }
+]
