@@ -1,0 +1,348 @@
+[
+  {
+    "id": "fb101",
+    "feedback": "Tuote oli hyv\u00e4 mutta toimitus my\u00f6h\u00e4ss\u00e4. Asiakaspalvelu auttoi kuitenkin hyvin!",
+    "customer_id": "20001",
+    "timestamp": "2026-01-16T14:00:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"delivery\",\n  \"sentiment\": \"neutral\",\n  \"subcategory\": \"late_delivery\",\n  \"language\": \"fi\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer reports good product but delayed delivery, with helpful customer service\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:39.915529",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb102",
+    "feedback": "Terrible experience! Product broke immediately AND customer service was rude. Never shopping here again.",
+    "customer_id": "20002",
+    "timestamp": "2026-01-16T14:05:00Z",
+    "labels": {
+      "category": "product",
+      "sentiment": "negative",
+      "subcategory": "poor_quality",
+      "language": "en",
+      "priority": "high",
+      "summary": "Customer reports product broke immediately and had a rude customer service experience",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T20:38:40.457680",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb103",
+    "feedback": "I love the product quality but it's way too expensive for what you get. Would buy if price was lower.",
+    "customer_id": "20003",
+    "timestamp": "2026-01-16T14:10:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"product\",\n  \"sentiment\": \"neutral\",\n  \"subcategory\": \"price_concern\",\n  \"language\": \"en\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer loves product quality but finds it too expensive\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:40.951250",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb104",
+    "feedback": "Veebileht ei t\u00f6\u00f6tanud \u00fcldse. P\u00fc\u00fcdsin kaks tundi maksta aga ei \u00f5nnestunud. V\u00e4ga pettunud!",
+    "customer_id": "20004",
+    "timestamp": "2026-01-16T14:15:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"technical\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"website_not_working\",\n  \"language\": \"et\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer experienced website malfunction and failed to complete payment after two hours of trying\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:41.442403",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb105",
+    "feedback": "Fast delivery \ud83d\udc4d but product selection could be better. Overall satisfied though.",
+    "customer_id": "20005",
+    "timestamp": "2026-01-16T14:20:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": [\"delivery\", \"product\"],\n  \"sentiment\": \"neutral\",\n  \"subcategory\": [\"fast_delivery\", \"product_selection\"],\n  \"language\": \"en\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer praises fast delivery but suggests improvement in product selection.\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:42.011506",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb106",
+    "feedback": "Pas\u016bt\u012bjums ierad\u0101s boj\u0101ts. Atgrie\u0161anas process bija sare\u017e\u0123\u012bts un ilgs. Neiesaku.",
+    "customer_id": "20006",
+    "timestamp": "2026-01-16T14:25:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"delivery\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"damaged_product\",\n  \"language\": \"lv\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer reports that the order arrived damaged and the return process was complicated and lengthy\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:42.523528",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb107",
+    "feedback": "The website kept crashing during checkout. After 3 attempts I gave up. Fix your technical issues!",
+    "customer_id": "20007",
+    "timestamp": "2026-01-16T14:30:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"technical\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"website_crash\",\n  \"language\": \"en\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer experienced multiple website crashes during checkout, leading to abandonment\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:42.975942",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb108",
+    "feedback": "Prek\u0117 gera, kaina normali, bet pristatymas u\u017etruko 2 savaites. Per ilgai.",
+    "customer_id": "20008",
+    "timestamp": "2026-01-16T14:35:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"delivery\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"late_delivery\",\n  \"language\": \"lt\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer reports that the delivery took 2 weeks, which they consider too long\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:43.413936",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb109",
+    "feedback": "Perfect! Everything was exactly as described. Fast shipping, great quality, reasonable price. Will order again! \ud83c\udf1f",
+    "customer_id": "20009",
+    "timestamp": "2026-01-16T14:40:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"general\",\n  \"sentiment\": \"positive\",\n  \"subcategory\": \"positive_feedback\",\n  \"language\": \"en\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer expresses satisfaction with product, shipping speed, quality, and price, and indicates intent to repurchase.\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:43.924596",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb110",
+    "feedback": "Tilaus saapui nopeasti mutta v\u00e4\u00e4r\u00e4 tuote. Yritin soittaa asiakaspalveluun mutta en saanut vastausta.",
+    "customer_id": "20010",
+    "timestamp": "2026-01-16T14:45:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"delivery\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"wrong_product\",\n  \"language\": \"fi\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer received the wrong product and could not get a response from customer service\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:44.385985",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb111",
+    "feedback": "I guess it's okay? Nothing special. Product works but feels cheap. Probably won't buy again.",
+    "customer_id": "20011",
+    "timestamp": "2026-01-16T14:50:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"product\",\n  \"sentiment\": \"neutral\",\n  \"subcategory\": \"poor_quality\",\n  \"language\": \"en\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer finds the product functional but feels it is of low quality and unlikely to repurchase\",\n  \"confidence\": \"medium\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:44.851941",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb112",
+    "feedback": "Maksu ei toiminut, yritin kolmea eri korttia. Sitten l\u00f6ysin saman tuotteen halvemmalla kilpailijalta. Huono kokemus.",
+    "customer_id": "20012",
+    "timestamp": "2026-01-16T14:55:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"payment\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"payment_failed\",\n  \"language\": \"fi\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer experienced payment failure with multiple cards and found the same product cheaper elsewhere\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:45.345511",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb113",
+    "feedback": "Great selection! Prices are high but you get what you pay for. Delivery was slower than expected though.",
+    "customer_id": "20013",
+    "timestamp": "2026-01-16T15:00:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "neutral",
+      "subcategory": "mixed_feedback",
+      "language": "en",
+      "priority": "medium",
+      "summary": "Customer praises selection and quality but complains about high prices and slow delivery.",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T20:38:45.819635",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb114",
+    "feedback": "Toode saabus kiiresti aga kvaliteet on kohutav. Raha tagasi palun!",
+    "customer_id": "20014",
+    "timestamp": "2026-01-16T15:05:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"product\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"poor_quality\",\n  \"language\": \"et\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer reports poor product quality and requests a refund\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:46.222562",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb115",
+    "feedback": "Customer service was amazing! They helped me find exactly what I needed. Product itself is just average but service made up for it.",
+    "customer_id": "20015",
+    "timestamp": "2026-01-16T15:10:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"service\",\n  \"sentiment\": \"positive\",\n  \"subcategory\": \"great_service\",\n  \"language\": \"en\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer praises excellent customer service that compensated for an average product\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:46.662282",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb116",
+    "feedback": "Pas\u016bt\u012bju pirms ned\u0113\u013cas, joproj\u0101m nav sa\u0146emts. Neviens neatbild uz e-pastiem. \u0160ausm\u012bgi!",
+    "customer_id": "20016",
+    "timestamp": "2026-01-16T15:15:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"delivery\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"unreceived_order\",\n  \"language\": \"lv\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer reports not receiving their order and unresponsive customer service\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:47.213951",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb117",
+    "feedback": "Mixed feelings. Love the product design but hate the checkout process. Also shipping took forever.",
+    "customer_id": "20017",
+    "timestamp": "2026-01-16T15:20:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"product\",\n  \"sentiment\": \"neutral\",\n  \"subcategory\": \"product_design\",\n  \"language\": \"en\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer loves the product design but has issues with the checkout process and shipping time\",\n  \"confidence\": \"medium\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:47.616816",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb118",
+    "feedback": "Labai patiko! Greitas pristatymas, gera kokyb\u0117, puiki kaina. Rekomenduoju visiems!",
+    "customer_id": "20018",
+    "timestamp": "2026-01-16T15:25:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"general\",\n  \"sentiment\": \"positive\",\n  \"subcategory\": \"positive_feedback\",\n  \"language\": \"lt\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer highly recommends the product for its fast delivery, good quality, and excellent price\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:48.127430",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb119",
+    "feedback": "Website is slow and confusing. Found what I wanted but checkout kept giving errors. Eventually worked after 5 tries.",
+    "customer_id": "20019",
+    "timestamp": "2026-01-16T15:30:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"technical\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"website_performance\",\n  \"language\": \"en\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer experienced slow website, confusion, and multiple checkout errors\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:38:48.583811",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb120",
+    "feedback": "Ihan ok. Ei mit\u00e4\u00e4n erikoista. Toimii.",
+    "customer_id": "20020",
+    "timestamp": "2026-01-16T15:35:00Z",
+    "labels": {
+      "category": "general",
+      "sentiment": "neutral",
+      "subcategory": "none",
+      "language": "fi",
+      "priority": "low",
+      "summary": "Customer finds the product functional but nothing special",
+      "confidence": "medium"
+    },
+    "processed_at": "2026-01-19T20:38:49.025437",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  }
+]
