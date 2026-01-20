@@ -1,0 +1,761 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Sunray Feedback Labeling System - Claude API (Full AI-Powered)'
+
+Parameters:
+  Environment:
+    Type: String
+    Description: Environment for deployment
+    AllowedValues:
+      - dev
+      - tst
+      - qa
+      - prd
+    Default: qa
+    ConstraintDescription: Must be dev, tst, qa, or prd
+  
+  AnthropicApiKey:
+    Type: String
+    Description: Anthropic API Key (get from console.anthropic.com)
+    NoEcho: true
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "Deployment Configuration"
+        Parameters:
+          - Environment
+          - AnthropicApiKey
+    ParameterLabels:
+      Environment:
+        default: "Environment (dev/tst/qa/prd)"
+      AnthropicApiKey:
+        default: "Anthropic API Key"
+
+Resources:
+  # Secrets Manager for API Key
+  AnthropicApiKeySecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub 'sunray-feedback-claude-${Environment}-api-key'
+      Description: Anthropic API Key for Claude
+      SecretString: !Sub '{"api_key":"${AnthropicApiKey}"}'
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+
+  # S3 Bucket for feedback storage
+  FeedbackBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'sunray-feedback-claude-${Environment}-${AWS::Region}'
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+        - Key: AIProvider
+          Value: anthropic-claude
+
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub 'sunray-feedback-claude-${Environment}-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                Resource: !Sub '${FeedbackBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !GetAtt FeedbackBucket.Arn
+        - PolicyName: SecretsManagerAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                Resource: !Ref AnthropicApiKeySecret
+
+  # CloudWatch Log Group for Lambda
+  FunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/sunray-feedback-claude-${Environment}-labeling-function'
+      RetentionInDays: 7
+
+  # The main Lambda function
+  FeedbackLabelingFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub 'sunray-feedback-claude-${Environment}-labeling-function'
+      Runtime: python3.11
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 900
+      MemorySize: 2048
+      Environment:
+        Variables:
+          OUTPUT_BUCKET: !Ref FeedbackBucket
+          ENVIRONMENT: !Ref Environment
+          API_KEY_SECRET_NAME: !Ref AnthropicApiKeySecret
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import os
+          import uuid
+          import urllib3
+          from datetime import datetime
+          from urllib.parse import unquote_plus
+          
+          s3 = boto3.client('s3')
+          secrets = boto3.client('secretsmanager')
+          http = urllib3.PoolManager()
+          
+          OUTPUT_BUCKET = os.environ['OUTPUT_BUCKET']
+          ENVIRONMENT = os.environ['ENVIRONMENT']
+          API_KEY_SECRET_NAME = os.environ['API_KEY_SECRET_NAME']
+          
+          # Cache API key
+          _api_key_cache = None
+          
+          def get_api_key():
+              """Get Anthropic API key from Secrets Manager (with caching)"""
+              global _api_key_cache
+              if _api_key_cache:
+                  return _api_key_cache
+              
+              response = secrets.get_secret_value(SecretId=API_KEY_SECRET_NAME)
+              secret = json.loads(response['SecretString'])
+              _api_key_cache = secret['api_key']
+              return _api_key_cache
+          
+          # Ontology matching QA output
+          ONTOLOGY = {
+              "categories": [
+                  {
+                      "id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+                      "name": "Staff",
+                      "sub_categories": [
+                          {"id": "82bd1474-f27f-404e-a62e-92d237ae0238", "name": "Knowledge"},
+                          {"id": "861d52ae-6b59-4060-845b-2af8ce476fd1", "name": "Friendliness"},
+                          {"id": "98759502-46bd-42ad-a654-9cb3a4a3a5f9", "name": "Appearance"},
+                          {"id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1", "name": "Helpfulness"}
+                      ]
+                  },
+                  {
+                      "id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+                      "name": "Physical Store Environment",
+                      "sub_categories": [
+                          {"id": "cae1edaa-ec57-4da9-9243-00c00da1985f", "name": "Cleanliness"},
+                          {"id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff", "name": "Layout"},
+                          {"id": "f9a223c2-890c-46a6-8271-edc93f54b48b", "name": "Ambiance"},
+                          {"id": "627749e1-54e4-43e9-b594-343b53bbf15b", "name": "Displays"},
+                          {"id": "4d791564-315d-480b-a303-08db84d2a0cd", "name": "Opening Hours"},
+                          {"id": "80811ea4-c329-4663-af85-26986fc25f33", "name": "Crowds"}
+                      ]
+                  },
+                  {
+                      "id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+                      "name": "Checkout",
+                      "sub_categories": [
+                          {"id": "0d78b861-a3a0-4a88-8317-9a4db65c667c", "name": "Speed"},
+                          {"id": "78255eae-a1dc-493c-9b82-a4f943f4693c", "name": "Payment Options"},
+                          {"id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a", "name": "Service"}
+                      ]
+                  },
+                  {
+                      "id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+                      "name": "Product",
+                      "sub_categories": [
+                          {"id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2", "name": "Selection"},
+                          {"id": "8e0e5a4e-6d93-4dbf-882f-8be094365438", "name": "Sizing"},
+                          {"id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6", "name": "Quality"},
+                          {"id": "9e5a4197-cb15-4553-9272-f17566cb6a61", "name": "Availability"}
+                      ]
+                  },
+                  {
+                      "id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+                      "name": "Pricing",
+                      "sub_categories": [
+                          {"id": "0add798b-ce4d-48fa-9441-cf913114e748", "name": "Value for Money"},
+                          {"id": "2de4e32c-659f-42ff-848c-527a082d61a4", "name": "Discounts"},
+                          {"id": "142ccedc-feb8-4cf4-a685-3d8da84a343c", "name": "Promotions"},
+                          {"id": "546efaa7-9099-4659-8129-1988ff79e2a8", "name": "Affordability"}
+                      ]
+                  },
+                  {
+                      "id": "8804b4e1-6abb-4a0e-b4e5-e5281fbaf74f",
+                      "name": "Returns",
+                      "sub_categories": [
+                          {"id": "ea678c85-de09-4bb3-9ecd-bdeecbf861a6", "name": "Speed"},
+                          {"id": "0fdbc941-56b3-4478-84f5-3f50ae5dbae7", "name": "Process"}
+                      ]
+                  },
+                  {
+                      "id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+                      "name": "Customer Support",
+                      "sub_categories": [
+                          {"id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452", "name": "Responsiveness"},
+                          {"id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d", "name": "Support Channels"}
+                      ]
+                  },
+                  {
+                      "id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+                      "name": "Online Experience",
+                      "sub_categories": [
+                          {"id": "ea220b26-8607-4641-9f0a-85a04080cc6b", "name": "Checkout"},
+                          {"id": "7bd31ca0-3a5e-41b8-bd9d-68b8be81b1b5", "name": "Mobile App"},
+                          {"id": "0df1c6cc-205a-40df-a8e4-06887bd78c42", "name": "Product Selection"},
+                          {"id": "811e5b24-a546-4f1b-8344-e9486921efb2", "name": "Website Usability"}
+                      ]
+                  },
+                  {
+                      "id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+                      "name": "Shipping & Delivery",
+                      "sub_categories": [
+                          {"id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6", "name": "Speed"},
+                          {"id": "cb4378b6-3e91-4362-bb2d-6276d6353189", "name": "Cost"},
+                          {"id": "a0f78830-a937-41dc-bbf9-21eb8e28dd70", "name": "Tracking"}
+                      ]
+                  },
+                  {
+                      "id": "e3632fcd-101d-4c79-8472-fb56c12dade6",
+                      "name": "Loyalty",
+                      "sub_categories": [
+                          {"id": "fb6618f0-854c-446a-9f61-157c977f4727", "name": "Benefits"},
+                          {"id": "ee826e8d-f82b-45a2-814d-cd59bf894944", "name": "Enrollment"}
+                      ]
+                  },
+                  {
+                      "id": "d76d8f67-6a52-4315-89e6-9ab7012c3bb4",
+                      "name": "Sustainability",
+                      "sub_categories": [
+                          {"id": "fad2a523-ca67-4377-9618-b8ff94fd052f", "name": "Ethical Sourcing"},
+                          {"id": "ac454d13-c8ef-45af-8b9c-24fa1ff58443", "name": "Environmental Impact"}
+                      ]
+                  },
+                  {
+                      "id": "d8ad9038-1e58-4806-bf80-1eb36f14296b",
+                      "name": "Marketing",
+                      "sub_categories": [
+                          {"id": "272588b7-2fc6-4f66-b86d-05f1fb6fee07", "name": "Advertising"},
+                          {"id": "ec6b9213-eb79-4c2e-9d4b-183fd4801767", "name": "Brand Image"}
+                      ]
+                  },
+                  {
+                      "id": "feb06d04-c2aa-439a-b8a0-ac21859fba22",
+                      "name": "Food & Beverage",
+                      "sub_categories": [
+                          {"id": "1e239253-7377-4768-b992-7284fc70cd7e", "name": "Quality"},
+                          {"id": "57f569cb-48e4-4a4a-b579-37c8df301083", "name": "Price"},
+                          {"id": "2a89dc87-c192-4d6c-a8b4-cdd37a5fb6fe", "name": "Variety"}
+                      ]
+                  }
+              ]
+          }
+          
+          def extract_feedback_text(feedback_obj):
+              """Extract all text from feedback object"""
+              texts = []
+              
+              if feedback_obj.get('Emotion_Open_Comments__c'):
+                  texts.append(feedback_obj['Emotion_Open_Comments__c'])
+              if feedback_obj.get('Selection_Open_Comments__c'):
+                  texts.append(feedback_obj['Selection_Open_Comments__c'])
+              if feedback_obj.get('Webstore_Selection_Open_Comments__c'):
+                  texts.append(feedback_obj['Webstore_Selection_Open_Comments__c'])
+              
+              return ' '.join(texts).strip()
+          
+          def call_claude_api(feedback_text, feedback_metadata):
+              """Call Claude API to analyze feedback"""
+              api_key = get_api_key()
+              
+              # Build comprehensive prompt using list join to avoid YAML issues
+              ontology_json = json.dumps(ONTOLOGY, indent=2)
+              language = str(feedback_metadata.get('Language__c', 'unknown'))
+              evi_score = str(feedback_metadata.get('EVI__c', 'unknown'))
+              emotion = str(feedback_metadata.get('Emotion__c', 'unknown'))
+              source = str(feedback_metadata.get('Feedback_Name_Source__c', 'unknown'))
+              touchpoint = str(feedback_metadata.get('Touchpoint_Name__c', 'unknown'))
+              
+              prompt_parts = [
+                  "Analyze this customer feedback and provide detailed categorization following the ontology.\n\n",
+                  "ONTOLOGY:\n",
+                  ontology_json,
+                  "\n\nFEEDBACK TEXT:\n",
+                  feedback_text,
+                  "\n\nMETADATA:\n",
+                  "- Language: ", language, "\n",
+                  "- EVI Score: ", evi_score, "\n",
+                  "- Emotion: ", emotion, "\n",
+                  "- Source: ", source, "\n",
+                  "- Touchpoint: ", touchpoint, "\n\n",
+                  'Provide your analysis as a JSON object with this structure:\n',
+                  '{\n',
+                  '  "spans": [\n',
+                  '    {\n',
+                  '      "text": "extracted sentence or phrase",\n',
+                  '      "category_id": "from ontology",\n',
+                  '      "sub_category_id": "from ontology",\n',
+                  '      "sentiment": "positive|negative|neutral",\n',
+                  '      "relevance_score": 0.0-1.0\n',
+                  '    }\n',
+                  '  ],\n',
+                  '  "overall_sentiment": "positive|negative|neutral|mixed",\n',
+                  '  "topics": [\n',
+                  '    {\n',
+                  '      "title": "brief topic title",\n',
+                  '      "description": "detailed description",\n',
+                  '      "sub_category_id": "from ontology",\n',
+                  '      "sentiment": "positive|negative|neutral"\n',
+                  '    }\n',
+                  '  ],\n',
+                  '  "suggestions": [\n',
+                  '    {\n',
+                  '      "text": "actionable suggestion",\n',
+                  '      "actionability": "easy|moderate|complex",\n',
+                  '      "related_span_indices": [0, 1]\n',
+                  '    }\n',
+                  '  ],\n',
+                  '  "language_detected": "fi|en|et|sv|lv|lt",\n',
+                  '  "confidence": "high|medium|low"\n',
+                  '}\n\n',
+                  'Respond ONLY with valid JSON, no markdown formatting.'
+              ]
+              
+              prompt = ''.join(prompt_parts)
+
+              # Call Claude API
+              body = {
+                  "model": "claude-sonnet-4-20250514",
+                  "max_tokens": 4096,
+                  "messages": [
+                      {
+                          "role": "user",
+                          "content": prompt
+                      }
+                  ]
+              }
+              
+              response = http.request(
+                  'POST',
+                  'https://api.anthropic.com/v1/messages',
+                  headers={
+                      'anthropic-version': '2023-06-01',
+                      'content-type': 'application/json',
+                      'x-api-key': api_key
+                  },
+                  body=json.dumps(body).encode('utf-8')
+              )
+              
+              if response.status != 200:
+                  raise Exception(f"Claude API error: {response.status} - {response.data.decode('utf-8')}")
+              
+              result = json.loads(response.data.decode('utf-8'))
+              
+              # Extract text content
+              content = result['content'][0]['text']
+              
+              # Parse JSON response
+              # Remove potential markdown wrapping
+              content = content.strip()
+              if content.startswith('```'):
+                  # Remove ```json and ``` wrapping
+                  lines = content.split('\n')
+                  content = '\n'.join(lines[1:-1])
+              
+              return json.loads(content)
+          
+          def analyze_feedback(feedback_obj):
+              """Analyze feedback using Claude API"""
+              try:
+                  feedback_text = extract_feedback_text(feedback_obj)
+                  
+                  if not feedback_text or len(feedback_text) < 3:
+                      return None
+                  
+                  print(f"Analyzing feedback: {feedback_obj.get('Id', 'unknown')}")
+                  
+                  # Call Claude
+                  analysis = call_claude_api(feedback_text, feedback_obj)
+                  
+                  # Build spans with IDs
+                  spans = []
+                  for span_data in analysis.get('spans', []):
+                      span = {
+                          "id": str(uuid.uuid4()),
+                          "start_index": 0,
+                          "end_index": 0,
+                          "processed_text": span_data.get('text', ''),
+                          "category_id": span_data.get('category_id'),
+                          "sub_category_id": span_data.get('sub_category_id'),
+                          "aspect_id": None,
+                          "relevance_score": span_data.get('relevance_score', 0.5),
+                          "sentiment": span_data.get('sentiment', 'neutral'),
+                          "topic_ids": []
+                      }
+                      spans.append(span)
+                  
+                  # Build tags
+                  tags = {
+                      "emotion": feedback_obj.get('Emotion__c', ''),
+                      "stockmann_id": feedback_obj.get('Id', ''),
+                      "evi": str(feedback_obj.get('EVI__c', '')),
+                      "feedback_source": feedback_obj.get('Feedback_Name_Source__c', ''),
+                      "language": analysis.get('language_detected', feedback_obj.get('Language__c', '')),
+                      "touchpoint": feedback_obj.get('Touchpoint_Name__c', ''),
+                      "evi_destroing": str(feedback_obj.get('EVI_Destroying_Cluster__c', '')),
+                      "evi_attention": str(feedback_obj.get('EVI_Attention_Cluster__c', '')),
+                      "evi_advocacy": str(feedback_obj.get('EVI_Advocacy_Cluster__c', '')),
+                      "evi_trusting": str(feedback_obj.get('EVI_Trusting_Cluster__c', '')),
+                      "ai_confidence": analysis.get('confidence', 'medium')
+                  }
+                  
+                  # Add optional fields
+                  for field, tag_name in [
+                      ('Country__c', 'country'),
+                      ('Department_Store_Visited__c', 'store'),
+                      ('Department_Visited__c', 'department'),
+                      ('Postal_Code_Area__c', 'postal_code_area')
+                  ]:
+                      if feedback_obj.get(field):
+                          tags[tag_name] = feedback_obj[field]
+                  
+                  # Calculate score from EVI
+                  evi_score = float(feedback_obj.get('EVI__c', 0) or 0)
+                  
+                  # Build document
+                  document = {
+                      "id": str(uuid.uuid4()),
+                      "source_id": feedback_obj.get('Id', ''),
+                      "source_text": feedback_text,
+                      "processed_text": feedback_text,
+                      "spans": spans,
+                      "score": evi_score,
+                      "timestamp": feedback_obj.get('Response_Date__c', feedback_obj.get('CreatedDate', '')),
+                      "tags": {k: v for k, v in tags.items() if v},
+                      "claude_analysis": {
+                          "overall_sentiment": analysis.get('overall_sentiment', 'neutral'),
+                          "topics": analysis.get('topics', []),
+                          "suggestions": analysis.get('suggestions', [])
+                      }
+                  }
+                  
+                  return document
+                  
+              except Exception as e:
+                  print(f"Error analyzing feedback {feedback_obj.get('Id', 'unknown')}: {str(e)}")
+                  import traceback
+                  traceback.print_exc()
+                  return None
+          
+          def aggregate_topics_and_suggestions(documents):
+              """Aggregate topics and suggestions from all documents"""
+              all_topics = []
+              all_suggestions = []
+              
+              for doc in documents:
+                  claude_analysis = doc.get('claude_analysis', {})
+                  
+                  # Extract topics
+                  for topic_data in claude_analysis.get('topics', []):
+                      topic = {
+                          "id": str(uuid.uuid4()),
+                          "title": topic_data.get('title', ''),
+                          "description": topic_data.get('description', ''),
+                          "sub_category_id": topic_data.get('sub_category_id'),
+                          "nps": 0.0  # Would need multiple feedbacks to calculate real NPS
+                      }
+                      all_topics.append(topic)
+                  
+                  # Extract suggestions
+                  for sugg_data in claude_analysis.get('suggestions', []):
+                      # Find related span IDs
+                      span_ids = []
+                      for idx in sugg_data.get('related_span_indices', []):
+                          if idx < len(doc['spans']):
+                              span_ids.append(doc['spans'][idx]['id'])
+                      
+                      suggestion = {
+                          "id": str(uuid.uuid4()),
+                          "text": sugg_data.get('text', ''),
+                          "span_ids": span_ids,
+                          "actionability": sugg_data.get('actionability', 'moderate')
+                      }
+                      all_suggestions.append(suggestion)
+              
+              return all_topics, all_suggestions
+          
+          def lambda_handler(event, context):
+              """Process S3 event and analyze feedbacks"""
+              print(f"Received event: {json.dumps(event)}")
+              
+              results = []
+              
+              for record in event.get('Records', []):
+                  try:
+                      bucket = record['s3']['bucket']['name']
+                      key = unquote_plus(record['s3']['object']['key'])
+                      
+                      print(f"Processing file: s3://{bucket}/{key}")
+                      
+                      if not key.startswith('ingress/') or not key.endswith('.json'):
+                          print(f"Skipping {key}")
+                          continue
+                      
+                      # Read input
+                      response = s3.get_object(Bucket=bucket, Key=key)
+                      content = response['Body'].read().decode('utf-8')
+                      input_data = json.loads(content)
+                      
+                      feedbacks = input_data.get('feedbacks', [])
+                      print(f"Found {len(feedbacks)} feedbacks to process")
+                      
+                      # Process with Claude
+                      documents = []
+                      for feedback in feedbacks:
+                          doc = analyze_feedback(feedback)
+                          if doc:
+                              documents.append(doc)
+                      
+                      print(f"Successfully analyzed {len(documents)} feedbacks")
+                      
+                      # Aggregate topics and suggestions
+                      topics, suggestions = aggregate_topics_and_suggestions(documents)
+                      
+                      # Build output
+                      output = {
+                          "version": "3.0",
+                          "document_batch_id": str(uuid.uuid4()),
+                          "ontology": ONTOLOGY,
+                          "topics": topics,
+                          "documents": documents,
+                          "suggestions": suggestions
+                      }
+                      
+                      # Write output
+                      timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+                      original_filename = key.split('/')[-1].replace('.json', '')
+                      output_key = f"egress/{original_filename}_labeled_{timestamp}.json"
+                      
+                      s3.put_object(
+                          Bucket=OUTPUT_BUCKET,
+                          Key=output_key,
+                          Body=json.dumps(output, indent=2, ensure_ascii=False),
+                          ContentType='application/json'
+                      )
+                      
+                      print(f"✓ Labeled data written to: s3://{OUTPUT_BUCKET}/{output_key}")
+                      
+                      # Archive original
+                      archive_key = key.replace('ingress/', 'archive/')
+                      s3.copy_object(
+                          Bucket=OUTPUT_BUCKET,
+                          CopySource={'Bucket': bucket, 'Key': key},
+                          Key=archive_key
+                      )
+                      s3.delete_object(Bucket=bucket, Key=key)
+                      
+                      print(f"✓ Original moved to: s3://{OUTPUT_BUCKET}/{archive_key}")
+                      
+                      results.append({
+                          'input': key,
+                          'output': output_key,
+                          'count': len(documents),
+                          'topics': len(topics),
+                          'suggestions': len(suggestions),
+                          'status': 'success'
+                      })
+                      
+                  except Exception as e:
+                      print(f"✗ Error processing {key}: {str(e)}")
+                      import traceback
+                      traceback.print_exc()
+                      results.append({
+                          'input': key,
+                          'status': 'error',
+                          'error': str(e)
+                      })
+              
+              return {
+                  'statusCode': 200,
+                  'body': json.dumps(results)
+              }
+
+  # Lambda Permission for S3
+  LambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref FeedbackLabelingFunction
+      Action: lambda:InvokeFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !GetAtt FeedbackBucket.Arn
+      SourceAccount: !Ref AWS::AccountId
+
+  # S3 Notification Config
+  S3NotificationCustomResource:
+    Type: Custom::S3BucketNotification
+    Properties:
+      ServiceToken: !GetAtt S3NotificationFunction.Arn
+      BucketName: !Ref FeedbackBucket
+      LambdaArn: !GetAtt FeedbackLabelingFunction.Arn
+      NotificationId: FeedbackIngressNotification
+
+  # S3 Notification Lambda
+  S3NotificationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub 'sunray-feedback-claude-${Environment}-s3-config'
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !GetAtt S3NotificationFunctionRole.Arn
+      Timeout: 60
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import cfnresponse
+          
+          s3 = boto3.client('s3')
+          
+          def handler(event, context):
+              print(f"Event: {json.dumps(event)}")
+              
+              try:
+                  bucket = event['ResourceProperties']['BucketName']
+                  lambda_arn = event['ResourceProperties']['LambdaArn']
+                  notification_id = event['ResourceProperties']['NotificationId']
+                  
+                  if event['RequestType'] in ['Create', 'Update']:
+                      s3.put_bucket_notification_configuration(
+                          Bucket=bucket,
+                          NotificationConfiguration={
+                              'LambdaFunctionConfigurations': [{
+                                  'Id': notification_id,
+                                  'LambdaFunctionArn': lambda_arn,
+                                  'Events': ['s3:ObjectCreated:*'],
+                                  'Filter': {
+                                      'Key': {
+                                          'FilterRules': [
+                                              {'Name': 'prefix', 'Value': 'ingress/'},
+                                              {'Name': 'suffix', 'Value': '.json'}
+                                          ]
+                                      }
+                                  }
+                              }]
+                          }
+                      )
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+                  elif event['RequestType'] == 'Delete':
+                      try:
+                          s3.put_bucket_notification_configuration(
+                              Bucket=bucket,
+                              NotificationConfiguration={}
+                          )
+                      except:
+                          pass
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+              except Exception as e:
+                  print(f"Error: {str(e)}")
+                  cfnresponse.send(event, context, cfnresponse.FAILED, {'Error': str(e)})
+
+  S3NotificationFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3NotificationConfig
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutBucketNotification
+                  - s3:GetBucketNotification
+                Resource: !GetAtt FeedbackBucket.Arn
+
+Outputs:
+  StackName:
+    Value: !Ref AWS::StackName
+    
+  Environment:
+    Value: !Ref Environment
+    
+  BucketName:
+    Value: !Ref FeedbackBucket
+    Export:
+      Name: !Sub 'sunray-feedback-claude-${Environment}-BucketName'
+  
+  IngressFolder:
+    Value: !Sub 's3://${FeedbackBucket}/ingress/'
+    
+  EgressFolder:
+    Value: !Sub 's3://${FeedbackBucket}/egress/'
+    
+  ArchiveFolder:
+    Value: !Sub 's3://${FeedbackBucket}/archive/'
+  
+  LambdaFunctionName:
+    Value: !Ref FeedbackLabelingFunction
+    
+  ProcessorType:
+    Value: Anthropic Claude Sonnet 4 (Full AI Analysis)
+    
+  EstimatedMonthlyCost:
+    Value: $50-150/10K feedbacks (highest quality)
+    
+  ApiKeySecretName:
+    Value: !Ref AnthropicApiKeySecret
+    Description: Secrets Manager secret containing API key
+    
+  CloudWatchLogGroup:
+    Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fsunray-feedback-claude-${Environment}-labeling-function'
+  
+  S3Console:
+    Value: !Sub 'https://s3.console.aws.amazon.com/s3/buckets/${FeedbackBucket}?region=${AWS::Region}'
+    
+  TestCommand:
+    Value: !Sub 'aws s3 cp feedback-qa-small-sample.json s3://${FeedbackBucket}/ingress/ --region ${AWS::Region}'

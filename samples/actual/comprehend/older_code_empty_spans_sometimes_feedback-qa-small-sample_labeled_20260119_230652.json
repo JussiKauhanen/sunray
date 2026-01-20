@@ -1,0 +1,351 @@
+{
+  "version": "3.0",
+  "document_batch_id": "6ee7acc6-78ea-4aa3-a992-b5b14bfe825c",
+  "ontology": {
+    "categories": [
+      {
+        "id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+        "name": "Staff",
+        "sub_categories": [
+          {
+            "id": "82bd1474-f27f-404e-a62e-92d237ae0238",
+            "name": "Knowledge"
+          },
+          {
+            "id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+            "name": "Friendliness"
+          },
+          {
+            "id": "98759502-46bd-42ad-a654-9cb3a4a3a5f9",
+            "name": "Appearance"
+          },
+          {
+            "id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+            "name": "Helpfulness"
+          }
+        ]
+      },
+      {
+        "id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+        "name": "Physical Store Environment",
+        "sub_categories": [
+          {
+            "id": "cae1edaa-ec57-4da9-9243-00c00da1985f",
+            "name": "Cleanliness"
+          },
+          {
+            "id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff",
+            "name": "Layout"
+          },
+          {
+            "id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+            "name": "Ambiance"
+          },
+          {
+            "id": "627749e1-54e4-43e9-b594-343b53bbf15b",
+            "name": "Displays"
+          },
+          {
+            "id": "4d791564-315d-480b-a303-08db84d2a0cd",
+            "name": "Opening Hours"
+          },
+          {
+            "id": "80811ea4-c329-4663-af85-26986fc25f33",
+            "name": "Crowds"
+          }
+        ]
+      },
+      {
+        "id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+        "name": "Checkout",
+        "sub_categories": [
+          {
+            "id": "0d78b861-a3a0-4a88-8317-9a4db65c667c",
+            "name": "Speed"
+          },
+          {
+            "id": "78255eae-a1dc-493c-9b82-a4f943f4693c",
+            "name": "Payment Options"
+          },
+          {
+            "id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+            "name": "Service"
+          }
+        ]
+      },
+      {
+        "id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+        "name": "Product",
+        "sub_categories": [
+          {
+            "id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+            "name": "Selection"
+          },
+          {
+            "id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+            "name": "Sizing"
+          },
+          {
+            "id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+            "name": "Quality"
+          },
+          {
+            "id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+            "name": "Availability"
+          }
+        ]
+      },
+      {
+        "id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+        "name": "Pricing",
+        "sub_categories": [
+          {
+            "id": "0add798b-ce4d-48fa-9441-cf913114e748",
+            "name": "Value for Money"
+          },
+          {
+            "id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+            "name": "Discounts"
+          },
+          {
+            "id": "142ccedc-feb8-4cf4-a685-3d8da84a343c",
+            "name": "Promotions"
+          },
+          {
+            "id": "546efaa7-9099-4659-8129-1988ff79e2a8",
+            "name": "Affordability"
+          }
+        ]
+      },
+      {
+        "id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+        "name": "Online Experience",
+        "sub_categories": [
+          {
+            "id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+            "name": "Checkout"
+          },
+          {
+            "id": "7bd31ca0-3a5e-41b8-bd9d-68b8be81b1b5",
+            "name": "Mobile App"
+          },
+          {
+            "id": "0df1c6cc-205a-40df-a8e4-06887bd78c42",
+            "name": "Product Selection"
+          },
+          {
+            "id": "811e5b24-a546-4f1b-8344-e9486921efb2",
+            "name": "Website Usability"
+          }
+        ]
+      },
+      {
+        "id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+        "name": "Shipping & Delivery",
+        "sub_categories": [
+          {
+            "id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6",
+            "name": "Speed"
+          },
+          {
+            "id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+            "name": "Cost"
+          },
+          {
+            "id": "a0f78830-a937-41dc-bbf9-21eb8e28dd70",
+            "name": "Tracking"
+          }
+        ]
+      },
+      {
+        "id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+        "name": "Customer Support",
+        "sub_categories": [
+          {
+            "id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+            "name": "Responsiveness"
+          },
+          {
+            "id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d",
+            "name": "Support Channels"
+          }
+        ]
+      }
+    ]
+  },
+  "topics": [],
+  "documents": [
+    {
+      "id": "0c930118-cd5b-41fa-a74e-4a119d7db185",
+      "source_id": "a1wVk000000gNprIAE",
+      "source_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli. Palun tehke see võimalusel korda.",
+      "processed_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli. Palun tehke see võimalusel korda.",
+      "spans": [
+        {
+          "id": "12650c69-9e44-44c9-9964-8786052d1544",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Postikulu täis ei tule, jätsin ostu pooleli",
+          "category_id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+          "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+          "aspect_id": null,
+          "relevance_score": 0.3,
+          "sentiment": "negative",
+          "topic_ids": []
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T11:38:54.000Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNprIAE",
+        "evi": "-1.0",
+        "feedback_source": "Webstore Pre-Purchase Survey",
+        "language": "ET",
+        "touchpoint": "eCom pre-purchase EE",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0"
+      }
+    },
+    {
+      "id": "21c0fb2e-f261-47ff-bee5-3aa0510b15c6",
+      "source_id": "a1wVk000000gNpsIAE",
+      "source_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "processed_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "spans": [
+        {
+          "id": "2fac7fc7-0195-46ea-81ec-2de252d89097",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.3,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:44:06.000Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpsIAE",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      }
+    },
+    {
+      "id": "0ce48ada-d682-406b-bcdc-20680a79005d",
+      "source_id": "a1wVk000000gNpuIAE",
+      "source_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta. Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "processed_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta. Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "spans": [],
+      "score": 0.66,
+      "timestamp": "2025-10-01T11:40:01.000Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpuIAE",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      }
+    },
+    {
+      "id": "1de1e033-979d-4f5a-9f9d-abc42b9add76",
+      "source_id": "a1wVk000000gVoUIAU",
+      "source_text": "Bra service Kan inte komma på något nytt märke",
+      "processed_text": "Bra service Kan inte komma på något nytt märke",
+      "spans": [],
+      "score": 1.0,
+      "timestamp": "2025-10-02T17:16:45.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVoUIAU",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "SV",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Children's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      }
+    },
+    {
+      "id": "80cfbd6c-d246-43d7-9cb6-bb936ee90ec8",
+      "source_id": "a1wVk000000gVqvIAE",
+      "source_text": "Because it's crazy day ☺️",
+      "processed_text": "Because it's crazy day ☺️",
+      "spans": [],
+      "score": 1.0,
+      "timestamp": "2025-10-02T14:42:16.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVqvIAE",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "EN",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      }
+    },
+    {
+      "id": "f356802d-4414-48e8-a582-297b98d67d62",
+      "source_id": "a1wVk000000gVrpIAE",
+      "source_text": "I bought satisfactory clothes and had a good shopping experience.",
+      "processed_text": "I bought satisfactory clothes and had a good shopping experience.",
+      "spans": [],
+      "score": 1.0,
+      "timestamp": "2025-10-02T16:08:23.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVrpIAE",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "EN",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Women's fashion and accessories"
+      }
+    }
+  ],
+  "suggestions": []
+}

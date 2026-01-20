@@ -1,0 +1,3590 @@
+{
+  "version": "3.0",
+  "document_batch_id": "ecd121ce-b0d1-48d6-a030-f2d10a11e9b0",
+  "ontology": {
+    "categories": [
+      {
+        "id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+        "name": "Staff",
+        "sub_categories": [
+          {
+            "id": "82bd1474-f27f-404e-a62e-92d237ae0238",
+            "name": "Knowledge"
+          },
+          {
+            "id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+            "name": "Friendliness"
+          },
+          {
+            "id": "98759502-46bd-42ad-a654-9cb3a4a3a5f9",
+            "name": "Appearance"
+          },
+          {
+            "id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+            "name": "Helpfulness"
+          }
+        ]
+      },
+      {
+        "id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+        "name": "Physical Store Environment",
+        "sub_categories": [
+          {
+            "id": "cae1edaa-ec57-4da9-9243-00c00da1985f",
+            "name": "Cleanliness"
+          },
+          {
+            "id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff",
+            "name": "Layout"
+          },
+          {
+            "id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+            "name": "Ambiance"
+          },
+          {
+            "id": "627749e1-54e4-43e9-b594-343b53bbf15b",
+            "name": "Displays"
+          },
+          {
+            "id": "4d791564-315d-480b-a303-08db84d2a0cd",
+            "name": "Opening Hours"
+          },
+          {
+            "id": "80811ea4-c329-4663-af85-26986fc25f33",
+            "name": "Crowds"
+          }
+        ]
+      },
+      {
+        "id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+        "name": "Checkout",
+        "sub_categories": [
+          {
+            "id": "0d78b861-a3a0-4a88-8317-9a4db65c667c",
+            "name": "Speed"
+          },
+          {
+            "id": "78255eae-a1dc-493c-9b82-a4f943f4693c",
+            "name": "Payment Options"
+          },
+          {
+            "id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+            "name": "Service"
+          }
+        ]
+      },
+      {
+        "id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+        "name": "Product",
+        "sub_categories": [
+          {
+            "id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+            "name": "Selection"
+          },
+          {
+            "id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+            "name": "Sizing"
+          },
+          {
+            "id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+            "name": "Quality"
+          },
+          {
+            "id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+            "name": "Availability"
+          }
+        ]
+      },
+      {
+        "id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+        "name": "Pricing",
+        "sub_categories": [
+          {
+            "id": "0add798b-ce4d-48fa-9441-cf913114e748",
+            "name": "Value for Money"
+          },
+          {
+            "id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+            "name": "Discounts"
+          },
+          {
+            "id": "142ccedc-feb8-4cf4-a685-3d8da84a343c",
+            "name": "Promotions"
+          },
+          {
+            "id": "546efaa7-9099-4659-8129-1988ff79e2a8",
+            "name": "Affordability"
+          }
+        ]
+      },
+      {
+        "id": "8804b4e1-6abb-4a0e-b4e5-e5281fbaf74f",
+        "name": "Returns",
+        "sub_categories": [
+          {
+            "id": "ea678c85-de09-4bb3-9ecd-bdeecbf861a6",
+            "name": "Speed"
+          },
+          {
+            "id": "0fdbc941-56b3-4478-84f5-3f50ae5dbae7",
+            "name": "Speed"
+          }
+        ]
+      },
+      {
+        "id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+        "name": "Customer Support",
+        "sub_categories": [
+          {
+            "id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+            "name": "Responsiveness"
+          },
+          {
+            "id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d",
+            "name": "Support Channels"
+          }
+        ]
+      },
+      {
+        "id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+        "name": "Online Experience",
+        "sub_categories": [
+          {
+            "id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+            "name": "Checkout"
+          },
+          {
+            "id": "7bd31ca0-3a5e-41b8-bd9d-68b8be81b1b5",
+            "name": "Mobile App"
+          },
+          {
+            "id": "0df1c6cc-205a-40df-a8e4-06887bd78c42",
+            "name": "Product Selection"
+          },
+          {
+            "id": "811e5b24-a546-4f1b-8344-e9486921efb2",
+            "name": "Website Usability"
+          }
+        ]
+      },
+      {
+        "id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+        "name": "Shipping & Delivery",
+        "sub_categories": [
+          {
+            "id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6",
+            "name": "Speed"
+          },
+          {
+            "id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+            "name": "Cost"
+          },
+          {
+            "id": "a0f78830-a937-41dc-bbf9-21eb8e28dd70",
+            "name": "Tracking"
+          }
+        ]
+      },
+      {
+        "id": "e3632fcd-101d-4c79-8472-fb56c12dade6",
+        "name": "Loyalty",
+        "sub_categories": [
+          {
+            "id": "fb6618f0-854c-446a-9f61-157c977f4727",
+            "name": "Benefits"
+          },
+          {
+            "id": "ee826e8d-f82b-45a2-814d-cd59bf894944",
+            "name": "Enrollment"
+          }
+        ]
+      },
+      {
+        "id": "d76d8f67-6a52-4315-89e6-9ab7012c3bb4",
+        "name": "Sustainability",
+        "sub_categories": [
+          {
+            "id": "fad2a523-ca67-4377-9618-b8ff94fd052f",
+            "name": "Ethical Sourcing"
+          },
+          {
+            "id": "ac454d13-c8ef-45af-8b9c-24fa1ff58443",
+            "name": "Environmental Impact"
+          }
+        ]
+      },
+      {
+        "id": "d8ad9038-1e58-4806-bf80-1eb36f14296b",
+        "name": "Marketing",
+        "sub_categories": [
+          {
+            "id": "272588b7-2fc6-4f66-b86d-05f1fb6fee07",
+            "name": "Advertising"
+          },
+          {
+            "id": "ec6b9213-eb79-4c2e-9d4b-183fd4801767",
+            "name": "Brand Image"
+          }
+        ]
+      },
+      {
+        "id": "feb06d04-c2aa-439a-b8a0-ac21859fba22",
+        "name": "Food & Beverage",
+        "sub_categories": [
+          {
+            "id": "1e239253-7377-4768-b992-7284fc70cd7e",
+            "name": "Quality"
+          },
+          {
+            "id": "57f569cb-48e4-4a4a-b579-37c8df301083",
+            "name": "Price"
+          },
+          {
+            "id": "2a89dc87-c192-4d6c-a8b4-cdd37a5fb6fe",
+            "name": "Variety"
+          }
+        ]
+      }
+    ]
+  },
+  "topics": [
+    {
+      "id": "77840f2d-7206-4a3a-a533-a68e87451a14",
+      "title": "Inconsistent checkout speed creates customer frustration",
+      "description": "Customers are expressing frustration with the inconsistent speed of the checkout process. While some experiences highlight fast transactions, others point to long queues and delays that detract from the shopping experience.",
+      "sub_category_id": "0d78b861-a3a0-4a88-8317-9a4db65c667c",
+      "nps": -100.0
+    },
+    {
+      "id": "9b75f4bc-5a20-4fac-b529-9978a6eb5482",
+      "title": "Issues with payment processing during peak times",
+      "description": "Customers have reported several issues with payment processing, particularly during busy promotional events. Delays and errors in transactions have led to frustration and dissatisfaction, emphasizing the need for improved efficiency.",
+      "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+      "nps": -100.0
+    },
+    {
+      "id": "f0facdff-4666-4546-b80a-f0723742239d",
+      "title": "Unnecessary difficulties related to packaging for product pickups",
+      "description": "Feedback indicates that customers are not satisfied with the packaging used for product pickups, specifically preferring bags over large cardboard boxes. The current packaging makes it challenging to carry items discreetly and comfortably.",
+      "sub_category_id": "ea678c85-de09-4bb3-9ecd-bdeecbf861a6",
+      "nps": -100.0
+    },
+    {
+      "id": "1d3215df-635f-4cc9-80ae-5d630098dfbe",
+      "title": "Confusion over product location in the store",
+      "description": "Customers are experiencing difficulty finding products within the store due to unclear signage and layout. Specific feedback indicates that products are spread across multiple areas without adequate indication of their locations, leading to frustration during shopping.",
+      "sub_category_id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff",
+      "nps": -83.33333333333333
+    },
+    {
+      "id": "e5a7c5af-95dc-46c2-b3f3-b0d205da33c4",
+      "title": "Positive experiences driven by friendly and helpful staff",
+      "description": "Several customers commend the friendly and helpful demeanor of the customer service representatives. Positive interactions with staff contribute significantly to the overall pleasantness of the shopping experience.",
+      "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+      "nps": 96.29629629629629
+    },
+    {
+      "id": "b43e1f5d-1243-4c21-828b-b52ab6454ee0",
+      "title": "Positive feedback on various discounts received",
+      "description": "Many customers are expressing satisfaction with the various discounts available, particularly the 20% loyalty discount and seasonal offers. These discounts are seen as valuable incentives that enhance the shopping experience and influence purchasing decisions.",
+      "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+      "nps": 95.1219512195122
+    },
+    {
+      "id": "be700c96-064e-450b-ae03-087504834d8c",
+      "title": "Positive feedback on self-service checkout options",
+      "description": "Self-service checkouts are generally viewed positively by customers who appreciate their convenience and ease of use. Some feedback also suggests that these options help alleviate long queues during peak shopping times.",
+      "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+      "nps": 78.57142857142857
+    },
+    {
+      "id": "3ce94f49-e01e-4f1e-bb61-d1326e192b19",
+      "title": "Dissatisfaction with checkout queue length and management",
+      "description": "Customers are expressing dissatisfaction with the length of checkout queues and the management of these lines during busy periods. Many comments highlight long wait times and confusion over where to queue, indicating a need for better organization.",
+      "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+      "nps": -85.0
+    },
+    {
+      "id": "766684b4-f8f6-494f-b602-12264a36778e",
+      "title": "High frequency of promotions noted across various products",
+      "description": "The feedback highlights a strong presence of promotions within the store, with many comments mentioning the abundance of available offers and deals across products. Customers seem to appreciate the variety of promotions that are currently being offered.",
+      "sub_category_id": "142ccedc-feb8-4cf4-a685-3d8da84a343c",
+      "nps": 66.66666666666667
+    },
+    {
+      "id": "3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce",
+      "title": "Overall friendliness of staff enhances customer experience",
+      "description": "Customers frequently express appreciation for the overall friendliness of the staff throughout various departments. Many comments highlight the cheerful, welcoming attitude of salespeople, which contributes positively to the shopping experience across the store.",
+      "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+      "nps": 98.34710743801652
+    },
+    {
+      "id": "f4567652-1f26-4707-8849-47461bb1e9b3",
+      "title": "Recognition of exceptional service instances",
+      "description": "Amidst mixed reviews, there were distinct mentions of certain staff members providing exceptional service that notably enhanced customer experiences. Customers appreciated when sales staff took extra steps to ensure satisfaction, such as providing detailed product guidance or resolving issues efficiently.",
+      "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+      "nps": 95.23809523809524
+    },
+    {
+      "id": "638c1233-e5c2-462c-a351-ed73319166bc",
+      "title": "Inconsistent delivery times lead to mixed experiences",
+      "description": "Customers are experiencing inconsistent delivery times, with some reporting fast and timely arrivals while others face delays and frustrations. This discrepancy contributes to a varied perception of the overall delivery service and customer satisfaction.",
+      "sub_category_id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6",
+      "nps": -100.0
+    },
+    {
+      "id": "3e4ae1c7-1ebf-487d-9494-0d985b4b343d",
+      "title": "Desire for more diverse and innovative promotions",
+      "description": "Customers are calling for more diverse and innovative promotional offers beyond the traditional Crazy Days events. Suggestions include individual offers and collaborations with more domestic brands to enhance the shopping experience.",
+      "sub_category_id": "272588b7-2fc6-4f66-b86d-05f1fb6fee07",
+      "nps": -50.0
+    },
+    {
+      "id": "09507dbc-879d-453f-8bb4-7ff5cc0f0e3c",
+      "title": "Inconsistency in service quality across checkout points",
+      "description": "The quality of service appears inconsistent across different checkout points. Some customers report swift and friendly service, while others experience slower service and issues with product handling, indicating a disparity in training or staffing.",
+      "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+      "nps": -100.0
+    },
+    {
+      "id": "5d8104cc-2668-4635-9a4f-f02c15043c7c",
+      "title": "Oversized packaging leads to dissatisfaction",
+      "description": "Feedback indicates that customers are dissatisfied with receiving orders in excessively large boxes. This issue not only creates inconvenience during pickup but also impacts customers' overall purchasing decisions.",
+      "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+      "nps": -100.0
+    },
+    {
+      "id": "126f1bd4-7438-4378-9158-689cf65b1880",
+      "title": "Consistent quality of core products",
+      "description": "Feedback highlights that the products offered by the store are consistently of good quality, which contributes positively to customer experiences. This assurance of quality is a significant factor in customer loyalty.",
+      "sub_category_id": "1e239253-7377-4768-b992-7284fc70cd7e",
+      "nps": 100.0
+    },
+    {
+      "id": "051b7552-f139-465a-9b55-1066a5096775",
+      "title": "Feedback on seasonal promotions and variety",
+      "description": "Several comments highlight customer disappointment with the selection during specific promotional events, like Crazy Days. There are mentions of the offerings not being as appealing or varied as in previous years.",
+      "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+      "nps": 0.0
+    },
+    {
+      "id": "e6be6629-e018-4980-96c7-c0927d4ebe12",
+      "title": "Concerns over product presentation and depiction",
+      "description": "Some customers have noted discrepancies between online product images and the items received, leading to dissatisfaction in terms of expectations versus reality. This theme suggests a need for improved representation of products in marketing.",
+      "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+      "nps": -100.0
+    },
+    {
+      "id": "c2e32e4a-ca34-4988-a8e7-98b8e60825db",
+      "title": "Sizing issues hinder purchase decisions",
+      "description": "Customers are experiencing frequent sizing issues, with several reporting that particular sizes they were interested in were not available. This has caused delays in decision-making and disappointment for those specifically looking for certain sizes.",
+      "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+      "nps": -100.0
+    }
+  ],
+  "documents": [
+    {
+      "id": "5929ee6b-131a-4078-be19-a58db2b27e59",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli.",
+      "processed_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli.",
+      "spans": [
+        {
+          "id": "31f450e5-38cb-4984-9228-860248c9f658",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.20406970847548536,
+          "sentiment": "negative",
+          "topic_ids": ["cc5ba3e1-05ce-42ce-b2fc-4e136a2514f0"]
+        },
+        {
+          "id": "47ba045c-db02-41b8-aa25-43392eba0ceb",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Superyellow mütsid lastele müügis, osta ei ole võimalik.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.14924720421742857,
+          "sentiment": "negative",
+          "topic_ids": ["6ff45cef-ddd7-4a63-8ebf-4d7e90bb9446"]
+        },
+        {
+          "id": "804ecb88-d206-4c45-a6be-cf93317b6a7b",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Postikulu täis ei tule, jätsin ostu pooleli.",
+          "category_id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+          "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+          "aspect_id": null,
+          "relevance_score": 0.2474168689105544,
+          "sentiment": "negative",
+          "topic_ids": ["6cf2dafb-a539-46f6-a78f-9c97b9051753"]
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T11:38:54Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNprIAE",
+        "evi": "-1.0",
+        "feedback_source": "Webstore Pre-Purchase Survey",
+        "language": "ET",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "eCom pre-purchase EE"
+      }
+    },
+    {
+      "id": "bfaee494-85a5-41d6-858e-f727c22dc9a3",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Palun tehke see võimalusel korda.",
+      "processed_text": "Palun tehke see võimalusel korda.",
+      "spans": [
+        {
+          "id": "6e29bc61-9bdb-4c68-ae88-2df000174498",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Palun tehke see võimalusel korda.",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "cae1edaa-ec57-4da9-9243-00c00da1985f",
+          "aspect_id": null,
+          "relevance_score": 0.11743284667179943,
+          "sentiment": "negative",
+          "topic_ids": ["4fa220d7-1ed8-487b-9468-d33c0d4c80c6"]
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T11:38:54Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNprIAE",
+        "evi": "-1.0",
+        "feedback_source": "Webstore Pre-Purchase Survey",
+        "language": "ET",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "eCom pre-purchase EE"
+      }
+    },
+    {
+      "id": "accb5a55-f698-4034-9f7c-a4a5c0856194",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "processed_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "spans": [
+        {
+          "id": "be163af2-81db-46fd-8c4f-5879ce883a20",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.37559038746224266,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:44:06Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpsIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "539c11b6-0d73-46b9-aa81-adddf72cdda4",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta.",
+      "processed_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta.",
+      "spans": [
+        {
+          "id": "b6319315-abc2-40a3-b5f1-811cd3806a5f",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjä tilasi sen Tapiolasta",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        },
+        {
+          "id": "a4cc2b06-a42f-426b-aa8d-f30fb862498e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "etsiessäni naisten alusvaateostolla oikeaa kokoa",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+          "aspect_id": null,
+          "relevance_score": 0.41389130396385065,
+          "sentiment": "neutral",
+          "topic_ids": ["2d9827c6-9c23-40e7-b077-61ad19d48c5f"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T11:40:01Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpuIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "4a4f2e78-9247-482b-8063-2dce150e8e3f",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "processed_text": "Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "spans": [
+        {
+          "id": "1591ec13-644c-482f-9841-3968bdaa79bf",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "pienemmät koot kuten 36 menee heti",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+          "aspect_id": null,
+          "relevance_score": 0.2830705764434346,
+          "sentiment": "negative",
+          "topic_ids": ["fddc0b34-905d-4619-8cd5-87235e9d69bc"]
+        },
+        {
+          "id": "cced3b49-f159-49c6-adde-e2edfc772f56",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.34629089898411525,
+          "sentiment": "negative",
+          "topic_ids": ["c2e32e4a-ca34-4988-a8e7-98b8e60825db"]
+        },
+        {
+          "id": "4ff8c3ac-3b76-4024-905d-3a0f0f2bd68c",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "3 ystävästä saman koon 36 etsinnässä.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+          "aspect_id": null,
+          "relevance_score": 0.22706101636123774,
+          "sentiment": "negative",
+          "topic_ids": ["fddc0b34-905d-4619-8cd5-87235e9d69bc"]
+        },
+        {
+          "id": "f16c9e0a-3ebb-4a36-9cb1-2279ed968252",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Koko-ongelmia aika usein.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.1335209731180403,
+          "sentiment": "negative",
+          "topic_ids": ["c2e32e4a-ca34-4988-a8e7-98b8e60825db"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T11:40:01Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpuIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "dcf20ce2-d47d-43dd-8829-12cb169b59d2",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Kemikalio-osaston ostoksesta kassalla en saanut 20% aletta , mikä oli ostoksista pitänyt saada ja en sitä huomannut kuin jälkeenpäin katsoessa laskuni. Harmi ,laskun loppusumma on 219e , voisitteko sen saada palautettua minulle , kiitos en haluaisi lähteä käymään.",
+      "processed_text": "Kemikalio-osaston ostoksesta kassalla en saanut 20% aletta , mikä oli ostoksista pitänyt saada ja en sitä huomannut kuin jälkeenpäin katsoessa laskuni. Harmi ,laskun loppusumma on 219e , voisitteko sen saada palautettua minulle , kiitos en haluaisi lähteä käymään.",
+      "spans": [
+        {
+          "id": "bc41e981-0fb8-4045-81e4-11796879ff4b",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "en saanut 20% aletta , mikä oli ostoksista pitänyt saada",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.28194932091517605,
+          "sentiment": "negative",
+          "topic_ids": ["11ca4f6a-5ec3-4031-91de-4c0c9c59626a"]
+        },
+        {
+          "id": "fcccc20b-ff53-4943-8ad4-093046f54d52",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "voisitteko sen saada palautettua minulle , kiitos en haluaisi lähteä käymään",
+          "category_id": "8804b4e1-6abb-4a0e-b4e5-e5281fbaf74f",
+          "sub_category_id": "ea678c85-de09-4bb3-9ecd-bdeecbf861a6",
+          "aspect_id": null,
+          "relevance_score": 0.15571966771304324,
+          "sentiment": "negative",
+          "topic_ids": ["ab72f6f1-0f63-4932-a123-8b0205f8af14"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:40:13Z",
+      "tags": {
+        "emotion": "Surprised",
+        "stockmann_id": "a1wVk000000gNpvIAE",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Women's fashion and accessories",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "b52cc94d-7978-4aaa-90af-99a7b08084fa",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Halusin käyttää kanta-asiakkaan -20% shoppailukoodin ostokseni yhteydessä. Koodi on aktivoinnista vuorokauden käytettävissä liikkeessä ja nettikaupassa. Alelappu oli kotona ja ajattelin aktivoida sen sovelluksesta. Alennus ei löytynyt sovelluksesta ja myyjä sanoi että vain lappu kelpaa. Olen silver jäsen mietin miksi asiakkaita ohjataan käyttämään sovellusta jos tietyt edut ei tule sovellukseen. Epäilin asiaa. Hain infopisteestä/asiakaspalveluksesta alelapun ja ostin tuotteen vaikka minua ärsytti pompottelu ja toimimattomuus. Kun pääsin kotiin tarkistin alelapusta että ale löytyy myös sovelluksesta. Ei löytynyt. Minua itseäni syytettiin teidän virheestä.",
+      "processed_text": "Halusin käyttää kanta-asiakkaan -20% shoppailukoodin ostokseni yhteydessä. Koodi on aktivoinnista vuorokauden käytettävissä liikkeessä ja nettikaupassa. Alelappu oli kotona ja ajattelin aktivoida sen sovelluksesta. Alennus ei löytynyt sovelluksesta ja myyjä sanoi että vain lappu kelpaa. Olen silver jäsen mietin miksi asiakkaita ohjataan käyttämään sovellusta jos tietyt edut ei tule sovellukseen. Epäilin asiaa. Hain infopisteestä/asiakaspalveluksesta alelapun ja ostin tuotteen vaikka minua ärsytti pompottelu ja toimimattomuus. Kun pääsin kotiin tarkistin alelapusta että ale löytyy myös sovelluksesta. Ei löytynyt. Minua itseäni syytettiin teidän virheestä.",
+      "spans": [
+        {
+          "id": "6384c339-0382-4fa6-ad8c-a2ec60547c6d",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Halusin käyttää kanta-asiakkaan -20% shoppailukoodin ostokseni yhteydessä.",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.32696029838331475,
+          "sentiment": "neutral",
+          "topic_ids": ["11ca4f6a-5ec3-4031-91de-4c0c9c59626a"]
+        },
+        {
+          "id": "baaee485-fbde-4f06-ab0e-60c55edef12c",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Alennus ei löytynyt sovelluksesta ja myyjä sanoi että vain lappu kelpaa.",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.3317576051010482,
+          "sentiment": "negative",
+          "topic_ids": ["11ca4f6a-5ec3-4031-91de-4c0c9c59626a"]
+        },
+        {
+          "id": "ba58bef8-5469-43de-adb4-af293d08113a",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Epäilin asiaa.",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "neutral",
+          "topic_ids": []
+        },
+        {
+          "id": "e7cde136-fc37-4dc1-bb66-c2f25f655a90",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hain infopisteestä/asiakaspalveluksesta alelapun ja ostin tuotteen vaikka minua ärsytti pompottelu ja toimimattomuus.",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.31625598093305235,
+          "sentiment": "negative",
+          "topic_ids": ["ebadadfc-fbfe-4104-a085-21b6c5fcae16"]
+        },
+        {
+          "id": "6c63e09c-2ad7-4764-8014-4d85ecf8dfe7",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kun pääsin kotiin tarkistin alelapusta että ale löytyy myös sovelluksesta. Ei löytynyt.",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.25642467836080557,
+          "sentiment": "negative",
+          "topic_ids": ["11ca4f6a-5ec3-4031-91de-4c0c9c59626a"]
+        },
+        {
+          "id": "6cfe3235-85d3-4de0-b1ee-a6be4b1625a1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Minua itseäni syytettiin teidän virheestä.",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.11497277229430439,
+          "sentiment": "negative",
+          "topic_ids": ["ebadadfc-fbfe-4104-a085-21b6c5fcae16"]
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T14:39:15Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNpwIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "-1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "ce5d89b2-a766-44fe-b8fd-7ab9826279d1",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hyvä ja positiivinen palvelu",
+      "processed_text": "Hyvä ja positiivinen palvelu",
+      "spans": [
+        {
+          "id": "e8bb92a4-1a96-4bbb-b97b-94f897a785fb",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hyvä ja positiivinen palvelu",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.3170391167743369,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T12:23:35Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNpxIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Home",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "8340d0b4-c850-4742-aafc-7fdea99b5db7",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Asiallista ja ystävällistä asiakaspalvelua.",
+      "processed_text": "Asiallista ja ystävällistä asiakaspalvelua.",
+      "spans": [
+        {
+          "id": "110e92ce-f510-4899-ba95-51faa452090d",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Asiallista ja ystävällistä asiakaspalvelua.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.35449635361062465,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T16:36:20Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNpzIAE",
+        "country": "Finland",
+        "evi": "1.0",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "Call Center Survey, Phone"
+      }
+    },
+    {
+      "id": "de9efbf0-7a5f-4fc2-a1d0-29e4b65b99ba",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Perusostos, maksettaessa myyjä laittoi paperipussiin. Ihan hyvä, mutta ei sen kummempaa.",
+      "processed_text": "Perusostos, maksettaessa myyjä laittoi paperipussiin. Ihan hyvä, mutta ei sen kummempaa.",
+      "spans": [
+        {
+          "id": "e9c9a89e-b399-41c9-bd12-b640716c94c1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "maksettaessa myyjä laittoi paperipussiin. Ihan hyvä, mutta ei sen kummempaa.",
+          "category_id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+          "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "neutral",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:35:35Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNq1IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "0f608d8c-cedc-47eb-9046-e0d58dc91af7",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Kiva avulias myyjä sekä ostosseuralaiset",
+      "processed_text": "Kiva avulias myyjä sekä ostosseuralaiset",
+      "spans": [
+        {
+          "id": "074a01f1-7c33-4875-8f23-014c1d4e8a96",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kiva avulias myyjä",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.2133503734528531,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        },
+        {
+          "id": "7b02b277-1cce-45a1-b997-e0121533f5ee",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "ostosseuralaiset",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "neutral",
+          "topic_ids": []
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T09:28:42Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNq2IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "85cb6e12-ebc0-4b6a-9f90-cb0a5152c469",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Tarvittavat löytyivät nopeasti (hyvä esillepano) ja muutakin löytyi, mutta olisin ehkä kaivannut jotakuta kettomaan tuotteista. Vietin osastolla kuitenkin varmaan 15-20 min.",
+      "processed_text": "Tarvittavat löytyivät nopeasti (hyvä esillepano) ja muutakin löytyi, mutta olisin ehkä kaivannut jotakuta kettomaan tuotteista. Vietin osastolla kuitenkin varmaan 15-20 min.",
+      "spans": [
+        {
+          "id": "51bacda0-377b-426a-8d91-ced4938fccf3",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Tarvittavat löytyivät nopeasti (hyvä esillepano)",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.2765343730075597,
+          "sentiment": "positive",
+          "topic_ids": ["cab8f7d8-04b4-4345-9829-834ac5cabdf7"]
+        },
+        {
+          "id": "570e1778-fd60-42dd-860c-e163e759fe08",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "olisin ehkä kaivannut jotakuta kettomaan tuotteista",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.22519633082891782,
+          "sentiment": "neutral",
+          "topic_ids": ["fbeb7a06-de0b-4779-9c33-fc8269fb6b78"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:31:59Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNq4IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "cc8ee759-94e2-4ca4-b5ee-9e9fae10850d",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Kävin tarkoituksella päivää ennen hulluja päiviä, sillä en pidä siitä halpakauppameiningistä yhtään. Mutta keltaiset laatikot olivat jo joka puolella, ja myyjillä oli kiirettä niiden kanssa. Kaiuttimet olivat jo kovalla.",
+      "processed_text": "Kävin tarkoituksella päivää ennen hulluja päiviä, sillä en pidä siitä halpakauppameiningistä yhtään. Mutta keltaiset laatikot olivat jo joka puolella, ja myyjillä oli kiirettä niiden kanssa. Kaiuttimet olivat jo kovalla.",
+      "spans": [
+        {
+          "id": "e4c5a654-2b91-41be-8ca2-81c2ac442047",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kaiuttimet olivat jo kovalla.",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+          "aspect_id": null,
+          "relevance_score": 0.13472451444958214,
+          "sentiment": "negative",
+          "topic_ids": ["8e18c7fb-7182-486a-8712-be8632e5d54c"]
+        },
+        {
+          "id": "c598596f-f32d-4b90-ad6a-1093cebb9f09",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjillä oli kiirettä niiden kanssa.",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "80811ea4-c329-4663-af85-26986fc25f33",
+          "aspect_id": null,
+          "relevance_score": 0.17850311107445507,
+          "sentiment": "negative",
+          "topic_ids": ["43bddbfd-f7d0-4596-b8d1-bac4a315f913"]
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T12:39:29Z",
+      "tags": {
+        "emotion": "Irritated",
+        "stockmann_id": "a1wVk000000gNq7IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "-1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "f4155fe0-7559-4388-befa-def55a0bc67b",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Alltid trevligt att besöka Stockmann.",
+      "processed_text": "Alltid trevligt att besöka Stockmann.",
+      "spans": [
+        {
+          "id": "3c12e6e5-41ff-42cb-a67d-d0faece6d1d7",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Alltid trevligt att besöka Stockmann.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.32959822024546376,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:44:02Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNq8IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "SV",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "51c3c388-6d92-4828-bad5-68ff33086564",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hienosti autettiin ja ystävällisesti!!",
+      "processed_text": "Hienosti autettiin ja ystävällisesti!!",
+      "spans": [
+        {
+          "id": "942f82ce-2766-4ad6-ad31-7bbbb8e7dd5e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hienosti autettiin ja ystävällisesti!!",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.3124380376146116,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T17:02:15Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNq9IAE",
+        "evi": "0.66",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "CC chat FIN"
+      }
+    },
+    {
+      "id": "c0bdd45f-e169-4a12-92a2-a4b6973bedc8",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Stockmann on aina tuttu ja turvallinen, kiva tavaratalo",
+      "processed_text": "Stockmann on aina tuttu ja turvallinen, kiva tavaratalo",
+      "spans": [
+        {
+          "id": "190753b6-1d24-4001-b1ad-dbbb813fce56",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Stockmann on aina tuttu ja turvallinen, kiva tavaratalo",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": null,
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:34:41Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqDIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cafes and Restaurants",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "5c3ccfa5-e6e6-4afa-8551-4095dbf05f54",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Kassahenkilö oli avulias ja kaikki meni lopulta yllättävän hyvin",
+      "processed_text": "Kassahenkilö oli avulias ja kaikki meni lopulta yllättävän hyvin",
+      "spans": [
+        {
+          "id": "31f28c3a-c510-4b07-972a-3936fab3248d",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kassahenkilö oli avulias",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.28522257768762727,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        },
+        {
+          "id": "c6320d10-21e8-455d-abd4-657a53f79cc6",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "kaikki meni lopulta yllättävän hyvin",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.11967282081776862,
+          "sentiment": "positive",
+          "topic_ids": ["e5a7c5af-95dc-46c2-b3f3-b0d205da33c4"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:25:01Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqFIAU",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "670e7dcb-eaa1-4324-bd52-3456256f4b5f",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Etsin 92cm tytön juhlamekkoa nyt syksyyn. Ei ollut kuin yksi tarjolla! Pitkävihaisia mekkoja pitäisi olla näin syksyn alussa. Huonot valikoimat Jumbossa. Olin kyllä pettynyt.",
+      "processed_text": "Etsin 92cm tytön juhlamekkoa nyt syksyyn. Ei ollut kuin yksi tarjolla! Pitkävihaisia mekkoja pitäisi olla näin syksyn alussa. Huonot valikoimat Jumbossa. Olin kyllä pettynyt.",
+      "spans": [
+        {
+          "id": "82a401eb-827a-47d9-88b5-fce7a33412b1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ei ollut kuin yksi tarjolla!",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.13795059518821182,
+          "sentiment": "negative",
+          "topic_ids": ["fc05bd8b-6dc0-4f0f-97a2-f22bdcc39cd1"]
+        },
+        {
+          "id": "453b3485-870b-4a95-a180-b4e0f49b1f17",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Huonot valikoimat Jumbossa.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.2067799291133575,
+          "sentiment": "negative",
+          "topic_ids": ["fc05bd8b-6dc0-4f0f-97a2-f22bdcc39cd1"]
+        },
+        {
+          "id": "04f91514-0a16-47e2-83a0-0f131f834bf4",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Pitkävihaisia mekkoja pitäisi olla näin syksyn alussa.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.15974009562232783,
+          "sentiment": "negative",
+          "topic_ids": ["6ff45cef-ddd7-4a63-8ebf-4d7e90bb9446"]
+        },
+        {
+          "id": "6ed70789-90c6-4f14-8e9f-08c1913d05d7",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Olin kyllä pettynyt.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+          "aspect_id": null,
+          "relevance_score": 0.16707899029660564,
+          "sentiment": "negative",
+          "topic_ids": ["91b8a851-7b3d-469d-b063-97c53e3ff4db"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T09:11:07Z",
+      "tags": {
+        "emotion": "Surprised",
+        "stockmann_id": "a1wVk000000gNqGIAU",
+        "country": "Finland",
+        "store": "Jumbo",
+        "department": "Children's fashion and accessories",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "93f1eb8f-cd94-486e-8819-01b2f18e6baa",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Vastaus tuli nopeasti, vaikka Hullujen päivien aloituspäivänä on varmasti paljon kysymyksiä.",
+      "processed_text": "Vastaus tuli nopeasti, vaikka Hullujen päivien aloituspäivänä on varmasti paljon kysymyksiä.",
+      "spans": [
+        {
+          "id": "6af82eed-8dea-4b11-9182-8ef86b886b92",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Vastaus tuli nopeasti",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.2616311411193917,
+          "sentiment": "positive",
+          "topic_ids": ["65667f11-3979-4326-b32c-f77219e61bb4"]
+        },
+        {
+          "id": "bd4a7cf5-7b5d-4d1e-bc49-c1fac89b915d",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "vaikka Hullujen päivien aloituspäivänä on varmasti paljon kysymyksiä",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d",
+          "aspect_id": null,
+          "relevance_score": 0.2413423342245538,
+          "sentiment": "neutral",
+          "topic_ids": ["e1b81bd6-ed5f-4fe9-b5a9-f12307eb3cf5"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T14:01:22Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqHIAU",
+        "country": "Finland",
+        "evi": "0.66",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "Call Center Survey"
+      }
+    },
+    {
+      "id": "453a3615-ef97-4c2f-9a1b-680f0c31343e",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Asiakaspalvelija selvitti nopeasti ongelmani ja oli ystävällinen",
+      "processed_text": "Asiakaspalvelija selvitti nopeasti ongelmani ja oli ystävällinen",
+      "spans": [
+        {
+          "id": "5ef5418a-e206-48d0-ac8e-de254ce51ab5",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "selvitti nopeasti ongelmani",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.30504757064379795,
+          "sentiment": "positive",
+          "topic_ids": ["65667f11-3979-4326-b32c-f77219e61bb4"]
+        },
+        {
+          "id": "51ba331a-aed5-4c1d-8658-b66de853fc09",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "oli ystävällinen",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.2526959105567688,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T12:37:05Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqJIAU",
+        "evi": "1.0",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "CC chat FIN"
+      }
+    },
+    {
+      "id": "2c4b9b8a-f54f-4ab3-996b-95e0bc5ab0ef",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Tarvitsin myyjien apua kolmessa eri asiassa. Kaikilla kerroilla myyjä oli sopivasti saatavilla ja sain tarvitsemani avun.",
+      "processed_text": "Tarvitsin myyjien apua kolmessa eri asiassa. Kaikilla kerroilla myyjä oli sopivasti saatavilla ja sain tarvitsemani avun.",
+      "spans": [
+        {
+          "id": "f54f2da6-dc62-4ed0-b5d5-b02d37d49c4f",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "sain tarvitsemani avun",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.09763175540288446,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        },
+        {
+          "id": "1ea0b80b-88ab-42f1-a2c7-85e46780f102",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjä oli sopivasti saatavilla",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.22688774415542232,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:33:29Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqOIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "57616fe7-04b2-4747-ba98-204141cdb591",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "No en ole täysin tyytyväinen ostokseeni ja toisella osastolla myyjä ei tiennyt asioita joita kysyin.",
+      "processed_text": "No en ole täysin tyytyväinen ostokseeni ja toisella osastolla myyjä ei tiennyt asioita joita kysyin.",
+      "spans": [
+        {
+          "id": "47e25486-8445-4514-80d3-db402a404916",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjä ei tiennyt asioita joita kysyin",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "82bd1474-f27f-404e-a62e-92d237ae0238",
+          "aspect_id": null,
+          "relevance_score": 0.3109652236203741,
+          "sentiment": "negative",
+          "topic_ids": ["5ce38088-41ba-4d19-a21a-3668692617ee"]
+        },
+        {
+          "id": "1c56248e-0385-4aa2-be6a-ba68cc656030",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "No en ole täysin tyytyväinen ostokseeni",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.21388013143960002,
+          "sentiment": "negative",
+          "topic_ids": ["fc05bd8b-6dc0-4f0f-97a2-f22bdcc39cd1"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:42:26Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNqPIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "OTHER",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "6d4e8045-1e1a-4b92-928e-151deb4472ab",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "I came at just before 17:00 to buy winter shoes for my kid. Second floor was empty, they were busy with yellow days, they told me. When I finally found someone to assist me. She was really nice and assisted me very honestly, I appreciate that. But I could sense everyone where waiting and preparing for tomorrow. \nI was planning on also buying a pair of Dr. Martens Chelsea with fur, according to the webpage they should have been there. But I could not find them and I didn't see anyone that could help me. So I gave up on those and just purchased the winter shoes for my kid. It left me with a feeling of not being welcome. The store was also surprisingly empty - staff and customer wise.",
+      "processed_text": "I came at just before 17:00 to buy winter shoes for my kid. Second floor was empty, they were busy with yellow days, they told me. When I finally found someone to assist me. She was really nice and assisted me very honestly, I appreciate that. But I could sense everyone where waiting and preparing for tomorrow. \nI was planning on also buying a pair of Dr. Martens Chelsea with fur, according to the webpage they should have been there. But I could not find them and I didn't see anyone that could help me. So I gave up on those and just purchased the winter shoes for my kid. It left me with a feeling of not being welcome. The store was also surprisingly empty - staff and customer wise.",
+      "spans": [
+        {
+          "id": "ee46926b-4e51-46b7-9d20-4f1197f86b25",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "When I finally found someone to assist me. She was really nice and assisted me very honestly, I appreciate that.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.3845979825123498,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        },
+        {
+          "id": "128fa0cc-8d99-4b53-bd2a-b60219277faa",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "It left me with a feeling of not being welcome.",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+          "aspect_id": null,
+          "relevance_score": 0.22262929419760713,
+          "sentiment": "negative",
+          "topic_ids": ["bd36fade-e0ce-4907-a093-ccda55789612"]
+        },
+        {
+          "id": "af25c0f4-cdc7-4556-950c-cd1d66598da4",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "I was planning on also buying a pair of Dr. Martens Chelsea with fur, according to the webpage they should have been there. But I could not find them and I didn't see anyone that could help me.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.3336270542746028,
+          "sentiment": "negative",
+          "topic_ids": ["cc5ba3e1-05ce-42ce-b2fc-4e136a2514f0"]
+        },
+        {
+          "id": "50fe8b96-0118-4c49-a2e3-9e5de68e51a7",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "The store was also surprisingly empty - staff and customer wise.",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "80811ea4-c329-4663-af85-26986fc25f33",
+          "aspect_id": null,
+          "relevance_score": 0.38657705547474375,
+          "sentiment": "neutral",
+          "topic_ids": ["3e49cc40-5c26-4c6d-ad16-7036a63afc52"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:28:22Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNqQIAU",
+        "country": "Finland",
+        "store": "Jumbo",
+        "department": "Overall My Visit at Stockmann",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "SV",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "0cb363e2-38c1-4759-a28a-8c462a721439",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Stockmann on luotettava brändi.",
+      "processed_text": "Stockmann on luotettava brändi.",
+      "spans": [
+        {
+          "id": "22e77111-bef1-4c34-ab46-1f5552346d73",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Stockmann on luotettava brändi.",
+          "category_id": "d8ad9038-1e58-4806-bf80-1eb36f14296b",
+          "sub_category_id": "ec6b9213-eb79-4c2e-9d4b-183fd4801767",
+          "aspect_id": null,
+          "relevance_score": 0.6272443244570882,
+          "sentiment": "positive",
+          "topic_ids": ["deea1213-9862-4933-92ae-74977ffb6eee"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T18:24:05Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqSIAU",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Cosmetics",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "4397f4b0-e645-4430-bba6-3c081d702892",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin mitä hain ja kaikki sujui kuten pitää",
+      "processed_text": "Löysin mitä hain ja kaikki sujui kuten pitää",
+      "spans": [
+        {
+          "id": "93516903-83c5-4d92-9d18-dc67ad6332a0",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Löysin mitä hain ja kaikki sujui kuten pitää",
+          "category_id": null,
+          "sub_category_id": null,
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T09:15:02Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqUIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "471ddad2-5169-42b9-bc99-0320634373a8",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Olititte odotukseni nopeudessa, hienoa!",
+      "processed_text": "Olititte odotukseni nopeudessa, hienoa!",
+      "spans": [
+        {
+          "id": "c72ea5d8-b37f-4fa0-a794-a4711302a731",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Olititte odotukseni nopeudessa, hienoa!",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.19291599316878807,
+          "sentiment": "positive",
+          "topic_ids": ["f4567652-1f26-4707-8849-47461bb1e9b3"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:49:29Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqVIAU",
+        "delivery_options_score": "7.0",
+        "delivery_origin": "Jussla",
+        "delivery_time_score": "9.0",
+        "evi": "1.0",
+        "feedback_source": "After Delivery Survey",
+        "language": "FI",
+        "package_quality_score": "8.0",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Delivery Survey Email",
+        "shipping_method": "Pick-up from store",
+        "pickup_location": "Parcel locker",
+        "delivery_partner": "NSHIFT",
+        "carrier_name": "JUMBO STOCKMANN.COM NOUTOPISTE"
+      }
+    },
+    {
+      "id": "5ed3d93a-9c0e-49d8-9786-3cee71ccfc71",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Netin kautta tilaaminen ei onnistu koskaan sujuvasti.",
+      "processed_text": "Netin kautta tilaaminen ei onnistu koskaan sujuvasti.",
+      "spans": [
+        {
+          "id": "74d79746-73b0-444e-84e1-91fe17184cb2",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Netin kautta tilaaminen ei onnistu koskaan sujuvasti.",
+          "category_id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+          "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+          "aspect_id": null,
+          "relevance_score": 0.3268835015849019,
+          "sentiment": "negative",
+          "topic_ids": ["aeccbf15-45a2-439e-986f-ea416b6dcdbd"]
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T13:25:41Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNqZIAU",
+        "evi": "-1.0",
+        "fcr": "No",
+        "feedback_source": "Call Center Survey",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "CC chat FIN"
+      }
+    },
+    {
+      "id": "bdc85e0e-9011-4012-93f7-8637fb08f036",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin etsimäni ja sain kivaa, aktiivista palvelua visualistilta, jolta kysyin asiaani, kun oletin hänet myyjäksi.",
+      "processed_text": "Löysin etsimäni ja sain kivaa, aktiivista palvelua visualistilta, jolta kysyin asiaani, kun oletin hänet myyjäksi.",
+      "spans": [
+        {
+          "id": "b170d8a6-5eb7-4722-8bf3-e69c884560f8",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "sain kivaa, aktiivista palvelua visualistilta, jolta kysyin asiaani",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.2606420614787984,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T09:39:44Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqaIAE",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Sports",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "33000-39999 TAMPERE AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "3e1518ac-55c8-4f51-aa23-a78dca90b885",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Kaikki sujui helposti ja vaivattomasti.",
+      "processed_text": "Kaikki sujui helposti ja vaivattomasti.",
+      "spans": [
+        {
+          "id": "1a9ca8b7-699e-46df-b837-df2ee3705ce0",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kaikki sujui helposti ja vaivattomasti.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.19145843835023837,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T05:19:46Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqbIAE",
+        "evi": "0.66",
+        "feedback_source": "Webstore After-Purchase Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "eCom After-purchase"
+      }
+    },
+    {
+      "id": "c588f3f1-ab28-4b24-963b-bcc459caf090",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Erittäin ystävällinen myyjä",
+      "processed_text": "Erittäin ystävällinen myyjä",
+      "spans": [
+        {
+          "id": "181c6ae5-8420-40cf-9d0e-ed3e9d71c1b2",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Erittäin ystävällinen myyjä",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.3670413996941357,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T04:55:09Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqcIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Home",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "e654283b-41c3-45d0-9fb0-83aaa6f32a30",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "viisakaS suhtlemine",
+      "processed_text": "viisakaS suhtlemine",
+      "spans": [
+        {
+          "id": "61931b59-e9a7-4346-b81f-9836e1dab491",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "viisakaS suhtlemine",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T04:17:06Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqeIAE",
+        "country": "Estonia",
+        "store": "Tallinn department store",
+        "department": "Women’s Fashion and Accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey EE",
+        "language": "ET",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey EE"
+      }
+    },
+    {
+      "id": "0110dff0-6d59-49e3-a041-a5b3c147cd1e",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin hyödyllistä ostettavaa henk.koht. 20% alennuksella",
+      "processed_text": "Löysin hyödyllistä ostettavaa henk.koht. 20% alennuksella",
+      "spans": [
+        {
+          "id": "b7356489-ab95-4e5b-92f9-bb3722c48bfc",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Löysin hyödyllistä ostettavaa henk.koht. 20% alennuksella",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.3642782691928158,
+          "sentiment": "positive",
+          "topic_ids": ["b43e1f5d-1243-4c21-828b-b52ab6454ee0"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:42:42Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqfIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "960bb6a1-1974-4dd6-8baa-bcdcff75ded2",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain haluamani tuotteen. Kassalla ei ruuhkaa. Miellyttävä kassahenkilö.",
+      "processed_text": "Sain haluamani tuotteen. Kassalla ei ruuhkaa. Miellyttävä kassahenkilö.",
+      "spans": [
+        {
+          "id": "05613667-d65f-4b84-aafb-7b2b23e82c5c",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Miellyttävä kassahenkilö.",
+          "category_id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+          "sub_category_id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+          "aspect_id": null,
+          "relevance_score": 0.4357667989567173,
+          "sentiment": "positive",
+          "topic_ids": ["979901ef-2221-4805-bd90-b23b7aca491f"]
+        },
+        {
+          "id": "adf2f715-c0f6-45ce-b4e9-de628ba9622e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Kassalla ei ruuhkaa.",
+          "category_id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+          "sub_category_id": "0d78b861-a3a0-4a88-8317-9a4db65c667c",
+          "aspect_id": null,
+          "relevance_score": 0.3193552621446334,
+          "sentiment": "positive",
+          "topic_ids": ["0a1a5010-77fb-4b9e-bfc1-4849195ecec7"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:54:28Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqgIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "bb9dff2f-6d1e-426b-bc3f-e6f81ad61fae",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Väga lahke müüja, kes aitas jõuda õigele otsusele.",
+      "processed_text": "Väga lahke müüja, kes aitas jõuda õigele otsusele.",
+      "spans": [
+        {
+          "id": "32686a73-f871-4a37-88f9-5384b4fce522",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Väga lahke müüja, kes aitas jõuda õigele otsusele.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.29247014811976924,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:31:03Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNqnIAE",
+        "country": "Estonia",
+        "store": "Tallinn department store",
+        "department": "Women’s Fashion and Accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey EE",
+        "language": "ET",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey EE"
+      }
+    },
+    {
+      "id": "552629e5-c537-4882-ba26-d8010ca76460",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Asiakaspalvelija osasi sanoa, miksi tilaukseni ei onnistu. Piti vaihtaa laite ja selain. Mutta parhaimmat tuotteet olivat ehtineet mennä. Sain kuitenkin tehtyä tilauksen joiltain osin. Ei siis ollut asiakaspalvelijan virhe.",
+      "processed_text": "Asiakaspalvelija osasi sanoa, miksi tilaukseni ei onnistu. Piti vaihtaa laite ja selain. Mutta parhaimmat tuotteet olivat ehtineet mennä. Sain kuitenkin tehtyä tilauksen joiltain osin. Ei siis ollut asiakaspalvelijan virhe.",
+      "spans": [
+        {
+          "id": "d2ca672d-d69d-4f3c-ac18-5ec524a2bc2e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Asiakaspalvelija osasi sanoa, miksi tilaukseni ei onnistu.",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.23926593663461565,
+          "sentiment": "positive",
+          "topic_ids": ["65667f11-3979-4326-b32c-f77219e61bb4"]
+        },
+        {
+          "id": "e2516615-b8ab-4eb6-9902-ac12454838bc",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Mutta parhaimmat tuotteet olivat ehtineet mennä.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.2692558024847065,
+          "sentiment": "negative",
+          "topic_ids": ["7b6d63a1-08c1-4192-842f-e06a3b053cc6"]
+        },
+        {
+          "id": "04d4c7c5-6960-430d-b1fb-109fe7b32650",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Sain kuitenkin tehtyä tilauksen joiltain osin.",
+          "category_id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+          "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+          "aspect_id": null,
+          "relevance_score": 0.24663992915950672,
+          "sentiment": "neutral",
+          "topic_ids": ["aeccbf15-45a2-439e-986f-ea416b6dcdbd"]
+        },
+        {
+          "id": "20acdea6-ab4f-48cf-95f1-b632a80b0b44",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ei siis ollut asiakaspalvelijan virhe.",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.17193387587251957,
+          "sentiment": "neutral",
+          "topic_ids": ["e5a7c5af-95dc-46c2-b3f3-b0d205da33c4"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T06:10:09Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNqoIAE",
+        "evi": "0.33",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "CC chat FIN"
+      }
+    },
+    {
+      "id": "4b79f515-8d86-4dbc-8e45-99a7dba5157b",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain hyvää asiakaspalvelua",
+      "processed_text": "Sain hyvää asiakaspalvelua",
+      "spans": [
+        {
+          "id": "4bec3204-f42e-44cf-b713-eb9f7e1b6f71",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Sain hyvää asiakaspalvelua",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.37053469772755054,
+          "sentiment": "positive",
+          "topic_ids": ["e5a7c5af-95dc-46c2-b3f3-b0d205da33c4"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:22:14Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqqIAE",
+        "evi": "1.0",
+        "feedback_source": "Webstore After-Purchase Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "eCom After-purchase"
+      }
+    },
+    {
+      "id": "8b615c0c-94ef-4a6e-abb9-b8f5f4b88860",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Menin hakemaan tilaamani paidan lasten osastolta. Ehdin jo maksaa ennen kuin huomasin paidan kauluksen olevan rikki. Tilasimme uuden.",
+      "processed_text": "Menin hakemaan tilaamani paidan lasten osastolta. Ehdin jo maksaa ennen kuin huomasin paidan kauluksen olevan rikki. Tilasimme uuden.",
+      "spans": [
+        {
+          "id": "1800668b-520c-41f9-bffb-de8d20382a84",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "huomasin paidan kauluksen olevan rikki",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+          "aspect_id": null,
+          "relevance_score": 0.16659663782343337,
+          "sentiment": "negative",
+          "topic_ids": ["91b8a851-7b3d-469d-b063-97c53e3ff4db"]
+        },
+        {
+          "id": "0d708aca-71f6-4ab2-a1be-0570f7f34692",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Tilasimme uuden",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "neutral",
+          "topic_ids": []
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T13:14:50Z",
+      "tags": {
+        "emotion": "Sadness",
+        "stockmann_id": "a1wVk000000gNqsIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Children's fashion and accessories",
+        "evi": "-1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "6e912971-ac8c-48cf-a4a1-5199a58ff7e9",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain ostettua tarpeelliset meikit ja sukkahousut ym tarpeellisen 20 % alennuksella!",
+      "processed_text": "Sain ostettua tarpeelliset meikit ja sukkahousut ym tarpeellisen 20 % alennuksella!",
+      "spans": [
+        {
+          "id": "bd9d0f44-8385-40fe-800f-a3b0a4bf269e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "20 % alennuksella",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.2803003390843133,
+          "sentiment": "positive",
+          "topic_ids": ["b43e1f5d-1243-4c21-828b-b52ab6454ee0"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:32:31Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNquIAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "466e21bf-397a-405d-b392-07bf826bb408",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin ja sain Hullujen päivien tuotteet, joita olin lähtenyt ostamaan.",
+      "processed_text": "Löysin ja sain Hullujen päivien tuotteet, joita olin lähtenyt ostamaan.",
+      "spans": [
+        {
+          "id": "c1fc00d2-f440-423d-af51-414e1fee7aab",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Löysin ja sain Hullujen päivien tuotteet, joita olin lähtenyt ostamaan.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.32936170341161314,
+          "sentiment": "positive",
+          "topic_ids": ["da1af071-05b7-4a74-9056-60971335bc15"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:17:24Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqvIAE",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Men's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "43941c74-9af1-473a-944e-42e25c846511",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin ja ostin vaatteen jollaisen olin nähnyt ja nyt myös saanut pitkän etsinnän jälkeen.",
+      "processed_text": "Löysin ja ostin vaatteen jollaisen olin nähnyt ja nyt myös saanut pitkän etsinnän jälkeen.",
+      "spans": [
+        {
+          "id": "49379c6c-eef2-430d-8af4-1155d21faea6",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Löysin ja ostin vaatteen jollaisen olin nähnyt",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.21154836888939985,
+          "sentiment": "positive",
+          "topic_ids": ["da1af071-05b7-4a74-9056-60971335bc15"]
+        },
+        {
+          "id": "9fb3708c-66e9-4277-8d3f-be071b7c8710",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "ja nyt myös saanut pitkän etsinnän jälkeen.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:27:18Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqwIAE",
+        "country": "Finland",
+        "store": "Tapiola",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "dc501241-f3cc-462c-bd68-a5f17d765441",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Omat toimitusmaksut, kun ei voinut yhdistää muihin hullutpaivat.com ostoksiin.",
+      "processed_text": "Omat toimitusmaksut, kun ei voinut yhdistää muihin hullutpaivat.com ostoksiin.",
+      "spans": [
+        {
+          "id": "f54f60ee-ea6b-4854-97bd-bfba7ed84795",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Omat toimitusmaksut, kun ei voinut yhdistää muihin hullutpaivat.com ostoksiin.",
+          "category_id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+          "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+          "aspect_id": null,
+          "relevance_score": 0.3092203336977571,
+          "sentiment": "negative",
+          "topic_ids": ["6cf2dafb-a539-46f6-a78f-9c97b9051753"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T05:44:31Z",
+      "tags": {
+        "emotion": "Surprised",
+        "stockmann_id": "a1wVk000000gNqxIAE",
+        "evi": "0.33",
+        "feedback_source": "Webstore After-Purchase Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "eCom After-purchase"
+      }
+    },
+    {
+      "id": "bd9f82e5-669c-4a5d-8f0b-4c27e4af6528",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Löysin hyvän tuotteen hyvällä hinnalla.",
+      "processed_text": "Löysin hyvän tuotteen hyvällä hinnalla.",
+      "spans": [
+        {
+          "id": "7d5b5c8d-0224-4032-b645-fecaae70a9db",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Löysin hyvän tuotteen",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+          "aspect_id": null,
+          "relevance_score": 0.2106919464836873,
+          "sentiment": "positive",
+          "topic_ids": ["b5cfbed7-1dc5-498f-aba7-d1e247e294d8"]
+        },
+        {
+          "id": "977799ed-4d6f-4b8d-8b45-378772135df2",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "hyvällä hinnalla",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "0add798b-ce4d-48fa-9441-cf913114e748",
+          "aspect_id": null,
+          "relevance_score": 0.26264433241181395,
+          "sentiment": "positive",
+          "topic_ids": ["1b7a294c-fcbd-42eb-9c54-53b1c83d02ef"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T18:06:57Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqzIAE",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Children's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "33000-39999 TAMPERE AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "dd21feae-59e1-470c-a29f-8df24f3deaa5",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Lasten vaatteiden ikä 4-5v huonosti valikoimaa.",
+      "processed_text": "Lasten vaatteiden ikä 4-5v huonosti valikoimaa.",
+      "spans": [
+        {
+          "id": "59f48377-6235-4fad-8777-9426e6477799",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "huonosti valikoimaa",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.27780004948101367,
+          "sentiment": "negative",
+          "topic_ids": ["fc05bd8b-6dc0-4f0f-97a2-f22bdcc39cd1"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T18:06:57Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNqzIAE",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Children's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "33000-39999 TAMPERE AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "850068e0-520d-4def-8f36-fee1b47cc2f8",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "kassa 5. krs matto-osastolla oli erittäin ystävällinen ja palvelukykyinen",
+      "processed_text": "kassa 5. krs matto-osastolla oli erittäin ystävällinen ja palvelukykyinen",
+      "spans": [
+        {
+          "id": "fcc3b25a-c77f-4e39-a035-b523730ba1fb",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "krs matto-osastolla oli erittäin ystävällinen",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.2832047812745625,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        },
+        {
+          "id": "878a06df-be11-4bf5-b620-d892467eb73b",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "ja palvelukykyinen",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.18789918267062689,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T20:10:56Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNr0IAE",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Home",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "a7c042f6-4105-4bc0-bccc-3fa245e66c82",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Ystävällinen asikaspalvelu ja sain tuotteet mitkä tulin hakemaan.",
+      "processed_text": "Ystävällinen asikaspalvelu ja sain tuotteet mitkä tulin hakemaan.",
+      "spans": [
+        {
+          "id": "f0aa85aa-a0e2-4197-86fd-0e94c4b01313",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ystävällinen asikaspalvelu ja sain tuotteet mitkä tulin hakemaan.",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d",
+          "aspect_id": null,
+          "relevance_score": 0.3866132880742181,
+          "sentiment": "positive",
+          "topic_ids": ["a8914fab-be80-411c-9379-87f8fc8d7f60"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T11:20:33Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNr1IAE",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "fbbfc25a-8b45-404a-9018-a9eba39336a6",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Toinen tuotteista, jota tulin ostamaan, oli loppuunmyyty.",
+      "processed_text": "Toinen tuotteista, jota tulin ostamaan, oli loppuunmyyty.",
+      "spans": [
+        {
+          "id": "afca0caf-40a1-4368-850a-58058a695a13",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Toinen tuotteista, jota tulin ostamaan, oli loppuunmyyty.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.3249653517663088,
+          "sentiment": "negative",
+          "topic_ids": ["6ff45cef-ddd7-4a63-8ebf-4d7e90bb9446"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T16:30:42Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNr3IAE",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Home",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "33000-39999 TAMPERE AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "ae947efc-575b-440f-9a1d-10adcf1d790d",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Palaute otettiin vastaan ja siitä tuli ystävällinen viesti.",
+      "processed_text": "Palaute otettiin vastaan ja siitä tuli ystävällinen viesti.",
+      "spans": [
+        {
+          "id": "90dd4b82-9e79-4d27-b0c4-9ce7e2d077e0",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Palaute otettiin vastaan ja siitä tuli ystävällinen viesti.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.19925802158540612,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T05:53:21Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNr4IAE",
+        "country": "Finland",
+        "evi": "0.66",
+        "fcr": "Yes",
+        "feedback_source": "Call Center Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "Call Center Survey"
+      }
+    },
+    {
+      "id": "9f615e53-c204-4426-a948-8906930ccc9f",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Visi tik laipni, pievērš neuzbāzīgi uzmanību. Paldies!",
+      "processed_text": "Visi tik laipni, pievērš neuzbāzīgi uzmanību. Paldies!",
+      "spans": [
+        {
+          "id": "e7b841f3-545d-4c1b-85b9-aafbddf531b1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Visi tik laipni, pievērš neuzbāzīgi uzmanību.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.16966007183907064,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:15:29Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNr5IAE",
+        "country": "Latvia",
+        "store": "Riga Department Store",
+        "department": "Home",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey LV",
+        "language": "LV",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey LV"
+      }
+    },
+    {
+      "id": "af9a2975-5fb3-43b4-93af-46b0cd3e5ef8",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Nopirku visu ko biju plānojusi, vienīgi pirms lielās izpārdošanas visi ļoti aizņdmti",
+      "processed_text": "Nopirku visu ko biju plānojusi, vienīgi pirms lielās izpārdošanas visi ļoti aizņdmti",
+      "spans": [
+        {
+          "id": "737b051d-a873-4b11-ad0d-756457478be1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "pirms lielās izpārdošanas visi ļoti aizņdmti",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "80811ea4-c329-4663-af85-26986fc25f33",
+          "aspect_id": null,
+          "relevance_score": 0.26566663259143497,
+          "sentiment": "neutral",
+          "topic_ids": ["43bddbfd-f7d0-4596-b8d1-bac4a315f913"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:05:21Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNr7IAE",
+        "country": "Latvia",
+        "store": "Riga Department Store",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey LV",
+        "language": "LV",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey LV"
+      }
+    },
+    {
+      "id": "804bac78-5ee2-44cb-9edc-3441aaac3020",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hyvä palvelu",
+      "processed_text": "Hyvä palvelu",
+      "spans": [
+        {
+          "id": "cc7ae69c-668d-495c-bbcc-424e1869d696",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hyvä palvelu",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.27840138178620705,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:30:18Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNr9IAE",
+        "country": "Finland",
+        "store": "Turku",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "20000-27999 TURKU AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "f8f0ffa1-7ddb-4734-8163-7d251bf64c6c",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain ne tuotteet hulluilta päiviltä, joita olin tullut hakemaan. Myyjälläkin oli aikaa auttaa minua, eikä tarvinnut juuri jonottaa.",
+      "processed_text": "Sain ne tuotteet hulluilta päiviltä, joita olin tullut hakemaan. Myyjälläkin oli aikaa auttaa minua, eikä tarvinnut juuri jonottaa.",
+      "spans": [
+        {
+          "id": "00c7f5ec-bab1-4f97-aa69-f7b0b2269f41",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Sain ne tuotteet hulluilta päiviltä, joita olin tullut hakemaan.",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.24662437642163448,
+          "sentiment": "positive",
+          "topic_ids": ["da1af071-05b7-4a74-9056-60971335bc15"]
+        },
+        {
+          "id": "c7a00814-6c63-42b2-9b27-8c9b1b107bfd",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Myyjälläkin oli aikaa auttaa minua, eikä tarvinnut juuri jonottaa.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.33830649053193085,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T08:12:26Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNrAIAU",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "33000-39999 TAMPERE AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "bfb44fc1-f975-4b80-96bc-a91f1a6b1bc5",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Pārdevēja ieteica izmantot mēneša kuponu, par ko biju aizmirsis",
+      "processed_text": "Pārdevēja ieteica izmantot mēneša kuponu, par ko biju aizmirsis",
+      "spans": [
+        {
+          "id": "805537ba-4963-477e-a5b5-bac426234bbf",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Pārdevēja ieteica izmantot mēneša kuponu, par ko biju aizmirsis",
+          "category_id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+          "sub_category_id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+          "aspect_id": null,
+          "relevance_score": 0.20641134791952354,
+          "sentiment": "neutral",
+          "topic_ids": ["0844576e-617c-44d3-acac-67730f23d84d"]
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T08:27:47Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNrBIAU",
+        "country": "Latvia",
+        "store": "Riga Department Store",
+        "department": "Cosmetics",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey LV",
+        "language": "LV",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey LV"
+      }
+    },
+    {
+      "id": "949a11a9-28b4-4b2c-bc70-7ab30ec6777f",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "För att den unga försäljaren på kosmetik avdelningen kände bra till produkterna och var mycket trevlig.",
+      "processed_text": "För att den unga försäljaren på kosmetik avdelningen kände bra till produkterna och var mycket trevlig.",
+      "spans": [
+        {
+          "id": "e887b72b-86eb-42de-8c74-2312eb57d25e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "För att den unga försäljaren på kosmetik avdelningen kände bra till produkterna",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "82bd1474-f27f-404e-a62e-92d237ae0238",
+          "aspect_id": null,
+          "relevance_score": 0.36044782318247487,
+          "sentiment": "positive",
+          "topic_ids": ["84c2f51e-66a6-4bb9-8875-af509a25e798"]
+        },
+        {
+          "id": "965c935f-1a73-4dd1-bf0f-c879bf622f21",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "var mycket trevlig",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.23127701483060034,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:22:36Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNrCIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "SV",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "17312f22-c0c6-44df-bce8-5a1cf0e2ad1d",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Olen hieman pettynyt hitaaseen toimitukseen.",
+      "processed_text": "Olen hieman pettynyt hitaaseen toimitukseen.",
+      "spans": [
+        {
+          "id": "689f69d2-3ac6-429f-ad41-8ff95e2f96ec",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Olen hieman pettynyt hitaaseen toimitukseen.",
+          "category_id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+          "sub_category_id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6",
+          "aspect_id": null,
+          "relevance_score": 0.39279584192720196,
+          "sentiment": "negative",
+          "topic_ids": ["638c1233-e5c2-462c-a351-ed73319166bc"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T20:37:51Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNrDIAU",
+        "delivery_options_score": "10.0",
+        "delivery_origin": "SFS",
+        "delivery_time_score": "1.0",
+        "evi": "0.33",
+        "feedback_source": "After Delivery Survey",
+        "language": "FI",
+        "package_quality_score": "10.0",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Delivery Survey Email",
+        "shipping_method": "Standard delivery",
+        "pickup_location": "PostNord Automaatti S-market Tonttila",
+        "delivery_partner": "NSHIFT",
+        "carrier_name": "POSTNORD"
+      }
+    },
+    {
+      "id": "14eca21f-4e55-4463-a870-b7664eb593dd",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Koska yleensä saan asian hoidettua pätevän asiakaspalvelijan kanssa.",
+      "processed_text": "Koska yleensä saan asian hoidettua pätevän asiakaspalvelijan kanssa.",
+      "spans": [],
+      "score": 0.33,
+      "timestamp": "2025-10-01T16:39:09Z",
+      "tags": {
+        "emotion": "Surprised",
+        "stockmann_id": "a1wVk000000gNrEIAU",
+        "country": "Finland",
+        "evi": "0.33",
+        "fcr": "No",
+        "feedback_source": "Call Center Survey",
+        "language": "FI",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "Call Center Survey, Phone"
+      }
+    },
+    {
+      "id": "8c95cba2-f266-4045-9b16-8a35c9824ded",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Sain ostettua kaikki suunnittelemani tuotteet hyvään jäsenhintaan.",
+      "processed_text": "Sain ostettua kaikki suunnittelemani tuotteet hyvään jäsenhintaan.",
+      "spans": [
+        {
+          "id": "cbcfdc45-67fd-40d1-a3af-87f5106eb9c9",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "hyvään jäsenhintaan",
+          "category_id": "e3632fcd-101d-4c79-8472-fb56c12dade6",
+          "sub_category_id": "fb6618f0-854c-446a-9f61-157c977f4727",
+          "aspect_id": null,
+          "relevance_score": 0.1691833912848623,
+          "sentiment": "positive",
+          "topic_ids": ["82282cc1-c9e7-4c5d-a71f-f6f019b73aa3"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:34:54Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNrGIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "e6c625ff-5e1b-4e16-8050-c703869af44e",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Liels preču klāsts",
+      "processed_text": "Liels preču klāsts",
+      "spans": [
+        {
+          "id": "e1f51d77-6e46-47f2-876c-d926a37371ac",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Liels preču klāsts",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+          "aspect_id": null,
+          "relevance_score": 0.2576421655979564,
+          "sentiment": "positive",
+          "topic_ids": ["da1af071-05b7-4a74-9056-60971335bc15"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T07:49:21Z",
+      "tags": {
+        "emotion": "Enthusiastic",
+        "stockmann_id": "a1wVk000000gNrHIAU",
+        "country": "Latvia",
+        "store": "Riga Department Store",
+        "department": "Grocery Store",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey LV",
+        "language": "LV",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey LV"
+      }
+    },
+    {
+      "id": "96bb1bd4-e0bc-416d-a533-4f649612cc17",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hooliv ja tark müüja soovitas, otsis, pakkus. Hea töö",
+      "processed_text": "Hooliv ja tark müüja soovitas, otsis, pakkus. Hea töö",
+      "spans": [
+        {
+          "id": "d0a9e8db-8afd-49ac-a3f6-7e1128f07cdd",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hooliv ja tark müüja soovitas, otsis, pakkus.",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.22747166162248647,
+          "sentiment": "positive",
+          "topic_ids": ["12ba627a-7638-4a40-bd28-106192fa95dd"]
+        },
+        {
+          "id": "37320a7d-6e09-481d-bbab-9ffd5b783ce4",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hea töö",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.12204429273507236,
+          "sentiment": "positive",
+          "topic_ids": ["3ecd86d9-bd19-4089-97d5-82b9cfc5a9ce"]
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-01T16:45:05Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gNrIIAU",
+        "country": "Estonia",
+        "store": "Tallinn department store",
+        "department": "Women’s Fashion and Accessories",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey EE",
+        "language": "ET",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey EE"
+      }
+    },
+    {
+      "id": "dfbfdbd0-99d5-450f-8bdb-b0f6ba43b327",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Allt gick bra",
+      "processed_text": "Allt gick bra",
+      "spans": [
+        {
+          "id": "e1f71fae-d0e2-47ff-be7c-a6039db55e0f",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Allt gick bra",
+          "category_id": null,
+          "sub_category_id": null,
+          "aspect_id": null,
+          "relevance_score": null,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:14:38Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNrKIAU",
+        "country": "Finland",
+        "store": "Tapiola",
+        "department": "Women's fashion and accessories",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "SV",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "touchpoint": "After Sales Survey"
+      }
+    },
+    {
+      "id": "f8899bbd-e444-4a36-80dc-39f6707b590c",
+      "source_id": "378dc668-aa6d-40ce-ba78-1063c2efef14",
+      "source_text": "Hullujen päivien alla ei kannata käydä ostoksilla, myyjät (kosmetiikkaosastolla) eivät olleet kovin palveluhaluisia.",
+      "processed_text": "Hullujen päivien alla ei kannata käydä ostoksilla, myyjät (kosmetiikkaosastolla) eivät olleet kovin palveluhaluisia.",
+      "spans": [
+        {
+          "id": "e724dba6-0ca5-4338-b79a-ef29e74c3c9c",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjät (kosmetiikkaosastolla) eivät olleet kovin palveluhaluisia",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.39124139278937153,
+          "sentiment": "negative",
+          "topic_ids": ["35084c37-06e2-4219-a8a5-61ddaecf6d92"]
+        }
+      ],
+      "score": 0.33,
+      "timestamp": "2025-10-01T07:45:02Z",
+      "tags": {
+        "emotion": "Indifferent",
+        "stockmann_id": "a1wVk000000gNrLIAU",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "evi": "0.33",
+        "feedback_source": "After Sales Survey",
+        "language": "FI",
+        "postal_code_area": "00000-10999 HELSINKI AREA",
+        "evi_destroing": "0.0",
+        "evi_attention": "1.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "touchpoint": "After Sales Survey"
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "42741a23-334c-4e71-b3a3-e02151b81266",
+      "text": "Improve the organization of the checkout services and online store pickups.",
+      "span_ids": [
+        "4de9e1c9-ccf8-4915-adc9-717a9a83f131",
+        "42b8a4ea-ad9c-4743-b7e7-7f38899d26b8"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "37a28f76-76cd-48d5-9f06-420010af8d4b",
+      "text": "Tarjoa Molton Brown suihkugeeliä ja käsivoidetta toivomaasi tuoksua.",
+      "span_ids": ["711b2a67-e42c-41c5-adc2-7c90a36efcad"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "6fcb6604-2101-482f-9c7b-886d0608e4f0",
+      "text": "Offer more affordable shoes and bags made of genuine materials.",
+      "span_ids": ["5ff83cff-8ae6-4a30-84e3-7ffc1c3e642b"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "5eb9b6f0-8a62-491b-819b-a45aea9c9215",
+      "text": "Add women's clothing and home decor items from Next brand.",
+      "span_ids": ["d366ab74-77e7-484d-aad7-3c42e7a25e6b"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "14fc546b-c446-4e37-8389-1c485eb41a4c",
+      "text": "Ensure discounts found in the application are honored at checkout.",
+      "span_ids": [
+        "baaee485-fbde-4f06-ab0e-60c55edef12c",
+        "6384c339-0382-4fa6-ad8c-a2ec60547c6d",
+        "ec5fe67f-b0cb-4bfc-adde-59421be7d2d5",
+        "6c63e09c-2ad7-4764-8014-4d85ecf8dfe7"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "afbe1581-92cd-426c-bd72-0b1557bcdbfd",
+      "text": "Include a dust bag with the 500 euro bag purchase.",
+      "span_ids": ["c5eac4f4-62b2-479b-a186-f506e6c79be9"],
+      "actionability": "easy"
+    },
+    {
+      "id": "1ef85f0e-3a2a-4842-bfae-5267cb4b1ef0",
+      "text": "Use self-service checkouts.",
+      "span_ids": [
+        "977df81d-bff9-4e62-b9fd-e4eb142d241d",
+        "95d32408-7de7-494b-9c47-c99894cfc692",
+        "08eaa714-e4d2-4623-8ced-8dba6edd2166",
+        "6bc6eccb-944a-4b17-ba18-3d48a93975b5"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "b8c826fb-56d8-4fc5-b0f4-047875bb4eb5",
+      "text": "Ensure that the checkout process is clear, especially regarding optional items like bags, to avoid unnecessary charges.",
+      "span_ids": ["d59ed750-2715-433e-b4fa-c893e8074c5d"],
+      "actionability": "easy"
+    },
+    {
+      "id": "c6cc2fae-5588-480e-9268-05cf9c2dcfea",
+      "text": "Correct the sale date for The North Face children's jacket in the Hulluden päivien catalogue.",
+      "span_ids": ["56306397-b548-479e-ba49-0cde0e15b57b"],
+      "actionability": "easy"
+    },
+    {
+      "id": "0a33a118-825b-48e0-ab3c-dc6c6fd8e08b",
+      "text": "Eliminate the postcharge fees.",
+      "span_ids": ["88b60ae2-31aa-4049-92eb-c5ec436462a9"],
+      "actionability": "easy"
+    },
+    {
+      "id": "c70649e4-016b-4768-8bfc-8da892168e1d",
+      "text": "Improve the phone's error indication for wrong numbers.",
+      "span_ids": ["7629ada6-061c-4bc1-bf23-b5c4ee6440a4"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "f898e021-eb40-4c33-8302-363e9e184e36",
+      "text": "Increase the availability of European brands, including trendy and affordable Danish options.",
+      "span_ids": [
+        "b6daa0ce-2d54-4288-bcab-6a81b407768f",
+        "4008cd31-a586-4cc3-be2b-07fc8453d7e7",
+        "430652b2-2eab-44f0-b965-197cbf570bd8",
+        "c6148b31-ea47-465d-b78d-145576d286f8"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "3445188c-ae8e-47cd-a7ee-00169f91a317",
+      "text": "Introduce Lululemon sportswear for both women and men.",
+      "span_ids": ["2714b1cf-9e05-4060-b3e0-8c19e9a4a329"],
+      "actionability": "complex"
+    },
+    {
+      "id": "91acd416-c969-431a-800c-8f9dc280a09e",
+      "text": "Ensure Dr. Martens Chelsea with fur are available for purchase on the website.",
+      "span_ids": ["af25c0f4-cdc7-4556-950c-cd1d66598da4"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "9d58db05-7918-44ce-8413-bf49a412befc",
+      "text": "Use a larger bag for blazers to avoid wrinkling during transport.",
+      "span_ids": ["6ed62875-8849-4bac-85a1-6982def67ca9"],
+      "actionability": "easy"
+    },
+    {
+      "id": "e7872e95-9dd2-401b-abb0-5066491bb802",
+      "text": "Improve the air quality and address the musty smell in the upper floors.",
+      "span_ids": ["d7ceee38-3ee7-4b75-9ee4-61fe9bde2ead"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "65d4aa07-0bd0-45e7-bf5c-94816e9db2c3",
+      "text": "Correct the membership number issue.",
+      "span_ids": ["f4340dec-bd9b-4aa6-8beb-b0ecd78b72ff"],
+      "actionability": "easy"
+    },
+    {
+      "id": "61f371ca-6027-40ef-9100-3cd2c235b205",
+      "text": "Add a reminder feature for users to have their number ready before ordering.",
+      "span_ids": ["7629ada6-061c-4bc1-bf23-b5c4ee6440a4"],
+      "actionability": "complex"
+    },
+    {
+      "id": "fd371327-54bd-4c63-a0a0-f4ee81ddb740",
+      "text": "Reduce the size of the box for shipping to make it easier to carry.",
+      "span_ids": [
+        "2a13dcde-e19a-44e4-9d5e-44eb9939608a",
+        "f209ebd3-bcac-4c2c-82a7-533f5e0528ec"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "d4718a89-4863-438e-8bf2-85393ddf6174",
+      "text": "Increase the availability of Whamisa products.",
+      "span_ids": ["f9282a55-fd42-4992-9c3f-0d16c9c72802"],
+      "actionability": "easy"
+    },
+    {
+      "id": "80ab3276-d82c-4be0-a8d0-41cb6d13bff8",
+      "text": "Reintroduce Moschino clothing to the offerings.",
+      "span_ids": ["e7ea9677-f747-4070-9fd9-01700b6d1bd7"],
+      "actionability": "complex"
+    },
+    {
+      "id": "cea69168-3a46-4a35-b125-e7d6c95820be",
+      "text": "Improve the signage to indicate where each brand's selection is located.",
+      "span_ids": [
+        "7b05549b-89f5-4860-ae40-a144dee4c425",
+        "7e5adaa1-3bc9-4205-9a2a-aa723a1e36ca"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "80ed8d42-b278-4a24-a280-12e34863c4db",
+      "text": "Allow customers to finish shopping before proceeding to checkout.",
+      "span_ids": ["cc79868e-29f3-449a-b7fa-29883506f537"],
+      "actionability": "easy"
+    },
+    {
+      "id": "771d0bcd-e149-4d98-86a3-04aa1fd3ea3d",
+      "text": "Improve customer service by ensuring there's always someone available to check product locations.",
+      "span_ids": ["5dea3ba6-a9d8-4ec8-983f-132744f779a1"],
+      "actionability": "complex"
+    },
+    {
+      "id": "092680ad-10d7-40e1-ae1a-4a98a930e394",
+      "text": "Lisää Lewiksen valikoimaa.",
+      "span_ids": ["1b31e708-afcc-4cf5-9469-3cba8a808aa3"],
+      "actionability": "easy"
+    },
+    {
+      "id": "641a2401-627d-4e13-a08f-c343399c1af2",
+      "text": "Varmista kiinnostavien housujen saatavuus.",
+      "span_ids": ["07ff3b54-2a73-4490-a8ee-a09c5460e0c3"],
+      "actionability": "easy"
+    },
+    {
+      "id": "5842f7e0-ad3a-45ff-bfc7-3e2629fbdb14",
+      "text": "Clarify the distribution of the brochure sent to homes.",
+      "span_ids": ["3a2f2458-98a5-41f4-b6b1-3044bd4d6c4e"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "fa99c60b-b925-4ded-888b-73fb41982400",
+      "text": "Offer plastic bags for carrying purchased products.",
+      "span_ids": [
+        "94c21d2b-76bf-42de-b283-4654be60ca69",
+        "952308f0-6986-45cd-bd6e-9db5d9ade081"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "e8da223a-1e38-46ac-9a56-63cbe912678c",
+      "text": "Laajenna valikoimaa ulkomaisista brändeistä ja väreistä naisille.",
+      "span_ids": [
+        "371e29b3-b670-4405-a6d5-da477d86a66f",
+        "41b585aa-85e0-43af-9290-599601d2f716",
+        "c08a5cf9-1ba9-40f5-a5d0-bc8ba89d7c2f"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "abecf854-02ad-4c06-a78b-410a7ddfb2c8",
+      "text": "Hanki naisten tennisvaatteita ja valkoisia tennistossuja.",
+      "span_ids": ["9a977afb-2be4-44d1-a74c-bfe99f2858ae"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "5f893349-72bc-4f65-ad37-4b1f3b775a69",
+      "text": "Stock more skincare products like Lumene.",
+      "span_ids": ["fa26aa88-6bd6-42cd-9238-5bc9e2f50a04"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "7579c53a-bf1c-4922-a128-c0095bb2c0fd",
+      "text": "Add more cash registers for different departments.",
+      "span_ids": [
+        "5c5e7d15-92d0-4488-b4eb-9969ec4ad5e4",
+        "e5ebe94c-bbfb-46cf-ad3c-0e1106fa522e",
+        "b4898b10-9763-4982-b099-e62c6868e9c3",
+        "6d4fe480-b9aa-44f7-adf1-2a5781445a10",
+        "9e1d6bdd-bece-4b3a-8a4c-8d4b64066d70",
+        "7e2f05f4-5ff8-42d0-81aa-29cec15920f0",
+        "caf19d59-cfb6-4818-a852-4eda501bc7be",
+        "9bbc2c27-faa0-4d60-b2be-50ab9e78468e",
+        "2702888e-0000-4473-a77b-f9bc2be7a575",
+        "cbc87435-1a40-46f4-bafa-1b3316a6f967"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "88578e8a-bc58-46ec-bacc-9f2dbdd41d28",
+      "text": "Include Danish brands such as InWear, Culture, and PBO in women's clothing.",
+      "span_ids": [
+        "2aab44c4-e91e-494a-b08b-3f46f78c7aa4",
+        "8263a79c-ed1e-4b63-8afd-e2496ecb033a"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "aa3a282c-6dfe-440b-ba74-c41dac104129",
+      "text": "Inform the customer that you will assist them shortly if busy.",
+      "span_ids": ["0ee2352a-bfba-4cb6-9b7a-5065a0942cc9"],
+      "actionability": "easy"
+    },
+    {
+      "id": "25f20881-6e0e-4e21-9124-38b3ac6c1d9c",
+      "text": "Address the weaknesses in the loyalty program.",
+      "span_ids": ["4724df90-e198-4429-b74d-d181579bccc8"],
+      "actionability": "complex"
+    },
+    {
+      "id": "d2f29f71-3d06-43f9-baf2-e71f67db4cb1",
+      "text": "Adjust the signage for pillows and blankets at the ceiling to guide correctly.",
+      "span_ids": ["639083b4-1c0c-49b3-9133-7439994c3fdf"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "d7a0eff1-583d-46be-810a-f0414ea33d8b",
+      "text": "Tarjoa juhlakengät miehille.",
+      "span_ids": ["ce06115d-261a-4444-9e18-d16b46fad168"],
+      "actionability": "easy"
+    },
+    {
+      "id": "b6c440e0-5e63-4152-9919-8110cfd014f3",
+      "text": "Address the unpleasant food smell.",
+      "span_ids": ["a14b23d5-ec4c-4a1b-bb13-1cc8d2cf2a32"],
+      "actionability": "easy"
+    },
+    {
+      "id": "e3ad171d-31c8-4ee7-b4d5-f3d7b6b9ea40",
+      "text": "Provide more diverse product images.",
+      "span_ids": ["fe78f791-9fee-4194-8775-7f54f3aeab9a"],
+      "actionability": "easy"
+    },
+    {
+      "id": "8c277697-b44c-493f-a263-e876b951ca96",
+      "text": "Ensure proper sizing information on price tags.",
+      "span_ids": [
+        "cced3b49-f159-49c6-adde-e2edfc772f56",
+        "afa35a95-d77e-4acc-96ec-acfe61cbea60"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "fc935999-73be-453b-be43-d7ffadd18098",
+      "text": "Tarjoa koko 40 ja 40,5 kenkien valikoima.",
+      "span_ids": ["34116195-deda-43b6-afb7-4d0afd778fe6"],
+      "actionability": "easy"
+    },
+    {
+      "id": "25dad13e-b067-4c00-b14b-8dbb6627fea6",
+      "text": "Improve the order processing system to prevent issues with customer orders.",
+      "span_ids": ["d2ca672d-d69d-4f3c-ac18-5ec524a2bc2e"],
+      "actionability": "complex"
+    },
+    {
+      "id": "73b72607-1db2-4389-a156-71e349adff51",
+      "text": "Introduce Gerry Weber products for adult women.",
+      "span_ids": ["b81a83c3-c917-44fd-85b2-17e7bdc42a86"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "b2fb4365-282f-4e3b-9a2d-a12b97caaf32",
+      "text": "Increase the number of sales associates available to help with fitting and finding sizes.",
+      "span_ids": [
+        "ef29aa31-3449-486d-bcf1-94b69fc18a1f",
+        "ff67b359-2b6f-472c-9216-ca0cad8655ce",
+        "ef398faa-9978-4be7-8025-29a9da00028e"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "a28f20ac-2915-47c4-81bf-af74c15755ef",
+      "text": "Ensure fresh stock for arugula to prevent spoiling.",
+      "span_ids": ["3f866055-eafb-479f-985e-5d00a873d5a7"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "be2a8ff3-a48d-45ae-8f51-62a6c7a02b9b",
+      "text": "Return the item to me.",
+      "span_ids": ["fcccc20b-ff53-4943-8ad4-093046f54d52"],
+      "actionability": "easy"
+    },
+    {
+      "id": "8040ac58-c620-4fa9-bc50-550d55a2c155",
+      "text": "Continue stocking Stokkan's own brands such as Noom, Villa Stockmann, and Casa.",
+      "span_ids": ["800a6bb9-1265-4a77-97a8-a7d1407a9f65"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "8b0a2709-d932-4997-b315-6aa29f20b8e3",
+      "text": "Provide samples and clear product labels in the underwear section.",
+      "span_ids": ["325166a9-52f4-46af-aadd-4509e3ba6082"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "2637ebc7-ee3f-40e3-9a57-9dba1e022d9c",
+      "text": "Adjust sign placements to reflect current product locations.",
+      "span_ids": ["74195ed8-fe43-4b2a-a933-e88d767d2fc4"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "316edd66-b9f0-4b2b-b677-f1b60e12d35a",
+      "text": "Provide training for staff to ensure they're more helpful and less dismissive.",
+      "span_ids": ["b1a634de-da39-4b4c-9a0a-fb366d1b5dc8"],
+      "actionability": "complex"
+    },
+    {
+      "id": "386c88da-93e8-4929-8de3-cb813eaad86e",
+      "text": "Provide the correct size of the sweater in stock.",
+      "span_ids": ["dc3154fb-450b-4a13-8082-d15022e4c23e"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "3dfad71a-f599-4b4d-8ab0-5c314b0c11cf",
+      "text": "Provide products in a bag instead of a cardboard box for pickup.",
+      "span_ids": [
+        "952308f0-6986-45cd-bd6e-9db5d9ade081",
+        "e142b5ba-727e-4624-bf3c-84bdd72eb269"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "fd7ce3c4-2e75-44a5-82ac-fdb7d0eb16e1",
+      "text": "Increase the number of sales associates available to help with fitting and finding sizes.",
+      "span_ids": [
+        "ef29aa31-3449-486d-bcf1-94b69fc18a1f",
+        "ff67b359-2b6f-472c-9216-ca0cad8655ce",
+        "6db11b0d-59f0-4a35-8c29-02614186f1ee",
+        "b1a634de-da39-4b4c-9a0a-fb366d1b5dc8",
+        "277d4128-76de-420f-a22a-b450e8ed9138"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "eb9db23d-9065-4a2a-90ec-e92c69444f45",
+      "text": "Tarjoa enemmän vaatteita Hulluilla päivillä.",
+      "span_ids": [
+        "530d47c3-3789-4021-b420-8a4ef0749b40",
+        "72b0cbd9-4e8a-4ae4-91d4-ae5c6b29d6b2"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "85a5a01b-74c3-41d4-af90-314bb4230034",
+      "text": "Add Björn Borg underwear and pajamas.",
+      "span_ids": ["ee9799db-90d7-478b-bbb6-a883c002b51a"],
+      "actionability": "easy"
+    },
+    {
+      "id": "78bcf565-7db1-4d73-b318-d0731d81b2a2",
+      "text": "Include Alfi brand thermos in the selection.",
+      "span_ids": ["d8f3fb0e-8dd5-483c-a999-f3f352319577"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "f588c1f2-562b-40a0-898a-a2515523879d",
+      "text": "Return the dropped pacifier at the checkout.",
+      "span_ids": ["91e0a6da-528a-4c9c-9a91-262d1a9370ba"],
+      "actionability": "easy"
+    },
+    {
+      "id": "ef2a12bf-b35f-42e2-8445-67960c9aa311",
+      "text": "Adjust the parking fee to reflect the hourly rate correctly.",
+      "span_ids": ["beb9ab42-c620-44c0-b396-780c3f368dd0"],
+      "actionability": "easy"
+    },
+    {
+      "id": "61937735-94e6-4f42-b9b5-ad0976f82f33",
+      "text": "Ensure that popular products are in stock.",
+      "span_ids": [
+        "26af33fc-cbe9-4743-bcf4-ab5ac6344f72",
+        "afca0caf-40a1-4368-850a-58058a695a13",
+        "99223ca6-5e6d-4ad1-b41c-f38796690b87",
+        "5cddaa82-3f0f-4ed2-8f63-21ecb99e3329",
+        "e84f4d10-7b8f-47ce-b90f-603e45e20988",
+        "3403e72e-8484-49e5-ab1f-3616ea6f9555",
+        "04f91514-0a16-47e2-83a0-0f131f834bf4"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "22883d43-bc4a-4bc1-8c8c-a60e8a8bdb4f",
+      "text": "Adjust the sleeve design of the cardigans to better fit a more robust body type.",
+      "span_ids": ["ef0d0f8e-6b32-40d5-83ce-6a48794bd62e"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "fbcd48c5-9d08-4b49-97fc-d642bb6e805a",
+      "text": "Tarjoa tyylikkäitä, mukavia arkivaatteita yli 65-vuotiaille.",
+      "span_ids": [
+        "684b8f37-b2cb-4ede-a5bd-45230d21822c",
+        "ce36c8b8-239f-4819-91fb-8cc05d35570d"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "7ce7dc3f-721a-433d-ae6f-dbc0e1115ada",
+      "text": "Extend the -20% discount to the last day for free days off.",
+      "span_ids": ["af5180cc-dfc8-445a-99e7-f49021d1ffc9"],
+      "actionability": "moderate"
+    },
+    {
+      "id": "46570bdb-c7cf-4080-9fb6-10b152b19351",
+      "text": "Lisää plus-koon naisten vaatteiden tarjontaa.",
+      "span_ids": [
+        "175ff689-2350-43ed-af4b-67331477a965",
+        "d7286f13-44ff-4347-9d7f-583175895c38"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "4e99a9bc-c84c-40d0-9c57-2c6b43659e57",
+      "text": "Correct the instructions for the collection point of online store items.",
+      "span_ids": ["bf18b3ca-e750-4ef0-9b4c-37000d11e699"],
+      "actionability": "easy"
+    },
+    {
+      "id": "af492176-41c1-427e-9a38-9ed5f4855c50",
+      "text": "Add Artek products, including lamps and items designed by Alvar Aalto, to the shop in Tapiola.",
+      "span_ids": [
+        "4a078f0f-6d0a-49ec-a03d-290d24dc7f06",
+        "758b5951-265b-4490-b361-a3b4a5fc7203"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "3423261f-9aeb-49a5-af96-1c8d3337c735",
+      "text": "Tarjoa lammasta myyntiin.",
+      "span_ids": ["297d6c4d-484a-401d-b988-c5a63a7694f1"],
+      "actionability": "easy"
+    },
+    {
+      "id": "b28e0eec-687e-4401-8180-571e56354abc",
+      "text": "Add more cash register points.",
+      "span_ids": [
+        "b0388838-b112-4296-92a2-46d5a9c402e0",
+        "5c5e7d15-92d0-4488-b4eb-9969ec4ad5e4",
+        "e5ebe94c-bbfb-46cf-ad3c-0e1106fa522e",
+        "9e1d6bdd-bece-4b3a-8a4c-8d4b64066d70",
+        "caf19d59-cfb6-4818-a852-4eda501bc7be",
+        "9bbc2c27-faa0-4d60-b2be-50ab9e78468e",
+        "2702888e-0000-4473-a77b-f9bc2be7a575"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "38a4c119-dcd6-4412-9ffe-2c16bb7becd6",
+      "text": "Expand availability of items beyond just Helsinki store.",
+      "span_ids": ["c7ec2a76-e118-4bd6-8262-ad46d44fa24e"],
+      "actionability": "complex"
+    },
+    {
+      "id": "3b5f7987-abca-4a6c-bb1a-6b4bfa0a0d06",
+      "text": "Replace the broken collar on the shirt.",
+      "span_ids": ["1800668b-520c-41f9-bffb-de8d20382a84"],
+      "actionability": "easy"
+    },
+    {
+      "id": "0be7d800-6bfb-4e41-9cb3-927e74ee696e",
+      "text": "Lisää plus-koon naisten vaatteiden tarjontaa.",
+      "span_ids": [
+        "175ff689-2350-43ed-af4b-67331477a965",
+        "32140108-c1ff-4b6a-9093-ac335a4f7c24",
+        "b8033207-45fa-4e4c-917c-6c97ee8f8c5c"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "bf8b8c1c-ecf1-4758-80b6-9cbfb929008b",
+      "text": "Fix the issue with adding products to the shopping cart on the Hullude päevade website.",
+      "span_ids": ["31f450e5-38cb-4984-9228-860248c9f658"],
+      "actionability": "easy"
+    },
+    {
+      "id": "999ab7e6-aa25-4b93-b33b-e547422e693b",
+      "text": "Provide more staff assistance in the Chanel department.",
+      "span_ids": [
+        "101e3275-dabd-4606-91fd-70605d569be9",
+        "ef29aa31-3449-486d-bcf1-94b69fc18a1f",
+        "f6b6f7ff-8acc-4000-9afc-4f175d4198e6",
+        "5dea3ba6-a9d8-4ec8-983f-132744f779a1",
+        "6db11b0d-59f0-4a35-8c29-02614186f1ee",
+        "b1a634de-da39-4b4c-9a0a-fb366d1b5dc8",
+        "277d4128-76de-420f-a22a-b450e8ed9138"
+      ],
+      "actionability": "easy"
+    }
+  ]
+}

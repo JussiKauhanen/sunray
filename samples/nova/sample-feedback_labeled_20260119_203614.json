@@ -1,0 +1,55 @@
+[
+  {
+    "id": "fb001",
+    "feedback": "Todella hyv\u00e4 palvelu, kiitos!",
+    "customer_id": "12345",
+    "timestamp": "2026-01-16T10:30:00Z",
+    "labels": {
+      "category": "service",
+      "sentiment": "positive",
+      "subcategory": "great_service",
+      "language": "fi",
+      "priority": "medium",
+      "summary": "Customer expresses satisfaction with the service",
+      "confidence": "high"
+    },
+    "processed_at": "2026-01-19T20:36:14.002661",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb002",
+    "feedback": "Couldn't complete my purchase, payment failed",
+    "customer_id": "67890",
+    "timestamp": "2026-01-16T11:15:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"payment\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"payment_failed\",\n  \"language\": \"en\",\n  \"priority\": \"high\",\n  \"summary\": \"Customer reports failed payment during purchase\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:36:14.472228",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  },
+  {
+    "id": "fb003",
+    "feedback": "Selection is quite poor",
+    "customer_id": "11111",
+    "timestamp": "2026-01-16T12:00:00Z",
+    "labels": {
+      "error": "Failed to parse Nova response",
+      "raw_response": "```json\n{\n  \"category\": \"product\",\n  \"sentiment\": \"negative\",\n  \"subcategory\": \"poor_selection\",\n  \"language\": \"en\",\n  \"priority\": \"medium\",\n  \"summary\": \"Customer reports a poor selection of products\",\n  \"confidence\": \"high\"\n}\n```",
+      "category": "general",
+      "sentiment": "neutral",
+      "priority": "low"
+    },
+    "processed_at": "2026-01-19T20:36:14.965032",
+    "processor": "amazon-nova",
+    "model": "eu.amazon.nova-lite-v1:0",
+    "environment": "dev"
+  }
+]

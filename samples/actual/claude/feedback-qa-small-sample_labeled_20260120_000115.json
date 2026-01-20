@@ -1,0 +1,1004 @@
+{
+  "version": "3.0",
+  "document_batch_id": "a487b808-5379-45eb-819a-53baef5a9870",
+  "ontology": {
+    "categories": [
+      {
+        "id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+        "name": "Staff",
+        "sub_categories": [
+          {
+            "id": "82bd1474-f27f-404e-a62e-92d237ae0238",
+            "name": "Knowledge"
+          },
+          {
+            "id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+            "name": "Friendliness"
+          },
+          {
+            "id": "98759502-46bd-42ad-a654-9cb3a4a3a5f9",
+            "name": "Appearance"
+          },
+          {
+            "id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+            "name": "Helpfulness"
+          }
+        ]
+      },
+      {
+        "id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+        "name": "Physical Store Environment",
+        "sub_categories": [
+          {
+            "id": "cae1edaa-ec57-4da9-9243-00c00da1985f",
+            "name": "Cleanliness"
+          },
+          {
+            "id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff",
+            "name": "Layout"
+          },
+          {
+            "id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+            "name": "Ambiance"
+          },
+          {
+            "id": "627749e1-54e4-43e9-b594-343b53bbf15b",
+            "name": "Displays"
+          },
+          {
+            "id": "4d791564-315d-480b-a303-08db84d2a0cd",
+            "name": "Opening Hours"
+          },
+          {
+            "id": "80811ea4-c329-4663-af85-26986fc25f33",
+            "name": "Crowds"
+          }
+        ]
+      },
+      {
+        "id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+        "name": "Checkout",
+        "sub_categories": [
+          {
+            "id": "0d78b861-a3a0-4a88-8317-9a4db65c667c",
+            "name": "Speed"
+          },
+          {
+            "id": "78255eae-a1dc-493c-9b82-a4f943f4693c",
+            "name": "Payment Options"
+          },
+          {
+            "id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a",
+            "name": "Service"
+          }
+        ]
+      },
+      {
+        "id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+        "name": "Product",
+        "sub_categories": [
+          {
+            "id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2",
+            "name": "Selection"
+          },
+          {
+            "id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+            "name": "Sizing"
+          },
+          {
+            "id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+            "name": "Quality"
+          },
+          {
+            "id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+            "name": "Availability"
+          }
+        ]
+      },
+      {
+        "id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+        "name": "Pricing",
+        "sub_categories": [
+          {
+            "id": "0add798b-ce4d-48fa-9441-cf913114e748",
+            "name": "Value for Money"
+          },
+          {
+            "id": "2de4e32c-659f-42ff-848c-527a082d61a4",
+            "name": "Discounts"
+          },
+          {
+            "id": "142ccedc-feb8-4cf4-a685-3d8da84a343c",
+            "name": "Promotions"
+          },
+          {
+            "id": "546efaa7-9099-4659-8129-1988ff79e2a8",
+            "name": "Affordability"
+          }
+        ]
+      },
+      {
+        "id": "8804b4e1-6abb-4a0e-b4e5-e5281fbaf74f",
+        "name": "Returns",
+        "sub_categories": [
+          {
+            "id": "ea678c85-de09-4bb3-9ecd-bdeecbf861a6",
+            "name": "Speed"
+          },
+          {
+            "id": "0fdbc941-56b3-4478-84f5-3f50ae5dbae7",
+            "name": "Process"
+          }
+        ]
+      },
+      {
+        "id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+        "name": "Customer Support",
+        "sub_categories": [
+          {
+            "id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+            "name": "Responsiveness"
+          },
+          {
+            "id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d",
+            "name": "Support Channels"
+          }
+        ]
+      },
+      {
+        "id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+        "name": "Online Experience",
+        "sub_categories": [
+          {
+            "id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+            "name": "Checkout"
+          },
+          {
+            "id": "7bd31ca0-3a5e-41b8-bd9d-68b8be81b1b5",
+            "name": "Mobile App"
+          },
+          {
+            "id": "0df1c6cc-205a-40df-a8e4-06887bd78c42",
+            "name": "Product Selection"
+          },
+          {
+            "id": "811e5b24-a546-4f1b-8344-e9486921efb2",
+            "name": "Website Usability"
+          }
+        ]
+      },
+      {
+        "id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+        "name": "Shipping & Delivery",
+        "sub_categories": [
+          {
+            "id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6",
+            "name": "Speed"
+          },
+          {
+            "id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+            "name": "Cost"
+          },
+          {
+            "id": "a0f78830-a937-41dc-bbf9-21eb8e28dd70",
+            "name": "Tracking"
+          }
+        ]
+      },
+      {
+        "id": "e3632fcd-101d-4c79-8472-fb56c12dade6",
+        "name": "Loyalty",
+        "sub_categories": [
+          {
+            "id": "fb6618f0-854c-446a-9f61-157c977f4727",
+            "name": "Benefits"
+          },
+          {
+            "id": "ee826e8d-f82b-45a2-814d-cd59bf894944",
+            "name": "Enrollment"
+          }
+        ]
+      },
+      {
+        "id": "d76d8f67-6a52-4315-89e6-9ab7012c3bb4",
+        "name": "Sustainability",
+        "sub_categories": [
+          {
+            "id": "fad2a523-ca67-4377-9618-b8ff94fd052f",
+            "name": "Ethical Sourcing"
+          },
+          {
+            "id": "ac454d13-c8ef-45af-8b9c-24fa1ff58443",
+            "name": "Environmental Impact"
+          }
+        ]
+      },
+      {
+        "id": "d8ad9038-1e58-4806-bf80-1eb36f14296b",
+        "name": "Marketing",
+        "sub_categories": [
+          {
+            "id": "272588b7-2fc6-4f66-b86d-05f1fb6fee07",
+            "name": "Advertising"
+          },
+          {
+            "id": "ec6b9213-eb79-4c2e-9d4b-183fd4801767",
+            "name": "Brand Image"
+          }
+        ]
+      },
+      {
+        "id": "feb06d04-c2aa-439a-b8a0-ac21859fba22",
+        "name": "Food & Beverage",
+        "sub_categories": [
+          {
+            "id": "1e239253-7377-4768-b992-7284fc70cd7e",
+            "name": "Quality"
+          },
+          {
+            "id": "57f569cb-48e4-4a4a-b579-37c8df301083",
+            "name": "Price"
+          },
+          {
+            "id": "2a89dc87-c192-4d6c-a8b4-cdd37a5fb6fe",
+            "name": "Variety"
+          }
+        ]
+      }
+    ]
+  },
+  "topics": [
+    {
+      "id": "52d18c99-d385-4a65-8899-a38cda611258",
+      "title": "Checkout functionality issues",
+      "description": "Customer unable to add products to cart on promotional pages, specifically children's Superyellow hats, resulting in abandoned purchase",
+      "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+      "nps": 0.0
+    },
+    {
+      "id": "985debee-f3c0-4e7a-bac1-2fa942032389",
+      "title": "Product availability problems",
+      "description": "Items listed as available for sale but cannot be purchased due to technical issues",
+      "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+      "nps": 0.0
+    },
+    {
+      "id": "b1f32e4c-6114-403f-b3a5-bc87614d45b4",
+      "title": "Shipping cost calculation error",
+      "description": "Shipping costs not displaying properly, preventing checkout completion",
+      "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+      "nps": 0.0
+    },
+    {
+      "id": "e0c0c66e-a9bc-4a1c-8fbc-02b35f3167b9",
+      "title": "Staff Friendliness",
+      "description": "Customer appreciated the friendly attitude of the cosmetics department staff member",
+      "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+      "nps": 0.0
+    },
+    {
+      "id": "3f95eacc-bb45-4a60-95fc-9564a6644a7a",
+      "title": "Staff Helpfulness",
+      "description": "Staff member provided helpful assistance in finding products for the customer",
+      "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+      "nps": 0.0
+    },
+    {
+      "id": "67272c3d-b710-455b-adb2-f949bd292149",
+      "title": "Helpful Staff Service",
+      "description": "Customer received good service from staff who helped find the right size and ordered items from another store location",
+      "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+      "nps": 0.0
+    },
+    {
+      "id": "c17d5b6a-3b73-45f5-8b9f-2c7cd78d2421",
+      "title": "Size Availability Issues",
+      "description": "Frequent problems with smaller sizes (36) being out of stock, affecting multiple customers looking for the same sizes",
+      "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+      "nps": 0.0
+    },
+    {
+      "id": "8c9dffaa-6e9d-4709-86e8-e2413e8ea010",
+      "title": "Sizing Range Problems",
+      "description": "Specific items like Sandi's checkered skirts only available in larger sizes (40+) when smaller sizes would sell better",
+      "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+      "nps": 0.0
+    },
+    {
+      "id": "ccfa2f47-d3bf-4328-b8e5-cf2bb5d89361",
+      "title": "Good Service Experience",
+      "description": "Customer expresses satisfaction with service quality but cannot suggest new brands",
+      "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+      "nps": 0.0
+    },
+    {
+      "id": "2f9b3013-cf16-426a-8152-6aac6cc57d74",
+      "title": "Busy Store Atmosphere",
+      "description": "Customer acknowledges a busy or hectic store environment but expresses it in a positive way with a smiling emoji, suggesting they don't mind the bustling atmosphere",
+      "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+      "nps": 0.0
+    },
+    {
+      "id": "05001dc9-9ae6-4a91-9463-766a81ab6ab7",
+      "title": "Product Quality Satisfaction",
+      "description": "Customer expressed satisfaction with the quality of clothing purchased, describing them as satisfactory",
+      "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+      "nps": 0.0
+    },
+    {
+      "id": "67f7fc94-40ce-4314-a3d6-602a1ab77584",
+      "title": "Overall Store Experience",
+      "description": "Customer had a positive overall shopping experience in the store environment",
+      "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+      "nps": 0.0
+    }
+  ],
+  "documents": [
+    {
+      "id": "b872c4c9-76bc-4634-b79d-d4329bed0dd8",
+      "source_id": "a1wVk000000gNprIAE",
+      "source_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli. Palun tehke see võimalusel korda.",
+      "processed_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada. Superyellow mütsid lastele müügis, osta ei ole võimalik. Ostukorvi lisada ei saa. Postikulu täis ei tule, jätsin ostu pooleli. Palun tehke see võimalusel korda.",
+      "spans": [
+        {
+          "id": "b0b66c63-2328-4c6b-a5c9-59a35fe7a5a4",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Hullude päevade lehel ei ole võimalik osasid tooteid ostukorvi lisada",
+          "category_id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+          "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "negative",
+          "topic_ids": []
+        },
+        {
+          "id": "c43d0f53-19f0-4b56-b1ea-150f3444f245",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Superyellow mütsid lastele müügis, osta ei ole võimalik",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.8,
+          "sentiment": "negative",
+          "topic_ids": []
+        },
+        {
+          "id": "57e5bf2e-735a-43af-84c0-9d58f07b43f2",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ostukorvi lisada ei saa",
+          "category_id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+          "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "negative",
+          "topic_ids": []
+        },
+        {
+          "id": "480e04a8-8902-47f5-9bc2-f696062906ef",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Postikulu täis ei tule, jätsin ostu pooleli",
+          "category_id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+          "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+          "aspect_id": null,
+          "relevance_score": 0.7,
+          "sentiment": "negative",
+          "topic_ids": []
+        }
+      ],
+      "score": -1.0,
+      "timestamp": "2025-10-01T11:38:54.000Z",
+      "tags": {
+        "emotion": "Frustrated",
+        "stockmann_id": "a1wVk000000gNprIAE",
+        "evi": "-1.0",
+        "feedback_source": "Webstore Pre-Purchase Survey",
+        "language": "et",
+        "touchpoint": "eCom pre-purchase EE",
+        "evi_destroing": "1.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "0.0",
+        "ai_confidence": "high"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "negative",
+        "topics": [
+          {
+            "title": "Checkout functionality issues",
+            "description": "Customer unable to add products to cart on promotional pages, specifically children's Superyellow hats, resulting in abandoned purchase",
+            "sub_category_id": "ea220b26-8607-4641-9f0a-85a04080cc6b",
+            "sentiment": "negative"
+          },
+          {
+            "title": "Product availability problems",
+            "description": "Items listed as available for sale but cannot be purchased due to technical issues",
+            "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+            "sentiment": "negative"
+          },
+          {
+            "title": "Shipping cost calculation error",
+            "description": "Shipping costs not displaying properly, preventing checkout completion",
+            "sub_category_id": "cb4378b6-3e91-4362-bb2d-6276d6353189",
+            "sentiment": "negative"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Fix the add-to-cart functionality on promotional pages to ensure all displayed products can be purchased",
+            "actionability": "moderate",
+            "related_span_indices": [
+              0,
+              2
+            ]
+          },
+          {
+            "text": "Resolve the shipping cost calculation issue to prevent checkout abandonment",
+            "actionability": "moderate",
+            "related_span_indices": [
+              3
+            ]
+          },
+          {
+            "text": "Implement quality assurance testing for promotional campaigns to ensure all featured products are purchasable",
+            "actionability": "complex",
+            "related_span_indices": [
+              0,
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "e5d601b6-e75c-4ca3-9120-4aa9db99e25d",
+      "source_id": "a1wVk000000gNpsIAE",
+      "source_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "processed_text": "Ystävällinen kosmetiikka puolen myyjä, joka auttoi tuotteen etsimisessä.",
+      "spans": [
+        {
+          "id": "9e9d3850-db23-4c06-891f-f094c66ca0fb",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Ystävällinen kosmetiikka puolen myyjä",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "positive",
+          "topic_ids": []
+        },
+        {
+          "id": "52d2291d-88f5-4bb6-af7f-9be62ef96cd8",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "auttoi tuotteen etsimisessä",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T07:44:06.000Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpsIAE",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "fi",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "ai_confidence": "high",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Cosmetics",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "positive",
+        "topics": [
+          {
+            "title": "Staff Friendliness",
+            "description": "Customer appreciated the friendly attitude of the cosmetics department staff member",
+            "sub_category_id": "861d52ae-6b59-4060-845b-2af8ce476fd1",
+            "sentiment": "positive"
+          },
+          {
+            "title": "Staff Helpfulness",
+            "description": "Staff member provided helpful assistance in finding products for the customer",
+            "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+            "sentiment": "positive"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Continue training staff to maintain high levels of friendliness and product knowledge in the cosmetics department",
+            "actionability": "easy",
+            "related_span_indices": [
+              0,
+              1
+            ]
+          },
+          {
+            "text": "Use this positive staff interaction as a training example for other departments",
+            "actionability": "moderate",
+            "related_span_indices": [
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d668ff40-3391-4d4d-abb3-c66e4fcefb16",
+      "source_id": "a1wVk000000gNpuIAE",
+      "source_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta. Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "processed_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa. Ei löytynyt joten myyjä tilasi sen Tapiolasta. Brändejä jo tarpeeksi mutta pienemmät koot kuten 36 menee heti. Esim Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot. 3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein.\n'",
+      "spans": [
+        {
+          "id": "6e06ac8c-9f78-4682-98df-11c8c3e36cd1",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Sain hyvää palvelua 30.9.etsiessäni naisten alusvaateostolla oikeaa kokoa",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "positive",
+          "topic_ids": []
+        },
+        {
+          "id": "5f0961c8-3ef3-4b7e-b3e2-602378a8bcf7",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "myyjä tilasi sen Tapiolasta",
+          "category_id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+          "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+          "aspect_id": null,
+          "relevance_score": 0.8,
+          "sentiment": "positive",
+          "topic_ids": []
+        },
+        {
+          "id": "1b57e53a-a924-43fc-b91d-ac83d04d47a4",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "pienemmät koot kuten 36 menee heti",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "negative",
+          "topic_ids": []
+        },
+        {
+          "id": "40c87a05-7634-4804-a616-c6b171647f2e",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Sandin tiettu ruutuhame olisi mennyt hyvin kaupaksi mutta jäljellä vain 40 yli olevat koot",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+          "aspect_id": null,
+          "relevance_score": 0.8,
+          "sentiment": "negative",
+          "topic_ids": []
+        },
+        {
+          "id": "9343972a-0e9d-4a3a-a71c-57671477fef0",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "3 ystävästä saman koon 36 etsinnässä. Koko-ongelmia aika usein",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+          "aspect_id": null,
+          "relevance_score": 1.0,
+          "sentiment": "negative",
+          "topic_ids": []
+        }
+      ],
+      "score": 0.66,
+      "timestamp": "2025-10-01T11:40:01.000Z",
+      "tags": {
+        "emotion": "Trusting",
+        "stockmann_id": "a1wVk000000gNpuIAE",
+        "evi": "0.66",
+        "feedback_source": "After Sales Survey",
+        "language": "fi",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "0.0",
+        "evi_trusting": "1.0",
+        "ai_confidence": "high",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "mixed",
+        "topics": [
+          {
+            "title": "Helpful Staff Service",
+            "description": "Customer received good service from staff who helped find the right size and ordered items from another store location",
+            "sub_category_id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1",
+            "sentiment": "positive"
+          },
+          {
+            "title": "Size Availability Issues",
+            "description": "Frequent problems with smaller sizes (36) being out of stock, affecting multiple customers looking for the same sizes",
+            "sub_category_id": "9e5a4197-cb15-4553-9272-f17566cb6a61",
+            "sentiment": "negative"
+          },
+          {
+            "title": "Sizing Range Problems",
+            "description": "Specific items like Sandi's checkered skirts only available in larger sizes (40+) when smaller sizes would sell better",
+            "sub_category_id": "8e0e5a4e-6d93-4dbf-882f-8be094365438",
+            "sentiment": "negative"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Improve inventory management for smaller sizes, especially size 36, to reduce frequent stockouts",
+            "actionability": "moderate",
+            "related_span_indices": [
+              2,
+              4
+            ]
+          },
+          {
+            "text": "Analyze sales data to better predict demand for smaller sizes and adjust ordering accordingly",
+            "actionability": "moderate",
+            "related_span_indices": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "text": "Continue training staff on inter-store ordering processes as this was appreciated by the customer",
+            "actionability": "easy",
+            "related_span_indices": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "8a0b2aad-9a1e-4618-8c56-111dcf8337d8",
+      "source_id": "a1wVk000000gVoUIAU",
+      "source_text": "Bra service Kan inte komma på något nytt märke",
+      "processed_text": "Bra service Kan inte komma på något nytt märke",
+      "spans": [
+        {
+          "id": "27312d28-c1b0-4550-860c-f650c09736df",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Bra service",
+          "category_id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+          "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-02T17:16:45.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVoUIAU",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "sv",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "ai_confidence": "high",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Children's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "positive",
+        "topics": [
+          {
+            "title": "Good Service Experience",
+            "description": "Customer expresses satisfaction with service quality but cannot suggest new brands",
+            "sub_category_id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452",
+            "sentiment": "positive"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Continue maintaining high service standards as they are appreciated by customers",
+            "actionability": "easy",
+            "related_span_indices": [
+              0
+            ]
+          },
+          {
+            "text": "Consider providing brand recommendations or new product suggestions to help customers discover new options",
+            "actionability": "moderate",
+            "related_span_indices": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "b3838070-ac4a-405a-b038-e285768ba5ed",
+      "source_id": "a1wVk000000gVqvIAE",
+      "source_text": "Because it's crazy day ☺️",
+      "processed_text": "Because it's crazy day ☺️",
+      "spans": [
+        {
+          "id": "e93cf39a-6c94-428d-b678-44ad0cc44977",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "Because it's crazy day ☺️",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+          "aspect_id": null,
+          "relevance_score": 0.6,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-02T14:42:16.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVqvIAE",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "en",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "ai_confidence": "low",
+        "country": "Finland",
+        "store": "Helsinki",
+        "department": "Women's fashion and accessories",
+        "postal_code_area": "00000-10999 HELSINKI AREA"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "positive",
+        "topics": [
+          {
+            "title": "Busy Store Atmosphere",
+            "description": "Customer acknowledges a busy or hectic store environment but expresses it in a positive way with a smiling emoji, suggesting they don't mind the bustling atmosphere",
+            "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+            "sentiment": "positive"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Monitor store traffic patterns to better manage busy periods and ensure customer comfort during peak times",
+            "actionability": "moderate",
+            "related_span_indices": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "5e3f8c38-02a7-4270-a326-59ac51bbbd30",
+      "source_id": "a1wVk000000gVrpIAE",
+      "source_text": "I bought satisfactory clothes and had a good shopping experience.",
+      "processed_text": "I bought satisfactory clothes and had a good shopping experience.",
+      "spans": [
+        {
+          "id": "9e4a5db0-8eec-49aa-9ec4-aa4283ff1f98",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "bought satisfactory clothes",
+          "category_id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+          "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+          "aspect_id": null,
+          "relevance_score": 0.8,
+          "sentiment": "positive",
+          "topic_ids": []
+        },
+        {
+          "id": "b1b7182d-2e0a-4773-b59e-4fb7ccf1ca42",
+          "start_index": 0,
+          "end_index": 0,
+          "processed_text": "good shopping experience",
+          "category_id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+          "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+          "aspect_id": null,
+          "relevance_score": 0.9,
+          "sentiment": "positive",
+          "topic_ids": []
+        }
+      ],
+      "score": 1.0,
+      "timestamp": "2025-10-02T16:08:23.000Z",
+      "tags": {
+        "emotion": "Joy",
+        "stockmann_id": "a1wVk000000gVrpIAE",
+        "evi": "1.0",
+        "feedback_source": "After Sales Survey",
+        "language": "en",
+        "touchpoint": "After Sales Survey",
+        "evi_destroing": "0.0",
+        "evi_attention": "0.0",
+        "evi_advocacy": "1.0",
+        "evi_trusting": "0.0",
+        "ai_confidence": "high",
+        "country": "Finland",
+        "store": "Tampere",
+        "department": "Women's fashion and accessories"
+      },
+      "claude_analysis": {
+        "overall_sentiment": "positive",
+        "topics": [
+          {
+            "title": "Product Quality Satisfaction",
+            "description": "Customer expressed satisfaction with the quality of clothing purchased, describing them as satisfactory",
+            "sub_category_id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6",
+            "sentiment": "positive"
+          },
+          {
+            "title": "Overall Store Experience",
+            "description": "Customer had a positive overall shopping experience in the store environment",
+            "sub_category_id": "f9a223c2-890c-46a6-8271-edc93f54b48b",
+            "sentiment": "positive"
+          }
+        ],
+        "suggestions": [
+          {
+            "text": "Continue maintaining current product quality standards and store environment to preserve positive customer experiences",
+            "actionability": "easy",
+            "related_span_indices": [
+              0,
+              1
+            ]
+          },
+          {
+            "text": "Consider following up with customer to understand specific aspects that made the experience good for improvement insights",
+            "actionability": "moderate",
+            "related_span_indices": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "45abcdb9-655b-450f-8bd8-7b36f2c20d38",
+      "text": "Fix the add-to-cart functionality on promotional pages to ensure all displayed products can be purchased",
+      "span_ids": [
+        "b0b66c63-2328-4c6b-a5c9-59a35fe7a5a4",
+        "57e5bf2e-735a-43af-84c0-9d58f07b43f2"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "9d92bcc5-5162-473e-9174-b24199d0bd1f",
+      "text": "Resolve the shipping cost calculation issue to prevent checkout abandonment",
+      "span_ids": [
+        "480e04a8-8902-47f5-9bc2-f696062906ef"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "76701787-7b86-4326-bedc-0fe4865f8062",
+      "text": "Implement quality assurance testing for promotional campaigns to ensure all featured products are purchasable",
+      "span_ids": [
+        "b0b66c63-2328-4c6b-a5c9-59a35fe7a5a4",
+        "c43d0f53-19f0-4b56-b1ea-150f3444f245",
+        "57e5bf2e-735a-43af-84c0-9d58f07b43f2"
+      ],
+      "actionability": "complex"
+    },
+    {
+      "id": "f2c99069-1eef-4a1e-9f02-7273edfbe646",
+      "text": "Continue training staff to maintain high levels of friendliness and product knowledge in the cosmetics department",
+      "span_ids": [
+        "9e9d3850-db23-4c06-891f-f094c66ca0fb",
+        "52d2291d-88f5-4bb6-af7f-9be62ef96cd8"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "c9542311-42a3-47e6-b75f-3127a998354f",
+      "text": "Use this positive staff interaction as a training example for other departments",
+      "span_ids": [
+        "9e9d3850-db23-4c06-891f-f094c66ca0fb",
+        "52d2291d-88f5-4bb6-af7f-9be62ef96cd8"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "8763bb3a-ac53-4c3f-9239-d2b2846c8fac",
+      "text": "Improve inventory management for smaller sizes, especially size 36, to reduce frequent stockouts",
+      "span_ids": [
+        "1b57e53a-a924-43fc-b91d-ac83d04d47a4",
+        "9343972a-0e9d-4a3a-a71c-57671477fef0"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "27f5bf73-6cbf-45b5-bd5d-13e4018ab170",
+      "text": "Analyze sales data to better predict demand for smaller sizes and adjust ordering accordingly",
+      "span_ids": [
+        "1b57e53a-a924-43fc-b91d-ac83d04d47a4",
+        "40c87a05-7634-4804-a616-c6b171647f2e",
+        "9343972a-0e9d-4a3a-a71c-57671477fef0"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "101479e3-a39c-4101-9cca-889db4f7f497",
+      "text": "Continue training staff on inter-store ordering processes as this was appreciated by the customer",
+      "span_ids": [
+        "5f0961c8-3ef3-4b7e-b3e2-602378a8bcf7"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "85739dec-951d-4f0c-9b77-19af3f2d3cb2",
+      "text": "Continue maintaining high service standards as they are appreciated by customers",
+      "span_ids": [
+        "27312d28-c1b0-4550-860c-f650c09736df"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "96d97fe7-4b0a-47ac-b83a-a61fccb0d2b1",
+      "text": "Consider providing brand recommendations or new product suggestions to help customers discover new options",
+      "span_ids": [
+        "27312d28-c1b0-4550-860c-f650c09736df"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "b57752b7-8690-4dd6-a26d-df041e7d7a4a",
+      "text": "Monitor store traffic patterns to better manage busy periods and ensure customer comfort during peak times",
+      "span_ids": [
+        "e93cf39a-6c94-428d-b678-44ad0cc44977"
+      ],
+      "actionability": "moderate"
+    },
+    {
+      "id": "e10fbda9-dd29-4625-bfc6-57aceb1d8417",
+      "text": "Continue maintaining current product quality standards and store environment to preserve positive customer experiences",
+      "span_ids": [
+        "9e4a5db0-8eec-49aa-9ec4-aa4283ff1f98",
+        "b1b7182d-2e0a-4773-b59e-4fb7ccf1ca42"
+      ],
+      "actionability": "easy"
+    },
+    {
+      "id": "cec2e707-4fad-4df4-a077-fb9de236ff25",
+      "text": "Consider following up with customer to understand specific aspects that made the experience good for improvement insights",
+      "span_ids": [
+        "b1b7182d-2e0a-4773-b59e-4fb7ccf1ca42"
+      ],
+      "actionability": "moderate"
+    }
+  ]
+}

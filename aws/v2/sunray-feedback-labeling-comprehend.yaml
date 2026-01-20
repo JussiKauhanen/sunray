@@ -1,0 +1,742 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Sunray Feedback Labeling System - Enhanced Comprehend (Hybrid Approach)'
+
+Parameters:
+  Environment:
+    Type: String
+    Description: Environment for deployment
+    AllowedValues:
+      - dev
+      - tst
+      - qa
+      - prd
+    Default: qa
+    ConstraintDescription: Must be dev, tst, qa, or prd
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "Deployment Configuration"
+        Parameters:
+          - Environment
+    ParameterLabels:
+      Environment:
+        default: "Environment (dev/tst/qa/prd)"
+
+Resources:
+  # S3 Bucket for feedback storage
+  FeedbackBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'sunray-feedback-comprehend-${Environment}-${AWS::Region}'
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+        - Key: AIProvider
+          Value: aws-comprehend-enhanced
+
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub 'sunray-feedback-comprehend-${Environment}-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                Resource: !Sub '${FeedbackBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !GetAtt FeedbackBucket.Arn
+        - PolicyName: ComprehendAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - comprehend:DetectSentiment
+                  - comprehend:DetectDominantLanguage
+                  - comprehend:BatchDetectSentiment
+                  - comprehend:BatchDetectDominantLanguage
+                Resource: '*'
+
+  # CloudWatch Log Group for Lambda
+  FunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/sunray-feedback-comprehend-${Environment}-labeling-function'
+      RetentionInDays: 7
+
+  # The main Lambda function
+  FeedbackLabelingFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub 'sunray-feedback-comprehend-${Environment}-labeling-function'
+      Runtime: python3.11
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 300
+      MemorySize: 1024
+      Environment:
+        Variables:
+          OUTPUT_BUCKET: !Ref FeedbackBucket
+          ENVIRONMENT: !Ref Environment
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Solution
+          Value: sunray-feedback-labeling
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import os
+          import uuid
+          import re
+          from datetime import datetime
+          from urllib.parse import unquote_plus
+          
+          s3 = boto3.client('s3')
+          comprehend = boto3.client('comprehend')
+          
+          OUTPUT_BUCKET = os.environ['OUTPUT_BUCKET']
+          ENVIRONMENT = os.environ['ENVIRONMENT']
+          
+          # Enhanced Ontology - matching expected QA output structure
+          ONTOLOGY = {
+              "categories": [
+                  {
+                      "id": "844a1b3b-637b-490f-92fa-e3b09e7b1441",
+                      "name": "Staff",
+                      "sub_categories": [
+                          {"id": "82bd1474-f27f-404e-a62e-92d237ae0238", "name": "Knowledge"},
+                          {"id": "861d52ae-6b59-4060-845b-2af8ce476fd1", "name": "Friendliness"},
+                          {"id": "98759502-46bd-42ad-a654-9cb3a4a3a5f9", "name": "Appearance"},
+                          {"id": "ca70dffd-a2e9-4a03-9712-dc8768e72fc1", "name": "Helpfulness"}
+                      ]
+                  },
+                  {
+                      "id": "7c865787-465b-4c66-ae90-a51edd2c79d5",
+                      "name": "Physical Store Environment",
+                      "sub_categories": [
+                          {"id": "cae1edaa-ec57-4da9-9243-00c00da1985f", "name": "Cleanliness"},
+                          {"id": "d78c7c3d-45d0-4baa-9914-d4f8ee6e5cff", "name": "Layout"},
+                          {"id": "f9a223c2-890c-46a6-8271-edc93f54b48b", "name": "Ambiance"},
+                          {"id": "627749e1-54e4-43e9-b594-343b53bbf15b", "name": "Displays"},
+                          {"id": "4d791564-315d-480b-a303-08db84d2a0cd", "name": "Opening Hours"},
+                          {"id": "80811ea4-c329-4663-af85-26986fc25f33", "name": "Crowds"}
+                      ]
+                  },
+                  {
+                      "id": "fc9fa5a2-0fb6-4820-9320-ec4f9b462acc",
+                      "name": "Checkout",
+                      "sub_categories": [
+                          {"id": "0d78b861-a3a0-4a88-8317-9a4db65c667c", "name": "Speed"},
+                          {"id": "78255eae-a1dc-493c-9b82-a4f943f4693c", "name": "Payment Options"},
+                          {"id": "148b461e-3ca0-4a12-9d9e-3c2bfcf2d33a", "name": "Service"}
+                      ]
+                  },
+                  {
+                      "id": "d84335dc-7ff1-48e4-ad35-963e4656160f",
+                      "name": "Product",
+                      "sub_categories": [
+                          {"id": "c7f13e5b-d1a7-4502-9c8d-5087edf742f2", "name": "Selection"},
+                          {"id": "8e0e5a4e-6d93-4dbf-882f-8be094365438", "name": "Sizing"},
+                          {"id": "6fe599c2-39ea-47e8-8813-5a64b115e7a6", "name": "Quality"},
+                          {"id": "9e5a4197-cb15-4553-9272-f17566cb6a61", "name": "Availability"}
+                      ]
+                  },
+                  {
+                      "id": "b57e6d2b-b799-48b3-9f72-b48cd7479d06",
+                      "name": "Pricing",
+                      "sub_categories": [
+                          {"id": "0add798b-ce4d-48fa-9441-cf913114e748", "name": "Value for Money"},
+                          {"id": "2de4e32c-659f-42ff-848c-527a082d61a4", "name": "Discounts"},
+                          {"id": "142ccedc-feb8-4cf4-a685-3d8da84a343c", "name": "Promotions"},
+                          {"id": "546efaa7-9099-4659-8129-1988ff79e2a8", "name": "Affordability"}
+                      ]
+                  },
+                  {
+                      "id": "853e82d5-0ff5-4f75-bc2c-b7fde18f2e96",
+                      "name": "Online Experience",
+                      "sub_categories": [
+                          {"id": "ea220b26-8607-4641-9f0a-85a04080cc6b", "name": "Checkout"},
+                          {"id": "7bd31ca0-3a5e-41b8-bd9d-68b8be81b1b5", "name": "Mobile App"},
+                          {"id": "0df1c6cc-205a-40df-a8e4-06887bd78c42", "name": "Product Selection"},
+                          {"id": "811e5b24-a546-4f1b-8344-e9486921efb2", "name": "Website Usability"}
+                      ]
+                  },
+                  {
+                      "id": "5ebf5992-1187-4c5e-b938-64c1adcd1fdd",
+                      "name": "Shipping & Delivery",
+                      "sub_categories": [
+                          {"id": "46b8b428-412f-47dc-85cf-94a1cae1b9c6", "name": "Speed"},
+                          {"id": "cb4378b6-3e91-4362-bb2d-6276d6353189", "name": "Cost"},
+                          {"id": "a0f78830-a937-41dc-bbf9-21eb8e28dd70", "name": "Tracking"}
+                      ]
+                  },
+                  {
+                      "id": "67aff62b-5f84-4a2c-8a0e-20847ae37801",
+                      "name": "Customer Support",
+                      "sub_categories": [
+                          {"id": "e5ad1a4b-d18c-4c1b-95ba-145e41415452", "name": "Responsiveness"},
+                          {"id": "6265aebb-a9b2-4ab4-b6e2-2bca6d78845d", "name": "Support Channels"}
+                      ]
+                  }
+              ]
+          }
+          
+          # Enhanced keyword mapping for better category detection
+          CATEGORY_KEYWORDS = {
+              "Staff": {
+                  "keywords": ["staff", "employee", "myyjä", "salesperson", "worker", "henkilökunta", "kassahenkil", "asiakaspalvelu", "myyja", "palvelu", "service"],
+                  "sub_categories": {
+                      "Knowledge": ["knowledge", "know", "explain", "tietää", "osaa", "selittää", "tieto"],
+                      "Friendliness": ["friendly", "nice", "pleasant", "ystävällinen", "mukava", "kiva", "positiivinen", "hymyilevä", "laipni", "trevlig", "bra"],
+                      "Helpfulness": ["helpful", "help", "assist", "auttaa", "auttoi", "avulias", "palvelu", "autettiin", "tilasi"],
+                      "Appearance": ["appearance", "dress", "uniform", "ulkonäkö", "pukeutuminen"]
+                  }
+              },
+              "Physical Store Environment": {
+                  "keywords": ["store", "shop", "environment", "space", "kauppa", "liike", "tila", "ympäristö", "floor"],
+                  "sub_categories": {
+                      "Cleanliness": ["clean", "dirty", "mess", "puhdas", "likainen", "siisti"],
+                      "Layout": ["layout", "organize", "järjestely", "sijainti", "layout", "löytää", "etsiä"],
+                      "Ambiance": ["atmosphere", "ambiance", "ilmapiiri", "tunnelma", "music", "kaiutin"],
+                      "Displays": ["display", "presentation", "esillepano", "näyttely"],
+                      "Opening Hours": ["hours", "open", "close", "aukiolo", "opening"],
+                      "Crowds": ["crowd", "busy", "ruuhka", "kiire", "täynnä", "empty"]
+                  }
+              },
+              "Checkout": {
+                  "keywords": ["checkout", "kassa", "payment", "pay", "maksu", "maksaa", "till", "register"],
+                  "sub_categories": {
+                      "Speed": ["fast", "slow", "quick", "nopea", "hidas", "jonottaa", "queue", "ruuhka"],
+                      "Payment Options": ["payment", "card", "cash", "maksuvaihtoehto", "kortti"],
+                      "Service": ["service", "palvelu", "kassapalvelu"]
+                  }
+              },
+              "Product": {
+                  "keywords": ["product", "item", "tuote", "tavara", "goods", "merchandise", "vaatteet", "clothing", "koot", "koko"],
+                  "sub_categories": {
+                      "Selection": ["selection", "choice", "valikoima", "range", "brändejä", "märke"],
+                      "Sizing": ["size", "koko", "koot", "fit", "sovitus", "pieni", "iso", "36", "40"],
+                      "Quality": ["quality", "laatu", "broken", "rikki", "defective", "hyvä"],
+                      "Availability": ["availability", "stock", "saatavuus", "varastossa", "loppuunmyyty", "sold out", "ei löytynyt"]
+                  }
+              },
+              "Pricing": {
+                  "keywords": ["price", "cost", "expensive", "cheap", "hinta", "kallis", "halpa", "discount", "ale"],
+                  "sub_categories": {
+                      "Value for Money": ["value", "worth", "arvo", "vastine"],
+                      "Discounts": ["discount", "sale", "alennus", "ale", "-20%", "20%"],
+                      "Promotions": ["promotion", "offer", "tarjous", "kampanja", "hullut päivät"],
+                      "Affordability": ["afford", "expensive", "cheap", "varaa", "kallis"]
+                  }
+              },
+              "Online Experience": {
+                  "keywords": ["website", "online", "web", "netti", "verkkokauppa", "app", "sovellus", "digital", "lehel", "veebileht", "ostukorv"],
+                  "sub_categories": {
+                      "Checkout": ["checkout", "cart", "ostukorvi", "ostukorv", "tilaus", "order", "osta", "ostu"],
+                      "Website Usability": ["usability", "easy", "difficult", "käytettävyys", "helppo", "vaikea", "ei ole võimalik", "ei saa"],
+                      "Mobile App": ["app", "mobile", "sovellus", "mobiili"],
+                      "Product Selection": ["selection", "search", "valikoima", "etsi", "tooteid", "mütsid"]
+                  }
+              },
+              "Shipping & Delivery": {
+                  "keywords": ["delivery", "shipping", "toimitus", "lähetys", "postage", "posti"],
+                  "sub_categories": {
+                      "Speed": ["fast", "slow", "late", "nopea", "hidas", "myöhässä"],
+                      "Cost": ["cost", "price", "hinta", "maksu", "postikulu"],
+                      "Tracking": ["track", "tracking", "seuranta"]
+                  }
+              },
+              "Customer Support": {
+                  "keywords": ["support", "customer service", "asiakaspalvelu", "tuki", "help"],
+                  "sub_categories": {
+                      "Responsiveness": ["response", "quick", "slow", "vastaus", "nopea"],
+                      "Support Channels": ["phone", "email", "chat", "puhelin", "sähköposti"]
+                  }
+              }
+          }
+          
+          def extract_feedback_text(feedback_obj):
+              """Extract all text from feedback object"""
+              texts = []
+              
+              # Main comment fields
+              if feedback_obj.get('Emotion_Open_Comments__c'):
+                  texts.append(feedback_obj['Emotion_Open_Comments__c'])
+              if feedback_obj.get('Selection_Open_Comments__c'):
+                  texts.append(feedback_obj['Selection_Open_Comments__c'])
+              if feedback_obj.get('Webstore_Selection_Open_Comments__c'):
+                  texts.append(feedback_obj['Webstore_Selection_Open_Comments__c'])
+              
+              return ' '.join(texts).strip()
+          
+          def detect_categories_and_subcategories(text):
+              """Enhanced category detection with scoring"""
+              text_lower = text.lower()
+              matches = []
+              
+              for category_name, category_data in CATEGORY_KEYWORDS.items():
+                  # Check main category keywords
+                  category_score = sum(1 for kw in category_data['keywords'] if kw in text_lower)
+                  
+                  if category_score > 0:
+                      # Find category ID from ontology
+                      category_id = next((c['id'] for c in ONTOLOGY['categories'] if c['name'] == category_name), None)
+                      
+                      # Check subcategories
+                      for subcat_name, subcat_keywords in category_data['sub_categories'].items():
+                          subcat_score = sum(1 for kw in subcat_keywords if kw in text_lower)
+                          
+                          if subcat_score > 0:
+                              # Find subcategory ID
+                              category_obj = next((c for c in ONTOLOGY['categories'] if c['name'] == category_name), None)
+                              if category_obj:
+                                  subcat_id = next((sc['id'] for sc in category_obj['sub_categories'] if sc['name'] == subcat_name), None)
+                                  
+                                  matches.append({
+                                      'category_id': category_id,
+                                      'category_name': category_name,
+                                      'sub_category_id': subcat_id,
+                                      'sub_category_name': subcat_name,
+                                      'score': category_score + subcat_score * 2  # Weight subcategories higher
+                                  })
+              
+              # Sort by score and return top matches
+              matches.sort(key=lambda x: x['score'], reverse=True)
+              return matches[:3] if matches else []  # Return top 3 matches
+          
+          def extract_spans(text, sentiment_result, categories):
+              """Extract text spans with categories - simpler approach"""
+              spans = []
+              
+              # Simple sentence split - only on ., !, ? followed by space and capital or end of string
+              # This avoids splitting dates like "30.9"
+              sentences = re.split(r'[.!?]+\s+(?=[A-ZÄÖÜÕŠŽ])|[.!?]+$', text)
+              sentences = [s.strip() for s in sentences if s.strip()]
+              
+              # Try to categorize each sentence
+              for sentence in sentences:
+                  sentence_categories = detect_categories_and_subcategories(sentence)
+                  
+                  if sentence_categories:
+                      # Found category match - create span
+                      cat_match = sentence_categories[0]
+                      span = {
+                          "id": str(uuid.uuid4()),
+                          "start_index": 0,
+                          "end_index": 0,
+                          "processed_text": sentence,
+                          "category_id": cat_match['category_id'],
+                          "sub_category_id": cat_match['sub_category_id'],
+                          "aspect_id": None,
+                          "relevance_score": min(cat_match['score'] / 10.0, 1.0),
+                          "sentiment": sentiment_result.lower(),
+                          "topic_ids": []
+                      }
+                      spans.append(span)
+              
+              # If no spans created, try full text
+              if not spans:
+                  full_categories = detect_categories_and_subcategories(text)
+                  
+                  if full_categories:
+                      # Has category for full text
+                      cat_match = full_categories[0]
+                      spans.append({
+                          "id": str(uuid.uuid4()),
+                          "start_index": 0,
+                          "end_index": 0,
+                          "processed_text": text.strip(),
+                          "category_id": cat_match['category_id'],
+                          "sub_category_id": cat_match['sub_category_id'],
+                          "aspect_id": None,
+                          "relevance_score": min(cat_match['score'] / 10.0, 1.0),
+                          "sentiment": sentiment_result.lower(),
+                          "topic_ids": []
+                      })
+                  else:
+                      # No category at all - create uncategorized span
+                      spans.append({
+                          "id": str(uuid.uuid4()),
+                          "start_index": 0,
+                          "end_index": 0,
+                          "processed_text": text.strip(),
+                          "category_id": None,
+                          "sub_category_id": None,
+                          "aspect_id": None,
+                          "relevance_score": None,
+                          "sentiment": sentiment_result.lower(),
+                          "topic_ids": []
+                      })
+              
+              return spans
+          
+          def analyze_feedback(feedback_obj):
+              """Analyze feedback using AWS Comprehend + enhanced logic"""
+              try:
+                  # Extract feedback text
+                  feedback_text = extract_feedback_text(feedback_obj)
+                  
+                  if not feedback_text or len(feedback_text) < 3:
+                      return None
+                  
+                  # Detect language
+                  try:
+                      language_response = comprehend.detect_dominant_language(Text=feedback_text[:5000])
+                      language = language_response['Languages'][0]['LanguageCode'] if language_response['Languages'] else 'en'
+                  except:
+                      language = feedback_obj.get('Language__c', 'en') or 'en'
+                  
+                  # Map language codes
+                  lang_map = {'FI': 'fi', 'ET': 'et', 'EN': 'en', 'SV': 'sv', 'LV': 'lv'}
+                  language = lang_map.get(language.upper(), language.lower())
+                  
+                  # Detect sentiment
+                  try:
+                      sentiment_response = comprehend.detect_sentiment(
+                          Text=feedback_text[:5000],
+                          LanguageCode='en' if language not in ['en', 'es', 'fr', 'de', 'it', 'pt', 'ar', 'hi', 'ja', 'ko', 'zh', 'zh-TW'] else language
+                      )
+                      sentiment = sentiment_response['Sentiment'].lower()
+                  except:
+                      # Fallback: use EVI score
+                      evi_score = float(feedback_obj.get('EVI__c', 0) or 0)
+                      if evi_score >= 0.6:
+                          sentiment = 'positive'
+                      elif evi_score <= -0.6:
+                          sentiment = 'negative'
+                      else:
+                          sentiment = 'neutral'
+                  
+                  # Detect categories
+                  categories = detect_categories_and_subcategories(feedback_text)
+                  
+                  # Extract spans
+                  spans = extract_spans(feedback_text, sentiment, categories)
+                  
+                  # Build tags from Salesforce fields
+                  tags = {
+                      "emotion": feedback_obj.get('Emotion__c', ''),
+                      "stockmann_id": feedback_obj.get('Id', ''),
+                      "evi": str(feedback_obj.get('EVI__c', '')),
+                      "feedback_source": feedback_obj.get('Feedback_Name_Source__c', ''),
+                      "language": feedback_obj.get('Language__c', ''),
+                      "touchpoint": feedback_obj.get('Touchpoint_Name__c', ''),
+                      "evi_destroing": str(feedback_obj.get('EVI_Destroying_Cluster__c', '')),
+                      "evi_attention": str(feedback_obj.get('EVI_Attention_Cluster__c', '')),
+                      "evi_advocacy": str(feedback_obj.get('EVI_Advocacy_Cluster__c', '')),
+                      "evi_trusting": str(feedback_obj.get('EVI_Trusting_Cluster__c', ''))
+                  }
+                  
+                  # Add optional fields
+                  if feedback_obj.get('Country__c'):
+                      tags['country'] = feedback_obj['Country__c']
+                  if feedback_obj.get('Department_Store_Visited__c'):
+                      tags['store'] = feedback_obj['Department_Store_Visited__c']
+                  if feedback_obj.get('Department_Visited__c'):
+                      tags['department'] = feedback_obj['Department_Visited__c']
+                  if feedback_obj.get('Postal_Code_Area__c'):
+                      tags['postal_code_area'] = feedback_obj['Postal_Code_Area__c']
+                  
+                  # Calculate score from EVI
+                  evi_score = float(feedback_obj.get('EVI__c', 0) or 0)
+                  
+                  # Build document
+                  document = {
+                      "id": str(uuid.uuid4()),
+                      "source_id": feedback_obj.get('Id', ''),
+                      "source_text": feedback_text,
+                      "processed_text": feedback_text,
+                      "spans": spans,
+                      "score": evi_score,
+                      "timestamp": feedback_obj.get('Response_Date__c', feedback_obj.get('CreatedDate', '')),
+                      "tags": {k: v for k, v in tags.items() if v}  # Remove empty values
+                  }
+                  
+                  return document
+                  
+              except Exception as e:
+                  print(f"Error analyzing feedback: {str(e)}")
+                  import traceback
+                  traceback.print_exc()
+                  return None
+          
+          def lambda_handler(event, context):
+              """Process S3 event and analyze feedbacks"""
+              print(f"Received event: {json.dumps(event)}")
+              
+              results = []
+              
+              for record in event.get('Records', []):
+                  try:
+                      bucket = record['s3']['bucket']['name']
+                      key = unquote_plus(record['s3']['object']['key'])
+                      
+                      print(f"Processing file: s3://{bucket}/{key}")
+                      
+                      # Only process files in ingress folder
+                      if not key.startswith('ingress/') or not key.endswith('.json'):
+                          print(f"Skipping {key} - not in ingress/ or not .json")
+                          continue
+                      
+                      # Read input file
+                      response = s3.get_object(Bucket=bucket, Key=key)
+                      content = response['Body'].read().decode('utf-8')
+                      input_data = json.loads(content)
+                      
+                      # Process feedbacks
+                      feedbacks = input_data.get('feedbacks', [])
+                      print(f"Found {len(feedbacks)} feedbacks to process")
+                      
+                      documents = []
+                      for feedback in feedbacks:
+                          doc = analyze_feedback(feedback)
+                          if doc:
+                              documents.append(doc)
+                      
+                      print(f"Successfully analyzed {len(documents)} feedbacks")
+                      
+                      # Build output structure matching expected format
+                      output = {
+                          "version": "3.0",
+                          "document_batch_id": str(uuid.uuid4()),
+                          "ontology": ONTOLOGY,
+                          "topics": [],  # Skip topics in hybrid approach
+                          "documents": documents,
+                          "suggestions": []  # Skip suggestions in hybrid approach
+                      }
+                      
+                      # Write to output folder
+                      timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+                      original_filename = key.split('/')[-1].replace('.json', '')
+                      output_key = f"egress/{original_filename}_labeled_{timestamp}.json"
+                      
+                      s3.put_object(
+                          Bucket=OUTPUT_BUCKET,
+                          Key=output_key,
+                          Body=json.dumps(output, indent=2, ensure_ascii=False),
+                          ContentType='application/json'
+                      )
+                      
+                      print(f"✓ Labeled data written to: s3://{OUTPUT_BUCKET}/{output_key}")
+                      
+                      # Move original to archive
+                      archive_key = key.replace('ingress/', 'archive/')
+                      s3.copy_object(
+                          Bucket=OUTPUT_BUCKET,
+                          CopySource={'Bucket': bucket, 'Key': key},
+                          Key=archive_key
+                      )
+                      s3.delete_object(Bucket=bucket, Key=key)
+                      
+                      print(f"✓ Original moved to: s3://{OUTPUT_BUCKET}/{archive_key}")
+                      
+                      results.append({
+                          'input': key,
+                          'output': output_key,
+                          'count': len(documents),
+                          'status': 'success'
+                      })
+                      
+                  except Exception as e:
+                      print(f"✗ Error processing {key}: {str(e)}")
+                      import traceback
+                      traceback.print_exc()
+                      results.append({
+                          'input': key,
+                          'status': 'error',
+                          'error': str(e)
+                      })
+              
+              return {
+                  'statusCode': 200,
+                  'body': json.dumps(results)
+              }
+
+  # Lambda Permission for S3 to invoke
+  LambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref FeedbackLabelingFunction
+      Action: lambda:InvokeFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !GetAtt FeedbackBucket.Arn
+      SourceAccount: !Ref AWS::AccountId
+
+  # Custom resource to add S3 notification
+  S3NotificationCustomResource:
+    Type: Custom::S3BucketNotification
+    Properties:
+      ServiceToken: !GetAtt S3NotificationFunction.Arn
+      BucketName: !Ref FeedbackBucket
+      LambdaArn: !GetAtt FeedbackLabelingFunction.Arn
+      NotificationId: FeedbackIngressNotification
+
+  # Lambda to configure S3 notifications
+  S3NotificationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub 'sunray-feedback-comprehend-${Environment}-s3-config'
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !GetAtt S3NotificationFunctionRole.Arn
+      Timeout: 60
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import cfnresponse
+          
+          s3 = boto3.client('s3')
+          
+          def handler(event, context):
+              print(f"Event: {json.dumps(event)}")
+              
+              try:
+                  bucket = event['ResourceProperties']['BucketName']
+                  lambda_arn = event['ResourceProperties']['LambdaArn']
+                  notification_id = event['ResourceProperties']['NotificationId']
+                  
+                  if event['RequestType'] in ['Create', 'Update']:
+                      s3.put_bucket_notification_configuration(
+                          Bucket=bucket,
+                          NotificationConfiguration={
+                              'LambdaFunctionConfigurations': [
+                                  {
+                                      'Id': notification_id,
+                                      'LambdaFunctionArn': lambda_arn,
+                                      'Events': ['s3:ObjectCreated:*'],
+                                      'Filter': {
+                                          'Key': {
+                                              'FilterRules': [
+                                                  {'Name': 'prefix', 'Value': 'ingress/'},
+                                                  {'Name': 'suffix', 'Value': '.json'}
+                                              ]
+                                          }
+                                      }
+                                  }
+                              ]
+                          }
+                      )
+                      print(f"✓ Notification configured for bucket: {bucket}")
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+                      
+                  elif event['RequestType'] == 'Delete':
+                      try:
+                          s3.put_bucket_notification_configuration(
+                              Bucket=bucket,
+                              NotificationConfiguration={}
+                          )
+                          print(f"✓ Notification removed from bucket: {bucket}")
+                      except Exception as e:
+                          print(f"Note: Could not remove notification: {e}")
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {})
+                      
+              except Exception as e:
+                  print(f"✗ Error: {str(e)}")
+                  cfnresponse.send(event, context, cfnresponse.FAILED, {'Error': str(e)})
+
+  # Role for the S3 notification configuration Lambda
+  S3NotificationFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3NotificationConfig
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutBucketNotification
+                  - s3:GetBucketNotification
+                Resource: !GetAtt FeedbackBucket.Arn
+
+Outputs:
+  StackName:
+    Description: CloudFormation stack name
+    Value: !Ref AWS::StackName
+    
+  Environment:
+    Description: Deployment environment
+    Value: !Ref Environment
+    
+  BucketName:
+    Description: S3 Bucket for feedback files
+    Value: !Ref FeedbackBucket
+    Export:
+      Name: !Sub 'sunray-feedback-comprehend-${Environment}-BucketName'
+  
+  IngressFolder:
+    Description: Upload raw feedback JSON files here
+    Value: !Sub 's3://${FeedbackBucket}/ingress/'
+    
+  EgressFolder:
+    Description: Labeled feedback appears here
+    Value: !Sub 's3://${FeedbackBucket}/egress/'
+    
+  ArchiveFolder:
+    Description: Processed files are moved here
+    Value: !Sub 's3://${FeedbackBucket}/archive/'
+  
+  LambdaFunctionName:
+    Description: Lambda function processing the feedback
+    Value: !Ref FeedbackLabelingFunction
+    
+  ProcessorType:
+    Description: AI processor being used
+    Value: AWS Comprehend (Enhanced Hybrid - Spans + Categories)
+    
+  EstimatedMonthlyCost:
+    Description: Estimated cost for 10K feedbacks/month
+    Value: $10-30 (very cost-effective)
+    
+  CloudWatchLogGroup:
+    Description: View Lambda logs here
+    Value: !Sub 'https://console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fsunray-feedback-comprehend-${Environment}-labeling-function'
+  
+  S3Console:
+    Description: Open S3 bucket in console
+    Value: !Sub 'https://s3.console.aws.amazon.com/s3/buckets/${FeedbackBucket}?region=${AWS::Region}'
+    
+  TestCommand:
+    Description: CLI command to test with sample file
+    Value: !Sub 'aws s3 cp feedback-qa-small-sample.json s3://${FeedbackBucket}/ingress/ --region ${AWS::Region}'
